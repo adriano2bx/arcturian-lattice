@@ -1,0 +1,30 @@
+{
+  "name": "nexus-intelligence-mcp",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Internal multi-source intelligence MCP for Hermes agents, designed for Cloudflare Workers.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test",
+    "test:live": "LIVE_TEST=1 node --test test/live.test.js test/live-v1.test.js",
+    "check": "node scripts/check-all.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "skills:list": "node scripts/skills.mjs list",
+    "skills:validate": "node scripts/skills.mjs validate",
+    "skills:install": "node scripts/skills.mjs install"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "agents": "0.23.0",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20260729.1",
+    "wrangler": "4.115.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

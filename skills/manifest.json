@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "server": "nexus-intelligence-mcp",
+  "skills": [
+    {
+      "name": "company-due-diligence",
+      "description": "Builds an evidence-graded due diligence dossier for a Brazilian company using official registrations, public contracts, legal signals, IP, web presence and OSINT. Use when evaluating a client, supplier, partner, acquisition target or high-value prospect.",
+      "category": "company-intelligence",
+      "version": "1.0.0",
+      "tools": [
+        "company.validate_cnpj",
+        "company.profile",
+        "company.risk",
+        "company.public_contracts",
+        "company.legal",
+        "company.ip",
+        "company.gazette",
+        "company.osint",
+        "web.profile",
+        "web.history",
+        "web.technology",
+        "news.search"
+      ],
+      "path": "skills/company-due-diligence/SKILL.md"
+    },
+    {
+      "name": "company-osint-br",
+      "description": "Investigates a Brazilian company from public and official sources, correlating CNPJ, web, gazette, regulatory, legal and infrastructure signals. Use for OSINT, business intelligence, prospect research or entity verification.",
+      "category": "company-intelligence",
+      "version": "1.0.0",
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "company.gazette",
+        "company.global",
+        "regulatory.search",
+        "web.profile",
+        "osint.subdomains",
+        "infra.network"
+      ],
+      "path": "skills/company-osint-br/SKILL.md"
+    },
+    {
+      "name": "public-procurement-intelligence",
+      "description": "Analyzes Brazilian public procurement and contract exposure around a company. Use to find government customers, contract history, procurement signals, public-sector opportunities or supplier concentration.",
+      "category": "go-to-market",
+      "version": "1.0.0",
+      "tools": [
+        "company.public_contracts",
+        "company.profile",
+        "news.search",
+        "market.ibge"
+      ],
+      "path": "skills/public-procurement-intelligence/SKILL.md"
+    },
+    {
+      "name": "legal-risk-screening",
+      "description": "Screens a Brazilian company using public integrity certificates and judicial publication signals without making legal conclusions. Use for vendor onboarding, partnership checks, compliance triage or legal-risk reconnaissance.",
+      "category": "risk",
+      "version": "1.0.0",
+      "tools": [
+        "company.risk",
+        "company.legal",
+        "company.profile"
+      ],
+      "path": "skills/legal-risk-screening/SKILL.md"
+    },
+    {
+      "name": "intellectual-property-intelligence",
+      "description": "Analyzes locally mirrored official INPI records for company trademarks, patents and other IP signals. Use for brand portfolio review, product-launch signals, competitive monitoring or IP due diligence.",
+      "category": "company-intelligence",
+      "version": "1.0.0",
+      "tools": [
+        "company.ip",
+        "company.profile",
+        "web.history",
+        "news.search"
+      ],
+      "path": "skills/intellectual-property-intelligence/SKILL.md"
+    },
+    {
+      "name": "website-intelligence",
+      "description": "Builds a public intelligence profile of a website or domain using HTTP, DNS, RDAP, sitemap, technology detection and subdomain signals. Use for competitor research, prospect enrichment, vendor review or digital reconnaissance.",
+      "category": "web-intelligence",
+      "version": "1.0.0",
+      "tools": [
+        "web.profile",
+        "web.technology",
+        "web.sitemap",
+        "osint.subdomains",
+        "infra.network",
+        "infra.peering"
+      ],
+      "path": "skills/website-intelligence/SKILL.md"
+    },
+    {
+      "name": "website-change-forensics",
+      "description": "Reconstructs how a website, offer or positioning changed over time using Wayback snapshots and current public observations. Use for competitor-history research, pricing/offer forensics or campaign retrospectives.",
+      "category": "web-intelligence",
+      "version": "1.0.0",
+      "tools": [
+        "web.history",
+        "web.profile",
+        "web.sitemap",
+        "news.search"
+      ],
+      "path": "skills/website-change-forensics/SKILL.md"
+    },
+    {
+      "name": "technology-stack-intelligence",
+      "description": "Identifies and interprets a company website technology stack from public HTML, headers, DNS and infrastructure signals. Use for martech research, vendor displacement opportunities, integration planning or competitor tech benchmarking.",
+      "category": "web-intelligence",
+      "version": "1.0.0",
+      "tools": [
+        "web.technology",
+        "web.profile",
+        "osint.subdomains",
+        "infra.network"
+      ],
+      "path": "skills/technology-stack-intelligence/SKILL.md"
+    },
+    {
+      "name": "seo-technical-audit",
+      "description": "Performs a technical and on-page SEO audit using direct public page observations. Use when diagnosing crawlability, metadata, canonical, heading, indexability or basic page-quality issues.",
+      "category": "seo",
+      "version": "1.0.0",
+      "tools": [
+        "seo.audit",
+        "web.sitemap",
+        "web.profile"
+      ],
+      "path": "skills/seo-technical-audit/SKILL.md"
+    },
+    {
+      "name": "seo-competitive-research",
+      "description": "Compares competitors in search using self-hosted SERP search, technical SEO observations, backlinks and web evidence. Use for keyword opportunity discovery, competitive SEO strategy or search-market mapping.",
+      "category": "seo",
+      "version": "1.0.0",
+      "tools": [
+        "seo.serp",
+        "seo.audit",
+        "seo.backlinks",
+        "web.search",
+        "competitive.compare"
+      ],
+      "path": "skills/seo-competitive-research/SKILL.md"
+    },
+    {
+      "name": "backlink-intelligence",
+      "description": "Analyzes the locally accumulated backlink graph for a domain, including referring domains and link opportunities. Use for link-gap research, authority analysis or outreach planning when local coverage exists.",
+      "category": "seo",
+      "version": "1.0.0",
+      "tools": [
+        "seo.backlinks",
+        "competitive.compare",
+        "web.search"
+      ],
+      "path": "skills/backlink-intelligence/SKILL.md"
+    },
+    {
+      "name": "market-research-br",
+      "description": "Builds Brazilian market intelligence from IBGE/SIDRA, mirrored open datasets, company intelligence and geographic context. Use for TAM/SAM framing, regional expansion, vertical research or market-entry analysis.",
+      "category": "market",
+      "version": "1.0.0",
+      "tools": [
+        "market.ibge",
+        "market.open_data",
+        "geo.search",
+        "company.osint",
+        "web.search",
+        "news.search"
+      ],
+      "path": "skills/market-research-br/SKILL.md"
+    },
+    {
+      "name": "academic-research",
+      "description": "Performs evidence-oriented literature discovery with Crossref and OpenAlex, then synthesizes results with source provenance. Use for technical research, evidence reviews, scientific background or citation discovery.",
+      "category": "research",
+      "version": "1.0.0",
+      "tools": [
+        "research.papers",
+        "research.deep"
+      ],
+      "path": "skills/academic-research/SKILL.md"
+    },
+    {
+      "name": "news-event-intelligence",
+      "description": "Finds and synthesizes recent company, sector and geopolitical news events using GDELT and web research. Use for event detection, competitive moves, partnership tracking, crisis context or market briefings.",
+      "category": "research",
+      "version": "1.0.0",
+      "tools": [
+        "news.search",
+        "research.deep",
+        "web.search"
+      ],
+      "path": "skills/news-event-intelligence/SKILL.md"
+    },
+    {
+      "name": "youtube-content-intelligence",
+      "description": "Analyzes YouTube videos and transcripts for themes, hooks, positioning, claims and content opportunities. Use for competitor channel research, content strategy, video summarization or transcript-driven intelligence.",
+      "category": "social",
+      "version": "1.0.0",
+      "tools": [
+        "youtube.metadata",
+        "youtube.transcript",
+        "web.search"
+      ],
+      "path": "skills/youtube-content-intelligence/SKILL.md"
+    },
+    {
+      "name": "social-listening",
+      "description": "Monitors public social mentions across indexed Reddit, YouTube, X and Instagram surfaces, with direct Reddit search where available. Use for brand listening, competitor mentions, customer pain discovery or trend reconnaissance.",
+      "category": "social",
+      "version": "1.0.0",
+      "tools": [
+        "social.search_mentions",
+        "reddit.search",
+        "news.search"
+      ],
+      "path": "skills/social-listening/SKILL.md"
+    },
+    {
+      "name": "ads-creative-intelligence",
+      "description": "Discovers publicly indexed ad-transparency pages and analyzes competitor messaging, offers and creative patterns. Use for paid-media research, creative strategy or campaign positioning.",
+      "category": "marketing",
+      "version": "1.0.0",
+      "tools": [
+        "ads.search_public",
+        "web.search",
+        "web.history",
+        "competitive.snapshot"
+      ],
+      "path": "skills/ads-creative-intelligence/SKILL.md"
+    },
+    {
+      "name": "financial-intelligence-br",
+      "description": "Researches Brazilian macro and financial indicators using official Banco Central series and local regulatory datasets. Use for economic context, rate/inflation analysis, regulated-company research or executive briefings.",
+      "category": "finance",
+      "version": "1.0.0",
+      "tools": [
+        "finance.bcb_series",
+        "regulatory.search",
+        "market.ibge",
+        "news.search"
+      ],
+      "path": "skills/financial-intelligence-br/SKILL.md"
+    },
+    {
+      "name": "public-company-intelligence-us",
+      "description": "Analyzes US public-company filings and XBRL facts using official SEC EDGAR data. Use for company fundamentals, filing history, risk-factor research or cross-border competitive intelligence.",
+      "category": "finance",
+      "version": "1.0.0",
+      "tools": [
+        "finance.sec_companyfacts",
+        "finance.sec_submissions",
+        "news.search"
+      ],
+      "path": "skills/public-company-intelligence-us/SKILL.md"
+    },
+    {
+      "name": "network-infrastructure-osint",
+      "description": "Maps public network, ASN, DNS and peering signals for a company domain using passive or registry-based sources. Use for infrastructure intelligence, vendor research or digital-asset mapping—not unauthorized security testing.",
+      "category": "osint",
+      "version": "1.0.0",
+      "tools": [
+        "web.profile",
+        "osint.subdomains",
+        "infra.network",
+        "infra.peering"
+      ],
+      "path": "skills/network-infrastructure-osint/SKILL.md"
+    },
+    {
+      "name": "regulatory-intelligence-br",
+      "description": "Searches locally mirrored official Brazilian regulatory datasets across CVM, ANS, Anvisa, Anatel, Aneel, ANP and Susep. Use for sector due diligence, regulated-company research, compliance context or vertical market intelligence.",
+      "category": "regulatory",
+      "version": "1.0.0",
+      "tools": [
+        "regulatory.search",
+        "company.profile",
+        "news.search"
+      ],
+      "path": "skills/regulatory-intelligence-br/SKILL.md"
+    },
+    {
+      "name": "competitive-intelligence",
+      "description": "Builds multi-source competitor snapshots and compares domains using derived Digital Visibility signals. Use for competitor benchmarking, strategic positioning, market monitoring or executive competitive analysis.",
+      "category": "competitive",
+      "version": "1.0.0",
+      "tools": [
+        "competitive.snapshot",
+        "competitive.compare",
+        "competitive.traffic_estimate",
+        "web.history",
+        "news.search",
+        "seo.serp",
+        "social.search_mentions"
+      ],
+      "path": "skills/competitive-intelligence/SKILL.md"
+    },
+    {
+      "name": "continuous-intelligence-monitoring",
+      "description": "Creates and manages recurring intelligence monitors that persist snapshots and change events. Use when a company, competitor or website should be watched continuously for meaningful changes.",
+      "category": "automation",
+      "version": "1.0.0",
+      "tools": [
+        "monitor.create",
+        "monitor.list",
+        "monitor.run",
+        "monitor.events",
+        "monitor.run_due"
+      ],
+      "path": "skills/continuous-intelligence-monitoring/SKILL.md"
+    },
+    {
+      "name": "abm-account-research",
+      "description": "Creates an account-based marketing research brief for a target company by combining company, web, technology, market, news and competitive signals. Use before strategic outbound, enterprise sales, partnership outreach or custom proposals.",
+      "category": "go-to-market",
+      "version": "1.0.0",
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "web.profile",
+        "web.technology",
+        "news.search",
+        "competitive.snapshot",
+        "company.public_contracts",
+        "regulatory.search"
+      ],
+      "path": "skills/abm-account-research/SKILL.md"
+    },
+    {
+      "name": "lead-market-mapping",
+      "description": "Maps target-market segments and company opportunities using Brazilian market data, public company intelligence, geography and web research. Use for ICP design, territory planning or lead-list strategy.",
+      "category": "go-to-market",
+      "version": "1.0.0",
+      "tools": [
+        "market.ibge",
+        "market.open_data",
+        "geo.search",
+        "web.search",
+        "company.osint",
+        "regulatory.search"
+      ],
+      "path": "skills/lead-market-mapping/SKILL.md"
+    },
+    {
+      "name": "content-gap-intelligence",
+      "description": "Finds content and search gaps by combining competitor pages, SERPs, sitemaps, YouTube, social mentions and news. Use to plan editorial calendars, landing pages, video topics or thought-leadership content.",
+      "category": "marketing",
+      "version": "1.0.0",
+      "tools": [
+        "seo.serp",
+        "web.sitemap",
+        "web.search",
+        "youtube.transcript",
+        "social.search_mentions",
+        "news.search",
+        "competitive.compare"
+      ],
+      "path": "skills/content-gap-intelligence/SKILL.md"
+    },
+    {
+      "name": "executive-intelligence-brief",
+      "description": "Produces a concise executive intelligence brief from company, competitor, market, news and monitoring signals. Use for weekly leadership updates, client strategy meetings or board-style summaries.",
+      "category": "executive",
+      "version": "1.0.0",
+      "tools": [
+        "monitor.events",
+        "competitive.compare",
+        "news.search",
+        "company.osint",
+        "market.ibge",
+        "finance.bcb_series"
+      ],
+      "path": "skills/executive-intelligence-brief/SKILL.md"
+    },
+    {
+      "name": "crisis-reputation-monitoring",
+      "description": "Monitors public news and social signals for a company or brand, grouping potential reputation issues and validating material events. Use for crisis detection, reputation monitoring or competitor-incident tracking.",
+      "category": "risk",
+      "version": "1.0.0",
+      "tools": [
+        "news.search",
+        "social.search_mentions",
+        "reddit.search",
+        "monitor.create",
+        "monitor.events",
+        "web.search"
+      ],
+      "path": "skills/crisis-reputation-monitoring/SKILL.md"
+    }
+  ]
+}

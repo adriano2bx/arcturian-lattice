@@ -1,0 +1,8 @@
+export class YouTubeProvider {
+  constructor({fetchFn=globalThis.fetch,transcriptBaseUrl=null,allowKomeFallback=false}={}){this.id='youtube';this.fetchFn=fetchFn;this.transcriptBaseUrl=transcriptBaseUrl?.replace(/\/$/,'')??null;this.allowKomeFallback=allowKomeFallback;}
+  async metadata(url){const u=new URL('https://www.youtube.com/oembed');u.searchParams.set('url',url);u.searchParams.set('format','json');let r;try{r=await this.fetchFn(u.toString(),{headers:{accept:'application/json'}})}catch(e){return{ok:false,provider:this.id,reason:'network_error',detail:String(e?.message??e)}}if(!r.ok)return{ok:false,provider:this.id,reason:'upstream_error',status:r.status};return{ok:true,provider:this.id,source:'youtube_oembed',data:await r.json()};}
+  async transcript(url){if(this.transcriptBaseUrl){const first=await this.#post(`${this.transcriptBaseUrl}/transcript`,{url});if(first.ok)return{...first,source:'self_hosted_transcript'};}
+    if(this.allowKomeFallback){const r=await this.#post('https://kome.ai/api/transcript',{video_id:url,format:true,source:'tool'});return{...r,source:'kome_fallback',externalDependency:true};}
+    return{ok:false,provider:this.id,reason:'transcript_provider_not_configured',detail:'Configure YOUTUBE_TRANSCRIPT_URL for a self-hosted transcript service; Kome fallback is opt-in.'};}
+  async #post(url,body){let r;try{r=await this.fetchFn(url,{method:'POST',headers:{accept:'application/json','content-type':'application/json'},body:JSON.stringify(body)})}catch(e){return{ok:false,provider:this.id,reason:'network_error',detail:String(e?.message??e)}}if(!r.ok)return{ok:false,provider:this.id,reason:'upstream_error',status:r.status};let data;try{data=await r.json()}catch{data=await r.text()}return{ok:true,provider:this.id,data};}
+}
