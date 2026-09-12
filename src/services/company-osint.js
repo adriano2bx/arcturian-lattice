@@ -19,7 +19,7 @@ export class CompanyOsintService {
   const jobs=[
     ['risk',new TcuCertificatesProvider({fetchFn:this.fetchFn}).check(doc.normalized)],
     ['gazetteCompany',qd.company(doc.normalized)],['gazettePartners',qd.partners(doc.normalized)],
-    ...(name?[['globalEntity',gleif.searchByName(name,{limit:5})],['news',gdelt.search({query:`\"${name}\"`,timespan:'3months',limit:25})]]:[]),
+    ...(name?[['globalEntity',gleif.searchByName(name,{limit:5})],['news',newsService.search({query:`"${name}"`,timespan:'3months',limit:25})]]:[]),
     ...(dateFrom&&dateTo?[['publicContracts',new PncpContractsProvider({fetchFn:this.fetchFn}).searchContracts({cnpj:doc.normalized,role:'supplier',dateFrom,dateTo,maxPages})]]:[]),
   ];
   const settled=await Promise.all(jobs.map(async([k,p])=>[k,await p.catch?.(e=>({ok:false,reason:'exception',detail:String(e?.message??e)}))??p]));
