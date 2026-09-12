@@ -5,7 +5,7 @@ import { TcuCertificatesProvider } from '../providers/tcu-certificates.js';
 import { PncpContractsProvider } from '../providers/pncp-contracts.js';
 import { QueridoDiarioProvider } from '../providers/querido-diario.js';
 import { GleifProvider } from '../providers/gleif.js';
-import { GdeltProvider } from '../providers/gdelt.js';
+import { NewsSearchService } from './news-search.js';
 import { describeCnpj } from '../core/cnpj.js';
 
 export class CompanyOsintService {
@@ -15,7 +15,7 @@ export class CompanyOsintService {
   const profileSvc = new CompanyProfileService({   providers: [     new BrasilApiCnpjProvider({ fetchFn: this.fetchFn }),     new MinhaReceitaCnpjProvider({ fetchFn: this.fetchFn }),   ], });
   let profile=null;try{profile=await profileSvc.getByCnpj(doc.normalized)}catch{}
   const name=legalName??profile?.identity?.legalName??null;
-  const qd=new QueridoDiarioProvider({fetchFn:this.fetchFn});const gdelt=new GdeltProvider({fetchFn:this.fetchFn});const gleif=new GleifProvider({fetchFn:this.fetchFn});
+  const qd=new QueridoDiarioProvider({fetchFn:this.fetchFn});const newsService=new NewsSearchService({fetchFn:this.fetchFn});const gleif=new GleifProvider({fetchFn:this.fetchFn});
   const jobs=[
     ['risk',new TcuCertificatesProvider({fetchFn:this.fetchFn}).check(doc.normalized)],
     ['gazetteCompany',qd.company(doc.normalized)],['gazettePartners',qd.partners(doc.normalized)],
