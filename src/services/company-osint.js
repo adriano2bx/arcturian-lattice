@@ -1,3 +1,4 @@
+import { MinhaReceitaCnpjProvider } from '../providers/minhareceita.js';
 import { CompanyProfileService } from './company-profile.js';
 import { BrasilApiCnpjProvider } from '../providers/brasilapi.js';
 import { TcuCertificatesProvider } from '../providers/tcu-certificates.js';
