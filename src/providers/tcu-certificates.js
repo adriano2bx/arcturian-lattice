@@ -93,7 +93,7 @@ export function summarizeCertificates(certificates) {
   let clear = 0;
   let reviewRequired = 0;
   for (const cert of certificates) {
-    const status = `${cert.status ?? ""} ${cert.description ?? ""}`.trim();
+    const status = `${cert.status ?? ""} ${cert.description ?? ""}`   .replace(/[_-]+/g, " ")   .replace(/\s+/g, " ")   .trim();
     if (clearPatterns.some((pattern) => pattern.test(status))) clear += 1;
     else reviewRequired += 1;
   }
