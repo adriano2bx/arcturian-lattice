@@ -1,3 +1,4 @@
+import { NewsSearchService } from '../services/news-search.js';
 import { MinhaReceitaCnpjProvider } from '../providers/minhareceita.js';
 import { McpServer } from '@modelcontextprotocol/server';
 import { z } from 'zod';
