@@ -41,6 +41,7 @@ import { CertificateTransparencyProvider } from '../providers/certificate-transp
 import { NominatimProvider } from '../providers/nominatim.js';
 import { OpenDataLocalProvider } from '../providers/open-data-local.js';
 import { SitemapProvider } from '../providers/sitemap.js';
+import { AnatelSyncService } from '../services/anatel-sync.js';
 
 export const NEXUS_VERSION = '1.1.0';
 
@@ -1469,6 +1470,18 @@ export function createNexusMcpServer({
           env.NOMINATIM_URL ??
           null,
       }).search(a),
+  );
+
+  tool(
+    server,
+    'regulatory.sync_anatel',
+    'Synchronize the next page of the official ANATEL STEL SCM dataset into the local D1 mirror.',
+    {},
+    async () =>
+      new AnatelSyncService({
+        db: env.DB ?? null,
+        fetchFn,
+      }).syncNextPage(),
   );
 
   tool(
