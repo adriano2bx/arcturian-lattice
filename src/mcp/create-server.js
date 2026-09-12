@@ -62,8 +62,10 @@ export function createNexusMcpServer({
   const youtube = () =>
     new YouTubeProvider({
       fetchFn,
-      transcriptBaseUrl: env.YOUTUBE_TRANSCRIPT_URL ?? null,
-      allowKomeFallback: boolEnv(env.ALLOW_KOME_FALLBACK),
+      transcriptBaseUrl:
+        env.YOUTUBE_TRANSCRIPT_URL ?? null,
+      allowKomeFallback:
+        boolEnv(env.ALLOW_KOME_FALLBACK),
     });
 
   tool(
@@ -86,15 +88,21 @@ export function createNexusMcpServer({
     async ({ cnpj }) => {
       const service = new CompanyProfileService({
         providers: [
-          new BrasilApiCnpjProvider({ fetchFn }),
-          new MinhaReceitaCnpjProvider({ fetchFn }),
+          new BrasilApiCnpjProvider({
+            fetchFn,
+          }),
+          new MinhaReceitaCnpjProvider({
+            fetchFn,
+          }),
         ],
       });
 
       try {
         return await service.getByCnpj(cnpj);
       } catch (error) {
-        if (error instanceof CompanyProfileError) {
+        if (
+          error instanceof CompanyProfileError
+        ) {
           return fail(
             error.code,
             error.message,
@@ -114,7 +122,10 @@ export function createNexusMcpServer({
     {
       cnpj: z.string().min(1),
       role: z
-        .enum(['supplier', 'organization'])
+        .enum([
+          'supplier',
+          'organization',
+        ])
         .default('supplier'),
       dateFrom: z.string(),
       dateTo: z.string(),
@@ -156,7 +167,9 @@ export function createNexusMcpServer({
           fetchFn,
         }).check(d.normalized)),
         meta: {
-          ...official('TCU Consulta Consolidada'),
+          ...official(
+            'TCU Consulta Consolidada',
+          ),
           legalConclusion: false,
         },
       };
@@ -169,7 +182,10 @@ export function createNexusMcpServer({
     'Search public judicial publication signals through the internal Judiciario BR MCP.',
     {
       cnpj: z.string().min(1),
-      legalName: z.string().min(2).optional(),
+      legalName: z
+        .string()
+        .min(2)
+        .optional(),
       dateFrom: z.string().optional(),
       dateTo: z.string().optional(),
       tribunal: z.string().optional(),
@@ -230,14 +246,16 @@ export function createNexusMcpServer({
         );
       }
 
-      const p = new JudiciarioMcpProvider({
-        fetchFn,
-        endpoint:
-          env.JUDICIARIO_MCP_URL ?? null,
-        bearerToken:
-          env.JUDICIARIO_BEARER_TOKEN ??
-          null,
-      });
+      const p =
+        new JudiciarioMcpProvider({
+          fetchFn,
+          endpoint:
+            env.JUDICIARIO_MCP_URL ??
+            null,
+          bearerToken:
+            env.JUDICIARIO_BEARER_TOKEN ??
+            null,
+        });
 
       return {
         ...(await p.searchByParty({
@@ -253,7 +271,8 @@ export function createNexusMcpServer({
           legalName: name,
         },
         meta: {
-          source: 'Judiciario BR / DJEN-CNJ',
+          source:
+            'Judiciario BR / DJEN-CNJ',
           sourceType:
             'internal_mcp_over_public_data',
           estimated: false,
@@ -269,7 +288,10 @@ export function createNexusMcpServer({
     'Search a local D1 mirror of official INPI intellectual-property data.',
     {
       cnpj: z.string().min(1),
-      legalName: z.string().min(2).optional(),
+      legalName: z
+        .string()
+        .min(2)
+        .optional(),
       limit: z
         .number()
         .int()
@@ -277,7 +299,11 @@ export function createNexusMcpServer({
         .max(500)
         .default(100),
     },
-    async ({ cnpj, legalName, limit }) => {
+    async ({
+      cnpj,
+      legalName,
+      limit,
+    }) => {
       const d = describeCnpj(cnpj);
 
       if (!d.valid) {
@@ -324,9 +350,10 @@ export function createNexusMcpServer({
         );
       }
 
-      const q = new QueridoDiarioProvider({
-        fetchFn,
-      });
+      const q =
+        new QueridoDiarioProvider({
+          fetchFn,
+        });
 
       const [company, partners] =
         await Promise.all([
@@ -334,13 +361,32 @@ export function createNexusMcpServer({
           q.partners(d.normalized),
         ]);
 
+      const companyOk =
+        company?.ok === true;
+
+      const partnersOk =
+        partners?.ok === true;
+
+      const ok =
+        companyOk || partnersOk;
+
+      const status =
+        companyOk && partnersOk
+          ? 'success'
+          : ok
+            ? 'partial_success'
+            : 'failed';
+
       return {
+        ok,
+        status,
         cnpj: d.normalized,
         company,
         partners,
         meta: {
           source: 'Querido Diario',
-          sourceType: 'open_public_api',
+          sourceType:
+            'open_public_api',
           estimated: false,
         },
       };
@@ -360,13 +406,18 @@ export function createNexusMcpServer({
         .max(50)
         .default(10),
     },
-    async ({ name, limit }) => ({
+    async ({
+      name,
+      limit,
+    }) => ({
       ...(await new GleifProvider({
         fetchFn,
       }).searchByName(name, {
         limit,
       })),
-      meta: official('GLEIF Golden Copy'),
+      meta: official(
+        'GLEIF Golden Copy',
+      ),
     }),
   );
 
@@ -376,7 +427,10 @@ export function createNexusMcpServer({
     'Build a consolidated company OSINT dossier from public/official sources.',
     {
       cnpj: z.string().min(1),
-      legalName: z.string().min(2).optional(),
+      legalName: z
+        .string()
+        .min(2)
+        .optional(),
       dateFrom: z.string().optional(),
       dateTo: z.string().optional(),
       maxPages: z
@@ -404,8 +458,10 @@ export function createNexusMcpServer({
         fetchFn,
       }).inspect(domain)),
       meta: {
-        source: 'HTTP + DNS + RDAP',
-        sourceType: 'public_observation',
+        source:
+          'HTTP + DNS + RDAP',
+        sourceType:
+          'public_observation',
         estimated: false,
       },
     }),
@@ -442,7 +498,8 @@ export function createNexusMcpServer({
       meta: {
         source:
           'Internet Archive Wayback',
-        sourceType: 'public_archive',
+        sourceType:
+          'public_archive',
         estimated: false,
       },
     }),
@@ -489,7 +546,8 @@ export function createNexusMcpServer({
     async (a) => ({
       ...(await searx().search(a)),
       meta: {
-        source: 'self-hosted SearXNG',
+        source:
+          'self-hosted SearXNG',
         sourceType:
           'self_hosted_metasearch',
         estimated: false,
@@ -509,7 +567,8 @@ export function createNexusMcpServer({
         fetchFn,
       }).audit(url)),
       meta: {
-        sourceType: 'direct_observation',
+        sourceType:
+          'direct_observation',
         estimated: false,
       },
     }),
@@ -543,8 +602,10 @@ export function createNexusMcpServer({
         limit,
       })),
       meta: {
-        source: 'self-hosted SearXNG',
-        sourceType: 'metasearch',
+        source:
+          'self-hosted SearXNG',
+        sourceType:
+          'metasearch',
         estimated: false,
       },
     }),
@@ -563,14 +624,18 @@ export function createNexusMcpServer({
         .max(500)
         .default(100),
     },
-    async ({ domain, limit }) => ({
+    async ({
+      domain,
+      limit,
+    }) => ({
       ...(await new LinkGraphLocalProvider({
         db: env.DB ?? null,
       }).backlinks(domain, {
         limit,
       })),
       meta: {
-        source: 'local link graph',
+        source:
+          'local link graph',
         sourceType:
           'accumulated_dataset',
         estimated: false,
@@ -591,32 +656,37 @@ export function createNexusMcpServer({
         .max(50)
         .default(10),
     },
-    async ({ query, limit }) => {
-      const [openalex, crossref] =
-        await Promise.all([
-          new OpenAlexProvider({
-            fetchFn,
-            apiKey:
-              env.OPENALEX_API_KEY ??
-              null,
-          }).searchWorks({
-            query,
-            limit,
-            mailto:
-              env.RESEARCH_CONTACT_EMAIL ??
-              null,
-          }),
+    async ({
+      query,
+      limit,
+    }) => {
+      const [
+        openalex,
+        crossref,
+      ] = await Promise.all([
+        new OpenAlexProvider({
+          fetchFn,
+          apiKey:
+            env.OPENALEX_API_KEY ??
+            null,
+        }).searchWorks({
+          query,
+          limit,
+          mailto:
+            env.RESEARCH_CONTACT_EMAIL ??
+            null,
+        }),
 
-          new CrossrefProvider({
-            fetchFn,
-          }).searchWorks({
-            query,
-            limit,
-            mailto:
-              env.RESEARCH_CONTACT_EMAIL ??
-              null,
-          }),
-        ]);
+        new CrossrefProvider({
+          fetchFn,
+        }).searchWorks({
+          query,
+          limit,
+          mailto:
+            env.RESEARCH_CONTACT_EMAIL ??
+            null,
+        }),
+      ]);
 
       return {
         query,
@@ -644,45 +714,52 @@ export function createNexusMcpServer({
         .max(25)
         .default(10),
     },
-    async ({ query, limit }) => {
-      const [web, oa, cr, news] =
-        await Promise.all([
-          searx().search({
-            query,
-            limit,
-          }),
+    async ({
+      query,
+      limit,
+    }) => {
+      const [
+        web,
+        oa,
+        cr,
+        news,
+      ] = await Promise.all([
+        searx().search({
+          query,
+          limit,
+        }),
 
-          new OpenAlexProvider({
-            fetchFn,
-            apiKey:
-              env.OPENALEX_API_KEY ??
-              null,
-          }).searchWorks({
-            query,
-            limit,
-            mailto:
-              env.RESEARCH_CONTACT_EMAIL ??
-              null,
-          }),
+        new OpenAlexProvider({
+          fetchFn,
+          apiKey:
+            env.OPENALEX_API_KEY ??
+            null,
+        }).searchWorks({
+          query,
+          limit,
+          mailto:
+            env.RESEARCH_CONTACT_EMAIL ??
+            null,
+        }),
 
-          new CrossrefProvider({
-            fetchFn,
-          }).searchWorks({
-            query,
-            limit,
-            mailto:
-              env.RESEARCH_CONTACT_EMAIL ??
-              null,
-          }),
+        new CrossrefProvider({
+          fetchFn,
+        }).searchWorks({
+          query,
+          limit,
+          mailto:
+            env.RESEARCH_CONTACT_EMAIL ??
+            null,
+        }),
 
-          new NewsSearchService({
-            fetchFn,
-          }).search({
-            query,
-            timespan: '3months',
-            limit,
-          }),
-        ]);
+        new NewsSearchService({
+          fetchFn,
+        }).search({
+          query,
+          timespan: '3months',
+          limit,
+        }),
+      ]);
 
       return {
         query,
@@ -736,7 +813,8 @@ export function createNexusMcpServer({
             'public_news_index',
           estimated: false,
           fallbackUsed:
-            result.fallbackUsed ?? false,
+            result.fallbackUsed ??
+            false,
         },
       };
     },
@@ -771,7 +849,9 @@ export function createNexusMcpServer({
       ...(await new IbgeSidraProvider({
         fetchFn,
       }).table(a)),
-      meta: official('IBGE SIDRA'),
+      meta: official(
+        'IBGE SIDRA',
+      ),
     }),
   );
 
@@ -804,7 +884,8 @@ export function createNexusMcpServer({
       }).forecast(a)),
       meta: {
         source: 'Open-Meteo',
-        sourceType: 'open_weather_data',
+        sourceType:
+          'open_weather_data',
         estimated: false,
       },
     }),
@@ -883,7 +964,10 @@ export function createNexusMcpServer({
         .max(50)
         .default(20),
     },
-    async ({ query, limit }) =>
+    async ({
+      query,
+      limit,
+    }) =>
       searx().search({
         query: `${query} (site:reddit.com OR site:youtube.com OR site:x.com OR site:instagram.com)`,
         limit,
@@ -903,7 +987,10 @@ export function createNexusMcpServer({
         .max(50)
         .default(20),
     },
-    async ({ query, limit }) =>
+    async ({
+      query,
+      limit,
+    }) =>
       searx().search({
         query: `${query} (site:facebook.com/ads/library OR site:adstransparency.google.com)`,
         limit,
@@ -949,7 +1036,9 @@ export function createNexusMcpServer({
           env.SEC_USER_AGENT ??
           'NexusIntelligence/1.0 admin@example.invalid',
       }).companyFacts(cik)),
-      meta: official('SEC EDGAR'),
+      meta: official(
+        'SEC EDGAR',
+      ),
     }),
   );
 
@@ -970,7 +1059,9 @@ export function createNexusMcpServer({
           env.SEC_USER_AGENT ??
           'NexusIntelligence/1.0 admin@example.invalid',
       }).submissions(cik)),
-      meta: official('SEC EDGAR'),
+      meta: official(
+        'SEC EDGAR',
+      ),
     }),
   );
 
@@ -984,7 +1075,9 @@ export function createNexusMcpServer({
         .min(2)
         .default('BTC'),
     },
-    async ({ currency }) => ({
+    async ({
+      currency,
+    }) => ({
       ...(await new CryptoProvider({
         fetchFn,
       }).exchangeRates(currency)),
@@ -1017,7 +1110,9 @@ export function createNexusMcpServer({
     'Compare up to five domains using the same derived Digital Visibility methodology.',
     {
       domains: z
-        .array(z.string().min(1))
+        .array(
+          z.string().min(1),
+        )
         .min(2)
         .max(5),
     },
@@ -1105,7 +1200,9 @@ export function createNexusMcpServer({
     'monitor.events',
     'List detected intelligence change events.',
     {
-      monitorId: z.string().optional(),
+      monitorId: z
+        .string()
+        .optional(),
       limit: z
         .number()
         .int()
@@ -1154,7 +1251,10 @@ export function createNexusMcpServer({
         .max(5000)
         .default(500),
     },
-    async ({ domain, limit }) => ({
+    async ({
+      domain,
+      limit,
+    }) => ({
       ...(await new SitemapProvider({
         fetchFn,
       }).urls(domain, {
@@ -1181,7 +1281,10 @@ export function createNexusMcpServer({
         .max(2000)
         .default(500),
     },
-    async ({ domain, limit }) => ({
+    async ({
+      domain,
+      limit,
+    }) => ({
       ...(await new CertificateTransparencyProvider({
         fetchFn,
       }).subdomains(domain, {
@@ -1204,7 +1307,9 @@ export function createNexusMcpServer({
     {
       resource: z.string().min(2),
     },
-    async ({ resource }) => ({
+    async ({
+      resource,
+    }) => ({
       ...(await new RipeStatProvider({
         fetchFn,
       }).networkInfo(resource)),
@@ -1260,7 +1365,8 @@ export function createNexusMcpServer({
       new NominatimProvider({
         fetchFn,
         baseUrl:
-          env.NOMINATIM_URL ?? null,
+          env.NOMINATIM_URL ??
+          null,
       }).search(a),
   );
 
@@ -1347,19 +1453,24 @@ function tool(
     async (args) => {
       try {
         const value =
-          await handler(args ?? {});
+          await handler(
+            args ?? {},
+          );
 
         const isError =
           value?.error != null ||
           value?.ok === false ||
-          value?.status === 'failed';
+          value?.status ===
+            'failed';
 
         return jsonToolResult(
           value,
           isError,
         );
       } catch (error) {
-        return errorToolResult(error);
+        return errorToolResult(
+          error,
+        );
       }
     },
   );
@@ -1384,7 +1495,9 @@ function jsonToolResult(
   };
 }
 
-function errorToolResult(error) {
+function errorToolResult(
+  error,
+) {
   return jsonToolResult(
     {
       error: {
@@ -1411,7 +1524,9 @@ function fail(
       code,
       message,
       ...(details !== undefined
-        ? { details }
+        ? {
+            details,
+          }
         : {}),
     },
   };
@@ -1434,6 +1549,8 @@ function boolEnv(value) {
     'yes',
     'on',
   ].includes(
-    String(value ?? '').toLowerCase(),
+    String(
+      value ?? '',
+    ).toLowerCase(),
   );
 }
