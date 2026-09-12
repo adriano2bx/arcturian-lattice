@@ -335,7 +335,7 @@ export function createNexusMcpServer({
   tool(
     server,
     'company.gazette',
-    'Get company and partner data exposed by the open Querido Diario API.',
+    'Get company and partner data exposed by the open Querido Diario API, with current-company identity cross-check.',
     {
       cnpj: z.string().min(1),
     },
@@ -355,11 +355,30 @@ export function createNexusMcpServer({
           fetchFn,
         });
 
-      const [company, partners] =
-        await Promise.all([
-          q.company(d.normalized),
-          q.partners(d.normalized),
-        ]);
+      const profileService =
+        new CompanyProfileService({
+          providers: [
+            new BrasilApiCnpjProvider({
+              fetchFn,
+            }),
+            new MinhaReceitaCnpjProvider({
+              fetchFn,
+            }),
+          ],
+        });
+
+      const [
+        company,
+        partners,
+        currentProfile,
+      ] = await Promise.all([
+        q.company(d.normalized),
+        q.partners(d.normalized),
+
+        profileService
+          .getByCnpj(d.normalized)
+          .catch(() => null),
+      ]);
 
       const companyOk =
         company?.ok === true;
@@ -367,27 +386,109 @@ export function createNexusMcpServer({
       const partnersOk =
         partners?.ok === true;
 
-      const ok =
+      const upstreamLegalName =
+        company?.data?.cnpj_info
+          ?.razao_social ?? null;
+
+      const currentLegalName =
+        currentProfile?.identity
+          ?.legalName ?? null;
+
+      const normalizeName = (value) =>
+        String(value ?? '')
+          .normalize('NFD')
+          .replace(
+            /[\u0300-\u036f]/g,
+            '',
+          )
+          .replace(
+            /[^A-Z0-9]/gi,
+            '',
+          )
+          .toUpperCase();
+
+      let identityMatch = null;
+
+      if (
+        upstreamLegalName &&
+        currentLegalName
+      ) {
+        identityMatch =
+          normalizeName(
+            upstreamLegalName,
+          ) ===
+          normalizeName(
+            currentLegalName,
+          );
+      }
+
+      const sourceOk =
         companyOk || partnersOk;
 
       const status =
-        companyOk && partnersOk
-          ? 'success'
-          : ok
+        !sourceOk
+          ? 'failed'
+          : identityMatch === false
             ? 'partial_success'
-            : 'failed';
+            : companyOk &&
+                partnersOk
+              ? 'success'
+              : 'partial_success';
 
       return {
-        ok,
+        ok: sourceOk,
         status,
+
         cnpj: d.normalized,
+
+        identityValidation: {
+          match: identityMatch,
+
+          current: {
+            legalName:
+              currentLegalName,
+            tradeName:
+              currentProfile
+                ?.identity
+                ?.tradeName ??
+              null,
+            source:
+              currentProfile?.meta
+                ?.source ??
+              null,
+          },
+
+          queridoDiario: {
+            legalName:
+              upstreamLegalName,
+            tradeName:
+              company?.data
+                ?.cnpj_info
+                ?.nome_fantasia ??
+              null,
+          },
+
+          warning:
+            identityMatch === false
+              ? 'Querido Diario company identity differs from the current company profile. Treat Querido Diario company/partner data as potentially historical or stale.'
+              : null,
+        },
+
         company,
         partners,
+
         meta: {
-          source: 'Querido Diario',
+          source:
+            'Querido Diario',
           sourceType:
             'open_public_api',
           estimated: false,
+          identityCrossChecked:
+            true,
+          currentIdentitySource:
+            currentProfile?.meta
+              ?.source ??
+            null,
         },
       };
     },
