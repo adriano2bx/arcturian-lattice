@@ -12,7 +12,7 @@ export class CompanyOsintService {
  constructor({fetchFn=globalThis.fetch}={}){this.fetchFn=fetchFn;}
  async investigate({cnpj,legalName=null,dateFrom,dateTo,maxPages=2}){
   const doc=describeCnpj(cnpj);if(!doc.valid)return{status:'failed',error:{code:'INVALID_CNPJ'},document:doc};
-  const profileSvc=new CompanyProfileService({providers:[new BrasilApiCnpjProvider({fetchFn:this.fetchFn})]});
+  const profileSvc = new CompanyProfileService({   providers: [     new BrasilApiCnpjProvider({ fetchFn: this.fetchFn }),     new MinhaReceitaCnpjProvider({ fetchFn: this.fetchFn }),   ], });
   let profile=null;try{profile=await profileSvc.getByCnpj(doc.normalized)}catch{}
   const name=legalName??profile?.identity?.legalName??null;
   const qd=new QueridoDiarioProvider({fetchFn:this.fetchFn});const gdelt=new GdeltProvider({fetchFn:this.fetchFn});const gleif=new GleifProvider({fetchFn:this.fetchFn});
