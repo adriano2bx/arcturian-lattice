@@ -64,7 +64,7 @@ export function createNexusMcpServer({ env = {}, fetchFn = globalThis.fetch } = 
     cnpj:z.string().min(1),legalName:z.string().min(2).optional(),dateFrom:z.string().optional(),dateTo:z.string().optional(),tribunal:z.string().optional(),page:z.number().int().min(1).default(1),pageSize:z.number().int().min(1).max(20).default(20),
   }, async ({cnpj,legalName,dateFrom,dateTo,tribunal,page,pageSize}) => {
     const d=describeCnpj(cnpj);if(!d.valid)return fail('INVALID_CNPJ','CNPJ check digits are invalid.',d);let name=legalName??null;
-    if(!name){try{name=(await new CompanyProfileService({providers:[new BrasilApiCnpjProvider({fetchFn})]}).getByCnpj(d.normalized)).identity?.legalName??null}catch{}}
+    if (!name) {   try {     name = (       await new CompanyProfileService({         providers: [           new BrasilApiCnpjProvider({ fetchFn }),           new MinhaReceitaCnpjProvider({ fetchFn }),         ],       }).getByCnpj(d.normalized)     ).identity?.legalName ?? null;   } catch {} }
     if(!name)return fail('LEGAL_NAME_REQUIRED','Could not resolve legal name; pass legalName explicitly.');
     const p=new JudiciarioMcpProvider({fetchFn,endpoint:env.JUDICIARIO_MCP_URL??null,bearerToken:env.JUDICIARIO_BEARER_TOKEN??null});
     return {...(await p.searchByParty({name,dateFrom,dateTo,tribunal,page,pageSize})),company:{cnpj:d.normalized,legalName:name},meta:{source:'Judiciario BR / DJEN-CNJ',sourceType:'internal_mcp_over_public_data',estimated:false,legalConclusion:false}};
