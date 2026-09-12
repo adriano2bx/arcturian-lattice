@@ -2,7 +2,7 @@ import { WebProfileService, normalizeDomainInput } from './web-profile.js';
 import { TechnologyProvider } from '../providers/technology.js';
 import { SeoAuditProvider } from '../providers/seo-audit.js';
 import { WaybackProvider } from '../providers/wayback.js';
-import { GdeltProvider } from '../providers/gdelt.js';
+import { NewsSearchService } from './news-search.js';
 
 export class CompetitiveService {
  constructor({fetchFn=globalThis.fetch}={}){this.fetchFn=fetchFn;}
