@@ -4,7 +4,16 @@
   "main": "src/index.js",
   "compatibility_date": "2026-09-11",
   "observability": { "enabled": true },
-  "triggers": { "crons": ["*/30 * * * *"] }
-  // Add a D1 binding named DB after creating it:
-  // "d1_databases": [{ "binding": "DB", "database_name": "nexus-intelligence", "database_id": "<id>" }]
+
+  "triggers": {
+    "crons": ["*/30 * * * *"]
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "nexus-intelligence",
+      "database_id": "e800de96-65c2-47b6-ab63-f2afcefbc31e"
+    }
+  ]
 }
