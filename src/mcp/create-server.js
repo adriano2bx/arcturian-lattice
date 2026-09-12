@@ -1,3 +1,4 @@
+import { MinhaReceitaCnpjProvider } from '../providers/minhareceita.js';
 import { McpServer } from '@modelcontextprotocol/server';
 import { z } from 'zod';
 import { describeCnpj } from '../core/cnpj.js';
@@ -45,7 +46,7 @@ export function createNexusMcpServer({ env = {}, fetchFn = globalThis.fetch } = 
   tool(server, 'company.validate_cnpj', 'Validate and normalize Brazilian numeric or alphanumeric CNPJ.', { cnpj: z.string().min(1) }, async ({ cnpj }) => describeCnpj(cnpj));
 
   tool(server, 'company.profile', 'Normalized Brazilian company profile by CNPJ with provider provenance.', { cnpj: z.string().min(1) }, async ({ cnpj }) => {
-    const service = new CompanyProfileService({ providers: [new BrasilApiCnpjProvider({ fetchFn })] });
+    const service = new CompanyProfileService({ providers: [   new BrasilApiCnpjProvider({ fetchFn }),   new MinhaReceitaCnpjProvider({ fetchFn }), ] });
     try { return await service.getByCnpj(cnpj); }
     catch (error) { if (error instanceof CompanyProfileError) return fail(error.code, error.message, error.details); throw error; }
   });
