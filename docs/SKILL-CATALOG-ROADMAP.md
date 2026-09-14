@@ -28,9 +28,9 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 1. **[ATIVA]** Triagem de risco jurídico público (`legal-risk-screening`)
 2. **[ATIVA]** Publicações judiciais por OAB com controle de cobertura (`legal-publications-oab`)
-3. **[PRÓXIMA]** Publicações judiciais por parte e validação de identidade
+3. **[ATIVA]** Publicações judiciais por parte e validação de identidade (`legal-publications-party`)
 4. **[PRÓXIMA]** Monitoramento de mudança em publicações de um processo
-5. **[PRÓXIMA]** Triagem de certidões e sinais de integridade
+5. **[ATIVA]** Triagem de certidões e sinais de integridade (`regulatory-sector-screening`)
 6. **[PRÓXIMA]** Matriz de evidências para revisão por advogado
 7. **[PLANEJADA]** Conflito de nomes, marcas e partes relacionadas
 8. **[PLANEJADA]** Due diligence regulatória por setor
@@ -69,7 +69,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 2. **[PRÓXIMA]** Dimensionamento de mercado por setor
 3. **[PRÓXIMA]** Dimensionamento por estado e município
 4. **[PRÓXIMA]** Comparação de praças para expansão
-5. **[PRÓXIMA]** Perfil econômico de território
+5. **[ATIVA]** Perfil econômico de território (`territory-economic-profile`)
 6. **[PRÓXIMA]** Sazonalidade e tendência em séries IBGE
 7. **[PLANEJADA]** Mapa de densidade de empresas por CNAE
 8. **[PLANEJADA]** Análise de comércio exterior por produto
@@ -97,7 +97,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 4. **[ATIVA]** Perfil técnico completo de domínio (`domain-profile-complete`)
 5. **[PRÓXIMA]** Reconciliação DNS, RDAP e HTTP
 6. **[PRÓXIMA]** Descoberta passiva de subdomínios e certificados
-7. **[PRÓXIMA]** Diagnóstico de disponibilidade e origem
+7. **[ATIVA]** Diagnóstico de disponibilidade e origem (`availability-infrastructure-diagnosis`)
 8. **[PLANEJADA]** Mapa de ativos digitais de uma organização
 9. **[PLANEJADA]** Comparação de infraestrutura de concorrentes
 10. **[PLANEJADA]** Relatório de exposição técnica pública

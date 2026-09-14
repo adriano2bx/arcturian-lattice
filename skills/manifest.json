@@ -507,6 +507,38 @@
       "version": "1.0.0",
       "tools": ["finance.bcb_series"],
       "path": "skills/bcb-series-reading/SKILL.md"
+    },
+    {
+      "name": "legal-publications-party",
+      "description": "Searches public judicial publications by party with identity disambiguation and explicit tribunal/date coverage.",
+      "category": "legal",
+      "version": "1.0.0",
+      "tools": ["company.profile", "company.legal"],
+      "path": "skills/legal-publications-party/SKILL.md"
+    },
+    {
+      "name": "regulatory-sector-screening",
+      "description": "Screens a regulated Brazilian entity across official mirrored regulator datasets with sector and coverage controls.",
+      "category": "regulatory",
+      "version": "1.0.0",
+      "tools": ["regulatory.search", "company.profile"],
+      "path": "skills/regulatory-sector-screening/SKILL.md"
+    },
+    {
+      "name": "territory-economic-profile",
+      "description": "Builds an evidence-based Brazilian territory profile from official IBGE indicators and public geographic context.",
+      "category": "market",
+      "version": "1.0.0",
+      "tools": ["market.ibge", "geo.search"],
+      "path": "skills/territory-economic-profile/SKILL.md"
+    },
+    {
+      "name": "availability-infrastructure-diagnosis",
+      "description": "Diagnoses observable public availability and origin signals for a domain without active security scanning.",
+      "category": "web-intelligence",
+      "version": "1.0.0",
+      "tools": ["web.profile", "infra.network"],
+      "path": "skills/availability-infrastructure-diagnosis/SKILL.md"
     }
   ]
 }

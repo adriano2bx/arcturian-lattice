@@ -196,10 +196,15 @@
       "segmentNumber": 2,
       "order": 3,
       "name": "Publicações judiciais por parte e validação de identidade",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "legal-publications-party"
+      ],
+      "tools": [
+        "company.legal",
+        "company.profile"
+      ],
+      "routable": true
     },
     {
       "id": "02.04-monitoramento-de-mudanca-em-publicacoes-de-um-processo",
@@ -218,10 +223,15 @@
       "segmentNumber": 2,
       "order": 5,
       "name": "Triagem de certidões e sinais de integridade",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "regulatory-sector-screening"
+      ],
+      "tools": [
+        "company.profile",
+        "regulatory.search"
+      ],
+      "routable": true
     },
     {
       "id": "02.06-matriz-de-evidencias-para-revisao-por-advogado",
@@ -576,10 +586,15 @@
       "segmentNumber": 5,
       "order": 5,
       "name": "Perfil econômico de território",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "territory-economic-profile"
+      ],
+      "tools": [
+        "geo.search",
+        "market.ibge"
+      ],
+      "routable": true
     },
     {
       "id": "05.06-sazonalidade-e-tendencia-em-series-ibge",
@@ -866,10 +881,15 @@
       "segmentNumber": 7,
       "order": 7,
       "name": "Diagnóstico de disponibilidade e origem",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "availability-infrastructure-diagnosis"
+      ],
+      "tools": [
+        "infra.network",
+        "web.profile"
+      ],
+      "routable": true
     },
     {
       "id": "07.08-mapa-de-ativos-digitais-de-uma-organizacao",
