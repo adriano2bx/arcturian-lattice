@@ -335,6 +335,25 @@ export function createArcturianLatticeMcpServer({
 
   tool(
     server,
+    'legal.publications_by_oab',
+    'Search public DJEN judicial publications addressed to a lawyer by OAB registration.',
+    {
+      oab: z.string().min(1),
+      uf: z.string().length(2).optional(),
+      dateFrom: z.string().optional(),
+      dateTo: z.string().optional(),
+      tribunal: z.string().optional(),
+      page: z.number().int().min(1).default(1),
+      pageSize: z.number().int().min(1).max(20).default(20),
+    },
+    async (args) => {
+      const p = new JudiciarioMcpProvider({ fetchFn, endpoint: env.JUDICIARIO_MCP_URL ?? null, bearerToken: env.JUDICIARIO_BEARER_TOKEN ?? null });
+      return { ...(await p.searchByOab(args)), meta: { source: 'DJEN-CNJ', sourceType: 'public_judicial_data', estimated: false, legalConclusion: false } };
+    },
+  );
+
+  tool(
+    server,
     'company.gazette',
     'Get company and partner data exposed by the open Querido Diario API, with current-company identity cross-check.',
     {

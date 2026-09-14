@@ -72,6 +72,25 @@ export class JudiciarioMcpProvider {
     };
   }
 
+  async searchByOab({ oab, uf, dateFrom, dateTo, tribunal, page = 1, pageSize = 20 }) {
+    if (!this.configured()) return { ok: false, provider: this.id, reason: "not_configured" };
+    const numeroOab = String(oab ?? "").trim().replace(/[^0-9A-Za-z-]/g, "");
+    if (!numeroOab) throw new Error("oab is required.");
+    const args = {
+      numeroOab,
+      ...(uf ? { ufOab: String(uf).trim().toUpperCase() } : {}),
+      ...(tribunal ? { siglaTribunal: String(tribunal).trim().toUpperCase() } : {}),
+      ...(dateFrom ? { dataInicio: normalizeIsoDate(dateFrom, "dateFrom") } : {}),
+      ...(dateTo ? { dataFim: normalizeIsoDate(dateTo, "dateTo") } : {}),
+      pagina: normalizePositiveInt(page, "page", 1, 100000),
+      itensPorPagina: normalizePositiveInt(pageSize, "pageSize", 1, 20),
+    };
+    const rpc = await this.callTool("buscar_por_oab", args);
+    if (!rpc.ok) return rpc;
+    const envelope = extractMcpToolPayload(rpc.payload);
+    return { ok: true, provider: this.id, query: args, publications: normalizeJudiciarioPublications(envelope), raw: envelope };
+  }
+
   async callTool(toolName, args) {
     const url = this.endpoint.endsWith("/mcp") ? this.endpoint : `${this.endpoint}/mcp`;
     const headers = {

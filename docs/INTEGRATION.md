@@ -40,7 +40,13 @@ Depois, use `tools/list` para descobrir apenas as capabilities habilitadas para 
 
 ## Superfície atual
 
-Lattice expõe 46 tools organizadas em company, web, SEO, research, news, market, finance, social, competitive, monitoring, infrastructure, geo, regulatory e open data. A lista normativa e os schemas são sempre obtidos por `tools/list`.
+Lattice expõe 47 tools organizadas em company, legal, web, SEO, research, news, market, finance, social, competitive, monitoring, infrastructure, geo, regulatory e open data. A lista normativa e os schemas são sempre obtidos por `tools/list`.
+
+## Publicações por OAB
+
+A tool `legal.publications_by_oab` consulta publicações públicas do DJEN para uma inscrição da OAB. O agente cliente decide a frequência, o intervalo consultado, a deduplicação e a forma de alerta; o MCP não mantém regras de automação jurídica.
+
+Parâmetros: `oab`, `uf` (opcional), `dateFrom`, `dateTo`, `tribunal`, `page` e `pageSize`. O resultado é informacional e não constitui conclusão jurídica.
 
 Catálogo funcional público (nomes de capability e finalidade, sem expor provedores ou APIs internas):
 `https://deltabots.com.br/pt-BR/products/arcturian/lattice/integration/tools/`

@@ -3,6 +3,7 @@
   "name": "arcturian-lattice",
   "main": "src/index.js",
   "compatibility_date": "2026-09-11",
+  "compatibility_flags": ["nodejs_compat"],
   "observability": { "enabled": true },
 
   "routes": [
