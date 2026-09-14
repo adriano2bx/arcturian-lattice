@@ -20,10 +20,7 @@ export default {
       return new Response('Not found', { status: 404 });
     }
 
-    if (request.method !== 'OPTIONS' && env.CONTROL_AUTH_URL && env.INTERNAL_AUTH_SECRET) {
-      const verified = await fetch(env.CONTROL_AUTH_URL, { method: 'POST', headers: { authorization: request.headers.get('authorization') ?? '', 'x-deltabots-internal-secret': env.INTERNAL_AUTH_SECRET } });
-      if (!verified.ok) return new Response(await verified.text(), { status: verified.status, headers: { 'content-type': 'application/json', 'www-authenticate': verified.status === 401 ? 'Bearer' : '' } });
-    } else if (request.method !== 'OPTIONS' && env.MCP_TOKEN) {
+    if (request.method !== 'OPTIONS' && env.MCP_TOKEN) {
       const expected = `Bearer ${env.MCP_TOKEN}`;
 
       if (request.headers.get('authorization') !== expected) {
