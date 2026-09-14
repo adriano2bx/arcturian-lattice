@@ -1910,10 +1910,19 @@
       "segmentNumber": 13,
       "order": 8,
       "name": "Mapa de stakeholders e influência",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "stakeholder-influence-map"
+      ],
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "news.search",
+        "web.profile",
+        "web.search",
+        "web.sitemap"
+      ],
+      "routable": true
     },
     {
       "id": "13.09-hipotese-de-valor-e-personalizacao-de-proposta",

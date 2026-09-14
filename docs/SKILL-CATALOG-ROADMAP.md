@@ -176,7 +176,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 5. **[ATIVA]** Enriquecimento e qualificação de lead (`sales-account-qualification`)
 6. **[ATIVA]** Detecção de gatilhos de compra observáveis (`sales-account-qualification`)
 7. **[ATIVA]** Preparação de reunião de descoberta (`sales-discovery-prep`)
-8. **[PRÓXIMA]** Mapa de stakeholders e influência
+8. **[ATIVA]** Mapa de stakeholders e influência (`stakeholder-influence-map`)
 9. **[ATIVA]** Hipótese de valor e personalização de proposta (`sales-discovery-prep`)
 10. **[ATIVA]** Inteligência de oportunidade, expansão e churn (`sales-account-qualification`)
 
@@ -188,7 +188,7 @@ Padronizar frontmatter, IDs, dependências, evidência, saída e testes das 30
 skills atuais. Hoje 19 estão instaláveis e 11 estão `blocked` porque dependem
 de tools desativadas; nenhuma skill bloqueada entra no roteamento automático.
 
-### Fase B — workflows prioritários (63 ativos; 11 aguardando capacidade)
+### Fase B — workflows prioritários (64 ativos; 10 aguardando capacidade)
 
 Os workflows **[ATIVA]** estão configurados e roteáveis. Os 11 itens ainda
 **[PRÓXIMA]** aguardam uma skill/tool específica ou dependem de uma capability

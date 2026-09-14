@@ -571,6 +571,14 @@
       "version": "1.0.0",
       "tools": ["web.sitemap", "seo.audit", "web.profile"],
       "path": "skills/seo-indexability-audit/SKILL.md"
+    },
+    {
+      "name": "stakeholder-influence-map",
+      "description": "Maps publicly observable organizational roles, entities and influence signals for an account without inventing people or authority.",
+      "category": "sales",
+      "version": "1.0.0",
+      "tools": ["company.profile", "company.osint", "web.profile", "web.sitemap", "news.search", "web.search"],
+      "path": "skills/stakeholder-influence-map/SKILL.md"
     }
   ]
 }
