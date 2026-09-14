@@ -56,23 +56,6 @@ Catálogo funcional público (nomes de capability e finalidade, sem expor proved
 
 Resultados devem ser interpretados conforme a evidência e a cobertura retornadas. Nenhuma tool declara risco jurídico, relevância comercial ou recomendação sem que isso seja produzido explicitamente por uma camada de agente/Skill.
 
-## Acompanhamento de publicações jurídicas
-
-Para acompanhamento recorrente, crie um monitor `legal_publications`. O campo `target` é um JSON serializado com `name` (razão social), e pode incluir `dateFrom`, `dateTo`, `tribunal`, `page` e `pageSize`. O Cron do Worker executa monitores vencidos, persiste snapshots e cria um evento quando o conjunto de publicações muda.
-
-Exemplo de configuração:
-
-```json
-{
-  "name": "Publicações — Empresa Exemplo",
-  "type": "legal_publications",
-  "target": "{\"name\":\"EMPRESA EXEMPLO LTDA\",\"tribunal\":\"TJSP\",\"pageSize\":20}",
-  "intervalMinutes": 1440
-}
-```
-
-O resultado é um alerta de mudança de dados públicos, não uma conclusão jurídica. A cobertura depende da disponibilidade e do escopo das publicações retornadas pela fonte oficial.
-
 ## Segurança e operação
 
 Tokens são credenciais privadas e devem ser armazenados em secret manager. Não registre tokens, argumentos ou respostas completas em logs. Use timeout, retry limitado e idempotência no cliente. O endpoint é multi-tenant e aplica autorização antes da execução.

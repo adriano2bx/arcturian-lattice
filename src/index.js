@@ -70,8 +70,6 @@ export default {
       new MonitorService({
         db: env.DB,
         fetchFn,
-        judiciarioEndpoint: env.JUDICIARIO_MCP_URL ?? null,
-        judiciarioBearerToken: env.JUDICIARIO_BEARER_TOKEN ?? null,
       })
         .runDue({ limit: 5 })
         .catch((error) => console.error('scheduled monitor error', error)),

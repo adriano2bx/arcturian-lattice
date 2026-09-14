@@ -1,6 +1,5 @@
 import { CompetitiveService } from './competitive.js';
 import { WebProfileService } from './web-profile.js';
-import { JudiciarioMcpProvider } from '../providers/judiciario-mcp.js';
 
 const VOLATILE_KEYS = new Set([
   'cf-ray',
@@ -13,12 +12,10 @@ const VOLATILE_KEYS = new Set([
 ]);
 
 export class MonitorService {
-  constructor({ db = null, fetchFn = globalThis.fetch, now = () => new Date(), judiciarioEndpoint = null, judiciarioBearerToken = null } = {}) {
+  constructor({ db = null, fetchFn = globalThis.fetch, now = () => new Date() } = {}) {
     this.db = db;
     this.fetchFn = fetchFn;
     this.now = now;
-    this.judiciarioEndpoint = judiciarioEndpoint;
-    this.judiciarioBearerToken = judiciarioBearerToken;
   }
 
   configured() {
@@ -165,13 +162,6 @@ export class MonitorService {
 
     if (type === 'competitive_snapshot') {
       return new CompetitiveService({ fetchFn: this.fetchFn }).snapshot(target);
-    }
-
-    if (type === 'legal_publications') {
-      let query;
-      try { query = typeof target === 'string' ? JSON.parse(target) : target; } catch { return { ok: false, status: 'failed', reason: 'invalid_target_json' }; }
-      if (!query?.name) return { ok: false, status: 'failed', reason: 'legal_name_required' };
-      return new JudiciarioMcpProvider({ fetchFn: this.fetchFn, endpoint: this.judiciarioEndpoint, bearerToken: this.judiciarioBearerToken }).searchByParty(query);
     }
 
     throw new Error(`Unsupported monitor type: ${type}`);
