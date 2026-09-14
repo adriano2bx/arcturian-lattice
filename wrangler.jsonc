@@ -19,5 +19,8 @@
       "database_name": "nexus-intelligence",
       "database_id": "41e4352a-e3b3-438a-84f9-6aca37c56075"
     }
+  ],
+  "services": [
+    { "binding": "CONTROL_PLANE", "service": "deltabots-control-plane" }
   ]
 }
