@@ -6,14 +6,14 @@
 
 | Estado                           | Quantidade | Significado                                                                                          |
 | -------------------------------- | ---------: | ---------------------------------------------------------------------------------------------------- |
-| Operacional verificado           |         39 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
-| Dependência externa/configuração |          8 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
+| Operacional verificado           |         40 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
+| Dependência externa/configuração |          7 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
 | Não executado no smoke test      |          0 | Todas as tools foram chamadas; as mutáveis foram executadas com escopo limitado.                     |
 
 ### Operacional verificado
 
 `company.validate_cnpj`, `company.profile`, `company.public_contracts`, `company.risk`, `legal.publications_by_oab`,
-`company.global`, `company.legal`, `web.profile`, `web.technology`, `research.papers`, `market.weather`,
+`company.gazette`, `company.global`, `company.legal`, `web.profile`, `web.technology`, `research.papers`, `market.weather`,
 `market.crypto_rates`, `competitive.snapshot`, `monitor.list`, `monitor.events`,
 `monitor.create`, `monitor.run`, `monitor.run_due`, `regulatory.sync_anatel`,
 `regulatory.search`, `seo.audit`, `market.ibge`, `youtube.metadata`,
@@ -24,8 +24,7 @@
 
 ### Dependência externa/configuração
 
-`company.ip`, `company.gazette`,
-`web.history`, `seo.backlinks`, `youtube.transcript`, `reddit.search`,
+`company.ip`, `web.history`, `seo.backlinks`, `youtube.transcript`, `reddit.search`,
 `competitive.traffic_estimate`, `market.open_data`.
 
 Isso não significa que o código esteja ausente. Cada tool retorna falha estruturada quando sua
