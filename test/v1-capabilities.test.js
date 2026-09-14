@@ -333,12 +333,28 @@ test("certificate transparency deduplicates wildcard and exact names", async () 
   assert.deepEqual(r.subdomains, ["a.example.com", "b.example.com"]);
 });
 
-test("Nominatim is self-host-only by default", async () => {
-  const r = await new NominatimProvider({ baseUrl: null }).search({
+test("Nominatim prefers self-hosting and falls back to Photon", async () => {
+  const r = await new NominatimProvider({
+    baseUrl: null,
+    fallbackUrl: "https://photon.test/api/",
+    fetchFn: async () =>
+      new Response(
+        JSON.stringify({
+          features: [
+            {
+              geometry: { coordinates: [-45, -23] },
+              properties: { name: "Teste" },
+            },
+          ],
+        }),
+        { status: 200 },
+      ),
+  }).search({
     query: "Sao Jose dos Campos",
   });
-  assert.equal(r.ok, false);
-  assert.equal(r.reason, "not_configured");
+  assert.equal(r.ok, true);
+  assert.equal(r.provider, "photon");
+  assert.equal(r.results[0].lat, -23);
 });
 
 test("sitemap provider extracts loc URLs", async () => {
