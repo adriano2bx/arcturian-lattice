@@ -212,10 +212,18 @@
       "segmentNumber": 2,
       "order": 4,
       "name": "Monitoramento de mudança em publicações de um processo",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "legal-process-change-monitoring"
+      ],
+      "tools": [
+        "company.legal",
+        "legal.publications_by_oab",
+        "monitor.create",
+        "monitor.events",
+        "monitor.run"
+      ],
+      "routable": true
     },
     {
       "id": "02.05-triagem-de-certidoes-e-sinais-de-integridade",
@@ -553,10 +561,14 @@
       "segmentNumber": 5,
       "order": 2,
       "name": "Dimensionamento de mercado por setor",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "sector-market-sizing"
+      ],
+      "tools": [
+        "market.ibge"
+      ],
+      "routable": true
     },
     {
       "id": "05.03-dimensionamento-por-estado-e-municipio",
@@ -718,10 +730,17 @@
       "segmentNumber": 6,
       "order": 5,
       "name": "Triagem financeira de parceiro ou fornecedor",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "partner-financial-screening"
+      ],
+      "tools": [
+        "company.profile",
+        "company.validate_cnpj",
+        "finance.bcb_series",
+        "regulatory.search"
+      ],
+      "routable": true
     },
     {
       "id": "06.06-indicadores-de-crescimento-e-retracao",
@@ -1000,10 +1019,16 @@
       "segmentNumber": 8,
       "order": 5,
       "name": "Auditoria de indexabilidade e arquitetura",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "seo-indexability-audit"
+      ],
+      "tools": [
+        "seo.audit",
+        "web.profile",
+        "web.sitemap"
+      ],
+      "routable": true
     },
     {
       "id": "08.06-mapa-de-lacunas-de-conteudo",

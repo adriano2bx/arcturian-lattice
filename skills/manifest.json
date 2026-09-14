@@ -539,6 +539,38 @@
       "version": "1.0.0",
       "tools": ["web.profile", "infra.network"],
       "path": "skills/availability-infrastructure-diagnosis/SKILL.md"
+    },
+    {
+      "name": "legal-process-change-monitoring",
+      "description": "Tracks observable changes in a public legal publication baseline and returns dated events for attorney review.",
+      "category": "legal",
+      "version": "1.0.0",
+      "tools": ["monitor.create", "monitor.run", "monitor.events", "company.legal", "legal.publications_by_oab"],
+      "path": "skills/legal-process-change-monitoring/SKILL.md"
+    },
+    {
+      "name": "sector-market-sizing",
+      "description": "Frames Brazilian sector market size from selected official IBGE indicators without presenting proxies as revenue forecasts.",
+      "category": "market",
+      "version": "1.0.0",
+      "tools": ["market.ibge"],
+      "path": "skills/sector-market-sizing/SKILL.md"
+    },
+    {
+      "name": "partner-financial-screening",
+      "description": "Screens a business partner using public registration, regulatory and macro-financial evidence without issuing a credit decision.",
+      "category": "finance",
+      "version": "1.0.0",
+      "tools": ["company.validate_cnpj", "company.profile", "regulatory.search", "finance.bcb_series"],
+      "path": "skills/partner-financial-screening/SKILL.md"
+    },
+    {
+      "name": "seo-indexability-audit",
+      "description": "Audits crawlability and indexability signals from public pages and sitemaps with reproducible evidence.",
+      "category": "seo",
+      "version": "1.0.0",
+      "tools": ["web.sitemap", "seo.audit", "web.profile"],
+      "path": "skills/seo-indexability-audit/SKILL.md"
     }
   ]
 }

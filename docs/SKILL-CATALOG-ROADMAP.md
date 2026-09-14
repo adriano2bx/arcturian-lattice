@@ -29,7 +29,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 1. **[ATIVA]** Triagem de risco jurídico público (`legal-risk-screening`)
 2. **[ATIVA]** Publicações judiciais por OAB com controle de cobertura (`legal-publications-oab`)
 3. **[ATIVA]** Publicações judiciais por parte e validação de identidade (`legal-publications-party`)
-4. **[PRÓXIMA]** Monitoramento de mudança em publicações de um processo
+4. **[ATIVA]** Monitoramento de mudança em publicações de um processo (`legal-process-change-monitoring`)
 5. **[ATIVA]** Triagem de certidões e sinais de integridade (`regulatory-sector-screening`)
 6. **[PRÓXIMA]** Matriz de evidências para revisão por advogado
 7. **[PLANEJADA]** Conflito de nomes, marcas e partes relacionadas
@@ -66,7 +66,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 ## 5. Mercado e economia
 
 1. **[BLOQUEADA]** Pesquisa de mercado brasileiro (`market-research-br`)
-2. **[PRÓXIMA]** Dimensionamento de mercado por setor
+2. **[ATIVA]** Dimensionamento de mercado por setor (`sector-market-sizing`)
 3. **[PRÓXIMA]** Dimensionamento por estado e município
 4. **[PRÓXIMA]** Comparação de praças para expansão
 5. **[ATIVA]** Perfil econômico de território (`territory-economic-profile`)
@@ -82,7 +82,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 2. **[ATIVA]** Inteligência de companhia pública dos EUA (`public-company-intelligence-us`)
 3. **[ATIVA]** Leitura de séries do Banco Central (`bcb-series-reading`)
 4. **[PRÓXIMA]** Reconciliação temporal de fatos SEC
-5. **[PRÓXIMA]** Triagem financeira de parceiro ou fornecedor
+5. **[ATIVA]** Triagem financeira de parceiro ou fornecedor (`partner-financial-screening`)
 6. **[PRÓXIMA]** Indicadores de crescimento e retração
 7. **[PLANEJADA]** Comparação financeira entre concorrentes
 8. **[PLANEJADA]** Exposição cambial e macroeconômica
@@ -108,7 +108,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 2. **[BLOQUEADA]** Pesquisa competitiva de SEO (`seo-competitive-research`)
 3. **[BLOQUEADA]** Inteligência de backlinks (`backlink-intelligence`)
 4. **[ATIVA]** Pesquisa de SERP por intenção (`serp-intent-research`)
-5. **[PRÓXIMA]** Auditoria de indexabilidade e arquitetura
+5. **[ATIVA]** Auditoria de indexabilidade e arquitetura (`seo-indexability-audit`)
 6. **[PRÓXIMA]** Mapa de lacunas de conteúdo
 7. **[PRÓXIMA]** Comparação de presença orgânica
 8. **[PLANEJADA]** Priorização de oportunidades por esforço e impacto
