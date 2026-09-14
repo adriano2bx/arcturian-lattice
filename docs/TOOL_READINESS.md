@@ -30,9 +30,9 @@
 Isso não significa que o código esteja ausente. Cada tool retorna falha estruturada quando sua
 fonte não está configurada ou indisponível; não produz dados estimados como se fossem oficiais.
 
-As operações mutáveis foram validadas com um monitor temporário de produção e uma sincronização
-limitada da ANATEL. A sincronização retornou progresso (`1.472` de `18.455` registros esperados)
-e continuará nas próximas execuções agendadas.
+As operações mutáveis foram validadas com um monitor temporário de produção e a sincronização
+ANATEL foi concluída: `17.606` registros deduplicados, todas as 37 páginas processadas e estado
+`ready`. O cron permanece habilitado para futuras atualizações incrementais.
 
 ## Gates automatizados
 
