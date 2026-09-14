@@ -1,5 +1,5 @@
 export class YouTubeProvider {
-  constructor({fetchFn=globalThis.fetch,transcriptBaseUrl=null,allowKomeFallback=false}={}){this.id='youtube';this.fetchFn=fetchFn;this.transcriptBaseUrl=transcriptBaseUrl?.replace(/\/$/,'')??null;this.allowKomeFallback=allowKomeFallback;}
+  constructor({fetchFn=globalThis.fetch,transcriptBaseUrl=null,publicRelayUrl='https://djen.2bx.com.br/youtube',allowKomeFallback=false}={}){this.id='youtube';this.fetchFn=fetchFn;this.transcriptBaseUrl=transcriptBaseUrl?.replace(/\/$/,'')??null;this.publicRelayUrl=publicRelayUrl?.replace(/\/$/,'')??null;this.allowKomeFallback=allowKomeFallback;}
   async metadata(url){const u=new URL('https://www.youtube.com/oembed');u.searchParams.set('url',url);u.searchParams.set('format','json');let r;try{r=await this.fetchFn(u.toString(),{headers:{accept:'application/json'}})}catch(e){return{ok:false,provider:this.id,reason:'network_error',detail:String(e?.message??e)}}if(!r.ok)return{ok:false,provider:this.id,reason:'upstream_error',status:r.status};return{ok:true,provider:this.id,source:'youtube_oembed',data:await r.json()};}
   async transcript(url){if(this.transcriptBaseUrl){const first=await this.#post(`${this.transcriptBaseUrl}/transcript`,{url});if(first.ok)return{...first,source:'self_hosted_transcript'};}
     const publicTrack = await this.#publicTranscript(url);
@@ -10,7 +10,8 @@ export class YouTubeProvider {
     let videoId;
     try { videoId = extractVideoId(url); } catch (e) { return {ok:false,provider:this.id,reason:'invalid_video_url',detail:e.message}; }
     let response;
-    try { response = await this.fetchFn(`https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`, {headers:{accept:'text/html','user-agent':'Mozilla/5.0'}}); }
+    const watchUrl = `${this.publicRelayUrl ?? 'https://www.youtube.com'}/watch?v=${encodeURIComponent(videoId)}`;
+    try { response = await this.fetchFn(watchUrl, {headers:{accept:'text/html','user-agent':'Mozilla/5.0'}}); }
     catch (e) { return {ok:false,provider:this.id,reason:'network_error',detail:String(e?.message??e)}; }
     if (!response.ok) return {ok:false,provider:this.id,reason:'upstream_error',status:response.status};
     const html = await response.text();
@@ -19,7 +20,8 @@ export class YouTubeProvider {
     const track = tracks.find((x)=>x.languageCode === 'pt' || x.languageCode === 'pt-BR') ?? tracks[0];
     if (!track?.baseUrl) return {ok:false,provider:this.id,reason:'caption_track_not_found'};
     let captions;
-    try { const r=await this.fetchFn(`${track.baseUrl}&fmt=json3`,{headers:{accept:'application/json'}}); if(!r.ok)return{ok:false,provider:this.id,reason:'caption_upstream_error',status:r.status}; captions=await r.json(); }
+    const captionUrl = track.baseUrl.replace(/^https:\/\/www\.youtube\.com/, this.publicRelayUrl ?? 'https://www.youtube.com');
+    try { const r=await this.fetchFn(`${captionUrl}&fmt=json3`,{headers:{accept:'application/json'}}); if(!r.ok)return{ok:false,provider:this.id,reason:'caption_upstream_error',status:r.status}; captions=await r.json(); }
     catch(e){return{ok:false,provider:this.id,reason:'network_error',detail:String(e?.message??e)}}
     const segments=(captions?.events??[]).flatMap((event)=>event.segs??[]).map((seg)=>String(seg.utf8??'').trim()).filter(Boolean);
     if(!segments.length)return{ok:false,provider:this.id,reason:'empty_transcript'};
