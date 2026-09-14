@@ -7,8 +7,11 @@ function fakeDb(rows) {
     prepare(sql) {
       return {
         bind(...params) {
-          return {
-            async all() {
+      return {
+        async first() {
+          return { total_records: rows.length, latest_source_update: "2026-09-11T00:00:00Z" };
+        },
+        async all() {
               return { results: rows, sql, params };
             },
           };

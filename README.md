@@ -4,7 +4,7 @@ Private intelligence capability layer for Hermes/AI agents. The Worker is the si
 
 ## v1.0 capability surface
 
-The server exposes **45 high-level MCP tools** across:
+The server exposes **46 high-level MCP tools** across:
 
 - Company intelligence: CNPJ, PNCP, TCU, Judiciario BR, INPI mirror, Querido Diario, GLEIF and consolidated OSINT.
 - Web intelligence: HTTP/DNS/RDAP profile, Wayback history, technology fingerprinting, sitemap and self-hosted search.
@@ -95,4 +95,3 @@ npm run skills:install -- --target hermes
 ```
 
 See [`docs/SKILLS.md`](docs/SKILLS.md) and [`skills/manifest.json`](skills/manifest.json).
-
