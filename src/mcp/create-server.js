@@ -1255,6 +1255,7 @@ export function createArcturianLatticeMcpServer({
       type: z.enum([
         'web_profile',
         'competitive_snapshot',
+        'legal_publications',
       ]),
       target: z.string().min(1),
       intervalMinutes: z
@@ -1268,6 +1269,8 @@ export function createArcturianLatticeMcpServer({
       new MonitorService({
         db: env.DB ?? null,
         fetchFn,
+        judiciarioEndpoint: env.JUDICIARIO_MCP_URL ?? null,
+        judiciarioBearerToken: env.JUDICIARIO_BEARER_TOKEN ?? null,
       }).create(a),
   );
 
@@ -1280,6 +1283,8 @@ export function createArcturianLatticeMcpServer({
       new MonitorService({
         db: env.DB ?? null,
         fetchFn,
+        judiciarioEndpoint: env.JUDICIARIO_MCP_URL ?? null,
+        judiciarioBearerToken: env.JUDICIARIO_BEARER_TOKEN ?? null,
       }).list(),
   );
 
@@ -1294,6 +1299,8 @@ export function createArcturianLatticeMcpServer({
       new MonitorService({
         db: env.DB ?? null,
         fetchFn,
+        judiciarioEndpoint: env.JUDICIARIO_MCP_URL ?? null,
+        judiciarioBearerToken: env.JUDICIARIO_BEARER_TOKEN ?? null,
       }).run(id),
   );
 
@@ -1316,6 +1323,8 @@ export function createArcturianLatticeMcpServer({
       new MonitorService({
         db: env.DB ?? null,
         fetchFn,
+        judiciarioEndpoint: env.JUDICIARIO_MCP_URL ?? null,
+        judiciarioBearerToken: env.JUDICIARIO_BEARER_TOKEN ?? null,
       }).events(a),
   );
 
@@ -1335,6 +1344,8 @@ export function createArcturianLatticeMcpServer({
       new MonitorService({
         db: env.DB ?? null,
         fetchFn,
+        judiciarioEndpoint: env.JUDICIARIO_MCP_URL ?? null,
+        judiciarioBearerToken: env.JUDICIARIO_BEARER_TOKEN ?? null,
       }).runDue({
         limit,
       }),
