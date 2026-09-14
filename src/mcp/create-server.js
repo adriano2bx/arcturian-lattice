@@ -791,6 +791,8 @@ export function createArcturianLatticeMcpServer({
     async (a) =>
       new RedditProvider({
         fetchFn,
+        fallbackUrl:
+          env.SEARCH_RELAY_URL ?? "https://djen.2bx.com.br/search-rss",
       }).search(a),
   );
 
