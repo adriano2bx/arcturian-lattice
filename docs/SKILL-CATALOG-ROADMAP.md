@@ -1,7 +1,11 @@
 # Catálogo planejado de skills — DeltaBots Arcturian / Lattice
 
-Este é o backlog de workflows, não uma lista de endpoints. Cada item deverá
-virar uma receita testada para coleta, cruzamento, validação e análise.
+Este é o backlog de workflows de negócio, não uma lista de endpoints nem uma
+lista de arquivos `SKILL.md`. Cada item descreve um resultado ponta a ponta e
+deverá ser decomposto em skills reutilizáveis, com receita testada para coleta,
+cruzamento, validação e análise. Uma skill composta pode implementar um
+workflow inteiro, enquanto uma skill menor pode ser compartilhada por vários
+workflows.
 
 Legenda: **[ATIVA]** já existe no catálogo atual; **[PRÓXIMA]** é prioridade de
 implementação; **[PLANEJADA]** depende de uma fase posterior.

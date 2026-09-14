@@ -4,6 +4,29 @@ Este contrato define o formato mínimo para uma skill funcionar em qualquer
 cliente compatível com Agent Skills. O frontmatter permanece compatível com o
 padrão aberto; os campos adicionais são convenções do ecossistema DeltaBots.
 
+## Hierarquia conceitual
+
+Não são sinônimos:
+
+```text
+Segmento
+  └── Workflow (resultado de negócio ponta a ponta)
+        └── Skills (módulos/receitas reutilizáveis)
+              └── Tools MCP (primitives de dados e execução)
+```
+
+Um **workflow** responde a uma decisão completa, por exemplo “qualificar uma
+conta para vendas”. Ele pode compor várias skills: resolver identidade,
+enriquecer a conta, detectar gatilhos, pontuar evidências e montar o briefing.
+Uma **skill** é uma unidade carregável por qualquer agente e pode ser usada em
+mais de um workflow. Uma **tool** apenas coleta ou transforma uma observação;
+ela não é um workflow.
+
+O backlog de 130 itens em `SKILL-CATALOG-ROADMAP.md` é uma matriz de workflows
+de negócio. Ele não significa automaticamente 130 arquivos `SKILL.md`: cada
+workflow será decomposto em skills reutilizáveis e algumas skills poderão
+atender vários workflows.
+
 ## Camadas de carregamento
 
 1. **Descoberta:** `name`, `description` e `metadata` permitem ao agente
