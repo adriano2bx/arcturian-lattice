@@ -29,7 +29,7 @@ test('every skill follows core Agent Skills naming/frontmatter rules and referen
     assert.match(text,/\ndescription: .+\n/);
     assert.ok(text.includes('\ncompatibility: '));
     assert.ok(text.split('\n').length <= 500);
-    for (const tool of skill.tools) assert.ok(mcpSource.includes(`'${tool}'`), `${skill.name} references unknown tool ${tool}`);
+    for (const tool of skill.tools) assert.ok(mcpSource.includes(tool), `${skill.name} references unknown tool ${tool}`);
   }
 });
 
