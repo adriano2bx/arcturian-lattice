@@ -6,8 +6,8 @@
 
 | Estado                           | Quantidade | Significado                                                                                          |
 | -------------------------------- | ---------: | ---------------------------------------------------------------------------------------------------- |
-| Operacional verificado           |         40 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
-| Dependência externa/configuração |          7 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
+| Operacional verificado           |         41 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
+| Dependência externa/configuração |          6 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
 | Não executado no smoke test      |          0 | Todas as tools foram chamadas; as mutáveis foram executadas com escopo limitado.                     |
 
 ### Operacional verificado
@@ -24,7 +24,7 @@
 
 ### Dependência externa/configuração
 
-`company.ip`, `web.history`, `seo.backlinks`, `youtube.transcript`, `reddit.search`,
+`company.ip`, `seo.backlinks`, `youtube.transcript`, `reddit.search`,
 `competitive.traffic_estimate`, `market.open_data`.
 
 Isso não significa que o código esteja ausente. Cada tool retorna falha estruturada quando sua

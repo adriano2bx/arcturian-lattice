@@ -1,7 +1,7 @@
 import { clamp } from '../core/http.js';
 
 export class WaybackProvider {
-  constructor({ fetchFn = globalThis.fetch, baseUrl = 'https://web.archive.org/cdx/search/cdx', commonCrawlIndexUrl = 'https://index.commoncrawl.org/collinfo.json' } = {}) {
+  constructor({ fetchFn = globalThis.fetch, baseUrl = 'https://web.archive.org/cdx/search/cdx', commonCrawlIndexUrl = 'https://djen.2bx.com.br/commoncrawl-index' } = {}) {
     this.id = 'wayback_cdx'; this.fetchFn = fetchFn; this.baseUrl = baseUrl; this.commonCrawlIndexUrl = commonCrawlIndexUrl;
   }
   async history(domain, { from, to, limit = 50 } = {}) {
