@@ -13,7 +13,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 ## 1. Empresa e entidades
 
-1. **[PRÓXIMA]** Verificação cadastral de empresa brasileira
+1. **[ATIVA]** Verificação cadastral de empresa brasileira (`company-registration-verification`)
 2. **[BLOQUEADA]** Due diligence de fornecedor (`company-due-diligence`)
 3. **[ATIVA]** OSINT de empresa brasileira (`company-osint-br`)
 4. **[ATIVA]** Reconciliação de identidade entre CNPJ, nome, domínio e LEI (`company-identity-reconciliation`)
@@ -40,7 +40,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 ## 3. Governo e contratos públicos
 
 1. **[ATIVA]** Inteligência de contratos públicos (`public-procurement-intelligence`)
-2. **[PRÓXIMA]** Histórico de fornecedor no PNCP
+2. **[ATIVA]** Histórico de fornecedor no PNCP (`pncp-supplier-history`)
 3. **[PRÓXIMA]** Mapa de órgãos compradores por setor
 4. **[PRÓXIMA]** Detecção de concentração de contratos
 5. **[PRÓXIMA]** Identificação de oportunidades por CNAE e território
@@ -80,7 +80,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 1. **[ATIVA]** Inteligência financeira brasileira (`financial-intelligence-br`)
 2. **[ATIVA]** Inteligência de companhia pública dos EUA (`public-company-intelligence-us`)
-3. **[PRÓXIMA]** Leitura de séries do Banco Central
+3. **[ATIVA]** Leitura de séries do Banco Central (`bcb-series-reading`)
 4. **[PRÓXIMA]** Reconciliação temporal de fatos SEC
 5. **[PRÓXIMA]** Triagem financeira de parceiro ou fornecedor
 6. **[PRÓXIMA]** Indicadores de crescimento e retração

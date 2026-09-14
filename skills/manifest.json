@@ -483,6 +483,30 @@
       "version": "1.0.0",
       "tools": ["news.search", "web.search"],
       "path": "skills/entity-news-panorama/SKILL.md"
+    },
+    {
+      "name": "company-registration-verification",
+      "description": "Verifies Brazilian company registration data and returns a source-dated identity record with explicit coverage gaps.",
+      "category": "company-intelligence",
+      "version": "1.0.0",
+      "tools": ["company.validate_cnpj", "company.profile"],
+      "path": "skills/company-registration-verification/SKILL.md"
+    },
+    {
+      "name": "pncp-supplier-history",
+      "description": "Reconstructs a Brazilian supplier's public procurement history with bounded pagination, role filters and completeness reporting.",
+      "category": "public-procurement",
+      "version": "1.0.0",
+      "tools": ["company.validate_cnpj", "company.public_contracts"],
+      "path": "skills/pncp-supplier-history/SKILL.md"
+    },
+    {
+      "name": "bcb-series-reading",
+      "description": "Reads official Banco Central SGS time series with units, periods, transformations and uncertainty explicitly preserved.",
+      "category": "finance",
+      "version": "1.0.0",
+      "tools": ["finance.bcb_series"],
+      "path": "skills/bcb-series-reading/SKILL.md"
     }
   ]
 }

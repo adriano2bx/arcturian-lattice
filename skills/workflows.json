@@ -15,10 +15,15 @@
       "segmentNumber": 1,
       "order": 1,
       "name": "Verificação cadastral de empresa brasileira",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "company-registration-verification"
+      ],
+      "tools": [
+        "company.profile",
+        "company.validate_cnpj"
+      ],
+      "routable": true
     },
     {
       "id": "01.02-due-diligence-de-fornecedor",
@@ -297,10 +302,15 @@
       "segmentNumber": 3,
       "order": 2,
       "name": "Histórico de fornecedor no PNCP",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "pncp-supplier-history"
+      ],
+      "tools": [
+        "company.public_contracts",
+        "company.validate_cnpj"
+      ],
+      "routable": true
     },
     {
       "id": "03.03-mapa-de-orgaos-compradores-por-setor",
@@ -667,10 +677,14 @@
       "segmentNumber": 6,
       "order": 3,
       "name": "Leitura de séries do Banco Central",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "bcb-series-reading"
+      ],
+      "tools": [
+        "finance.bcb_series"
+      ],
+      "routable": true
     },
     {
       "id": "06.04-reconciliacao-temporal-de-fatos-sec",
