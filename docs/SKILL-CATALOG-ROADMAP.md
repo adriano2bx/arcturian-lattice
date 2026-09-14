@@ -53,10 +53,10 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 ## 4. Propriedade intelectual
 
 1. **[BLOQUEADA]** Inteligência de propriedade intelectual (`intellectual-property-intelligence`)
-2. **[PRÓXIMA]** Busca de marcas por titular
-3. **[PRÓXIMA]** Reconciliação de titularidade e razão social
-4. **[PRÓXIMA]** Portfólio de marcas de uma empresa
-5. **[PRÓXIMA]** Busca de colisões nominativas por classe
+2. **[BLOQUEADA]** Busca de marcas por titular
+3. **[BLOQUEADA]** Reconciliação de titularidade e razão social
+4. **[BLOQUEADA]** Portfólio de marcas de uma empresa
+5. **[BLOQUEADA]** Busca de colisões nominativas por classe
 6. **[PLANEJADA]** Linha do tempo de pedidos e concessões
 7. **[PLANEJADA]** Sinais de patentes e programas de computador
 8. **[PLANEJADA]** Monitoramento de novos depósitos de concorrentes
@@ -109,8 +109,8 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 3. **[BLOQUEADA]** Inteligência de backlinks (`backlink-intelligence`)
 4. **[ATIVA]** Pesquisa de SERP por intenção (`serp-intent-research`)
 5. **[ATIVA]** Auditoria de indexabilidade e arquitetura (`seo-indexability-audit`)
-6. **[PRÓXIMA]** Mapa de lacunas de conteúdo
-7. **[PRÓXIMA]** Comparação de presença orgânica
+6. **[BLOQUEADA]** Mapa de lacunas de conteúdo
+7. **[BLOQUEADA]** Comparação de presença orgânica
 8. **[PLANEJADA]** Priorização de oportunidades por esforço e impacto
 9. **[PLANEJADA]** Diagnóstico de páginas que perderam visibilidade
 10. **[PLANEJADA]** Plano editorial baseado em evidências
@@ -118,10 +118,10 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 ## 9. Competitivo e posicionamento
 
 1. **[BLOQUEADA]** Inteligência competitiva (`competitive-intelligence`)
-2. **[PRÓXIMA]** Retrato comparativo de concorrentes
-3. **[PRÓXIMA]** Matriz de diferenciação observável
-4. **[PRÓXIMA]** Comparação de produtos e posicionamento
-5. **[PRÓXIMA]** Mapa de segmentos e territórios concorrentes
+2. **[BLOQUEADA]** Retrato comparativo de concorrentes
+3. **[BLOQUEADA]** Matriz de diferenciação observável
+4. **[BLOQUEADA]** Comparação de produtos e posicionamento
+5. **[BLOQUEADA]** Mapa de segmentos e territórios concorrentes
 6. **[PLANEJADA]** Detecção de movimentos de mercado
 7. **[PLANEJADA]** Análise de mensagens e propostas de valor
 8. **[PLANEJADA]** Cenários de ameaça competitiva
@@ -188,11 +188,11 @@ Padronizar frontmatter, IDs, dependências, evidência, saída e testes das 30
 skills atuais. Hoje 19 estão instaláveis e 11 estão `blocked` porque dependem
 de tools desativadas; nenhuma skill bloqueada entra no roteamento automático.
 
-### Fase B — workflows prioritários (64 ativos; 10 aguardando capacidade)
+### Fase B — workflows prioritários (64 ativos; 10 bloqueados)
 
-Os workflows **[ATIVA]** estão configurados e roteáveis. Os 11 itens ainda
-**[PRÓXIMA]** aguardam uma skill/tool específica ou dependem de uma capability
-bloqueada; não são marcados como ativos por aproximação.
+Os workflows **[ATIVA]** estão configurados e roteáveis. Os 10 itens
+**[BLOQUEADA]** dependem de uma skill/tool específica ou capability de provider
+que está desativada; não são marcados como ativos por aproximação.
 
 ### Fase C — workflows planejados (47)
 

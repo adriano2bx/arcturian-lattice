@@ -12,7 +12,7 @@ test("workflow registry is generated and preserves the hierarchy contract", asyn
   assert.equal(registry.server, "arcturian-lattice");
   assert.equal(registry.workflows.length, 130);
   assert.equal(registry.workflows.filter((workflow) => workflow.routable).length, 64);
-  assert.equal(registry.workflows.filter((workflow) => workflow.status === "blocked").length, 9);
+  assert.equal(registry.workflows.filter((workflow) => workflow.status === "blocked").length, 19);
   for (const workflow of registry.workflows) {
     assert.match(workflow.id, /^\d{2}\.\d{2}-[a-z0-9-]+$/);
     assert.ok(["active", "blocked", "next", "planned"].includes(workflow.status));

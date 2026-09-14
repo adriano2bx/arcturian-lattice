@@ -514,7 +514,7 @@
       "segmentNumber": 4,
       "order": 2,
       "name": "Busca de marcas por titular",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
@@ -525,7 +525,7 @@
       "segmentNumber": 4,
       "order": 3,
       "name": "Reconciliação de titularidade e razão social",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
@@ -536,7 +536,7 @@
       "segmentNumber": 4,
       "order": 4,
       "name": "Portfólio de marcas de uma empresa",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
@@ -547,7 +547,7 @@
       "segmentNumber": 4,
       "order": 5,
       "name": "Busca de colisões nominativas por classe",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
@@ -1147,7 +1147,7 @@
       "segmentNumber": 8,
       "order": 6,
       "name": "Mapa de lacunas de conteúdo",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
@@ -1158,7 +1158,7 @@
       "segmentNumber": 8,
       "order": 7,
       "name": "Comparação de presença orgânica",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
@@ -1223,7 +1223,7 @@
       "segmentNumber": 9,
       "order": 2,
       "name": "Retrato comparativo de concorrentes",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
@@ -1234,7 +1234,7 @@
       "segmentNumber": 9,
       "order": 3,
       "name": "Matriz de diferenciação observável",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
@@ -1245,7 +1245,7 @@
       "segmentNumber": 9,
       "order": 4,
       "name": "Comparação de produtos e posicionamento",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
@@ -1256,7 +1256,7 @@
       "segmentNumber": 9,
       "order": 5,
       "name": "Mapa de segmentos e territórios concorrentes",
-      "status": "next",
+      "status": "blocked",
       "skillRefs": [],
       "tools": [],
       "routable": false
