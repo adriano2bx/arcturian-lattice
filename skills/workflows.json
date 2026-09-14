@@ -1,0 +1,1634 @@
+{
+  "schemaVersion": 1,
+  "server": "arcturian-lattice",
+  "generatedFrom": "docs/SKILL-CATALOG-ROADMAP.md",
+  "semantics": {
+    "workflow": "resultado de negócio ponta a ponta",
+    "skill": "receita reutilizável carregável por um agente",
+    "tool": "primitiva MCP de dados ou execução",
+    "orchestration": "o agente escolhe ordem, parâmetros, frequência e saída"
+  },
+  "workflows": [
+    {
+      "id": "01.01-verificacao-cadastral-de-empresa-brasileira",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 1,
+      "name": "Verificação cadastral de empresa brasileira",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "01.02-due-diligence-de-fornecedor",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 2,
+      "name": "Due diligence de fornecedor",
+      "status": "blocked",
+      "skillRefs": [
+        "company-due-diligence"
+      ],
+      "tools": [
+        "company.gazette",
+        "company.ip",
+        "company.legal",
+        "company.osint",
+        "company.profile",
+        "company.public_contracts",
+        "company.risk",
+        "company.validate_cnpj",
+        "news.search",
+        "web.history",
+        "web.profile",
+        "web.technology"
+      ],
+      "routable": false
+    },
+    {
+      "id": "01.03-osint-de-empresa-brasileira",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 3,
+      "name": "OSINT de empresa brasileira",
+      "status": "active",
+      "skillRefs": [
+        "company-osint-br"
+      ],
+      "tools": [
+        "company.gazette",
+        "company.global",
+        "company.osint",
+        "company.profile",
+        "infra.network",
+        "osint.subdomains",
+        "regulatory.search",
+        "web.profile"
+      ],
+      "routable": true
+    },
+    {
+      "id": "01.04-reconciliacao-de-identidade-entre-cnpj-nome-dominio-e-lei",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 4,
+      "name": "Reconciliação de identidade entre CNPJ, nome, domínio e LEI",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "01.05-mapa-de-grupo-economico-e-entidades-relacionadas",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 5,
+      "name": "Mapa de grupo econômico e entidades relacionadas",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "01.06-linha-do-tempo-societaria-e-cadastral",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 6,
+      "name": "Linha do tempo societária e cadastral",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "01.07-perfil-de-cliente-potencial-para-vendas-enterprise",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 7,
+      "name": "Perfil de cliente potencial para vendas enterprise",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "01.08-validacao-de-fornecedor-antes-de-contratacao",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 8,
+      "name": "Validação de fornecedor antes de contratação",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "01.09-dossie-de-empresa-estrangeira-e-subsidiarias",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 9,
+      "name": "Dossiê de empresa estrangeira e subsidiárias",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "01.10-comparacao-de-multiplas-entidades-com-resolucao-de-homonimos",
+      "segment": "Empresa e entidades",
+      "segmentNumber": 1,
+      "order": 10,
+      "name": "Comparação de múltiplas entidades com resolução de homônimos",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "02.01-triagem-de-risco-juridico-publico",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 1,
+      "name": "Triagem de risco jurídico público",
+      "status": "active",
+      "skillRefs": [
+        "legal-risk-screening"
+      ],
+      "tools": [
+        "company.legal",
+        "company.profile",
+        "company.risk"
+      ],
+      "routable": true
+    },
+    {
+      "id": "02.02-publicacoes-judiciais-por-oab-com-controle-de-cobertura",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 2,
+      "name": "Publicações judiciais por OAB com controle de cobertura",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "02.03-publicacoes-judiciais-por-parte-e-validacao-de-identidade",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 3,
+      "name": "Publicações judiciais por parte e validação de identidade",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "02.04-monitoramento-de-mudanca-em-publicacoes-de-um-processo",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 4,
+      "name": "Monitoramento de mudança em publicações de um processo",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "02.05-triagem-de-certidoes-e-sinais-de-integridade",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 5,
+      "name": "Triagem de certidões e sinais de integridade",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "02.06-matriz-de-evidencias-para-revisao-por-advogado",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 6,
+      "name": "Matriz de evidências para revisão por advogado",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "02.07-conflito-de-nomes-marcas-e-partes-relacionadas",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 7,
+      "name": "Conflito de nomes, marcas e partes relacionadas",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "02.08-due-diligence-regulatoria-por-setor",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 8,
+      "name": "Due diligence regulatória por setor",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "02.09-preparacao-de-briefing-juridico-sem-conclusao-legal",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 9,
+      "name": "Preparação de briefing jurídico sem conclusão legal",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "02.10-reconciliacao-de-eventos-judiciais-em-multiplas-fontes",
+      "segment": "Jurídico e conformidade",
+      "segmentNumber": 2,
+      "order": 10,
+      "name": "Reconciliação de eventos judiciais em múltiplas fontes",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "03.01-inteligencia-de-contratos-publicos",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 1,
+      "name": "Inteligência de contratos públicos",
+      "status": "active",
+      "skillRefs": [
+        "public-procurement-intelligence"
+      ],
+      "tools": [
+        "company.profile",
+        "company.public_contracts",
+        "market.ibge",
+        "news.search"
+      ],
+      "routable": true
+    },
+    {
+      "id": "03.02-historico-de-fornecedor-no-pncp",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 2,
+      "name": "Histórico de fornecedor no PNCP",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "03.03-mapa-de-orgaos-compradores-por-setor",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 3,
+      "name": "Mapa de órgãos compradores por setor",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "03.04-deteccao-de-concentracao-de-contratos",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 4,
+      "name": "Detecção de concentração de contratos",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "03.05-identificacao-de-oportunidades-por-cnae-e-territorio",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 5,
+      "name": "Identificação de oportunidades por CNAE e território",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "03.06-analise-de-editais-e-requisitos-recorrentes",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 6,
+      "name": "Análise de editais e requisitos recorrentes",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "03.07-comparacao-de-concorrentes-em-licitacoes",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 7,
+      "name": "Comparação de concorrentes em licitações",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "03.08-linha-do-tempo-de-contratos-e-aditivos",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 8,
+      "name": "Linha do tempo de contratos e aditivos",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "03.09-qualificacao-de-conta-publica-para-abm",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 9,
+      "name": "Qualificação de conta pública para ABM",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "03.10-briefing-executivo-de-exposicao-ao-setor-publico",
+      "segment": "Governo e contratos públicos",
+      "segmentNumber": 3,
+      "order": 10,
+      "name": "Briefing executivo de exposição ao setor público",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "04.01-inteligencia-de-propriedade-intelectual",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 1,
+      "name": "Inteligência de propriedade intelectual",
+      "status": "blocked",
+      "skillRefs": [
+        "intellectual-property-intelligence"
+      ],
+      "tools": [
+        "company.ip",
+        "company.profile",
+        "news.search",
+        "web.history"
+      ],
+      "routable": false
+    },
+    {
+      "id": "04.02-busca-de-marcas-por-titular",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 2,
+      "name": "Busca de marcas por titular",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "04.03-reconciliacao-de-titularidade-e-razao-social",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 3,
+      "name": "Reconciliação de titularidade e razão social",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "04.04-portfolio-de-marcas-de-uma-empresa",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 4,
+      "name": "Portfólio de marcas de uma empresa",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "04.05-busca-de-colisoes-nominativas-por-classe",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 5,
+      "name": "Busca de colisões nominativas por classe",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "04.06-linha-do-tempo-de-pedidos-e-concessoes",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 6,
+      "name": "Linha do tempo de pedidos e concessões",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "04.07-sinais-de-patentes-e-programas-de-computador",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 7,
+      "name": "Sinais de patentes e programas de computador",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "04.08-monitoramento-de-novos-depositos-de-concorrentes",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 8,
+      "name": "Monitoramento de novos depósitos de concorrentes",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "04.09-mapa-de-classes-e-categorias-tecnologicas",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 9,
+      "name": "Mapa de classes e categorias tecnológicas",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "04.10-relatorio-de-ativos-e-lacunas-de-protecao",
+      "segment": "Propriedade intelectual",
+      "segmentNumber": 4,
+      "order": 10,
+      "name": "Relatório de ativos e lacunas de proteção",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "05.01-pesquisa-de-mercado-brasileiro",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 1,
+      "name": "Pesquisa de mercado brasileiro",
+      "status": "blocked",
+      "skillRefs": [
+        "market-research-br"
+      ],
+      "tools": [
+        "company.osint",
+        "geo.search",
+        "market.ibge",
+        "market.open_data",
+        "news.search",
+        "web.search"
+      ],
+      "routable": false
+    },
+    {
+      "id": "05.02-dimensionamento-de-mercado-por-setor",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 2,
+      "name": "Dimensionamento de mercado por setor",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "05.03-dimensionamento-por-estado-e-municipio",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 3,
+      "name": "Dimensionamento por estado e município",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "05.04-comparacao-de-pracas-para-expansao",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 4,
+      "name": "Comparação de praças para expansão",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "05.05-perfil-economico-de-territorio",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 5,
+      "name": "Perfil econômico de território",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "05.06-sazonalidade-e-tendencia-em-series-ibge",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 6,
+      "name": "Sazonalidade e tendência em séries IBGE",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "05.07-mapa-de-densidade-de-empresas-por-cnae",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 7,
+      "name": "Mapa de densidade de empresas por CNAE",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "05.08-analise-de-comercio-exterior-por-produto",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 8,
+      "name": "Análise de comércio exterior por produto",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "05.09-cenarios-de-entrada-em-mercado",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 9,
+      "name": "Cenários de entrada em mercado",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "05.10-briefing-de-mercado-para-diretoria",
+      "segment": "Mercado e economia",
+      "segmentNumber": 5,
+      "order": 10,
+      "name": "Briefing de mercado para diretoria",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "06.01-inteligencia-financeira-brasileira",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 1,
+      "name": "Inteligência financeira brasileira",
+      "status": "active",
+      "skillRefs": [
+        "financial-intelligence-br"
+      ],
+      "tools": [
+        "finance.bcb_series",
+        "market.ibge",
+        "news.search",
+        "regulatory.search"
+      ],
+      "routable": true
+    },
+    {
+      "id": "06.02-inteligencia-de-companhia-publica-dos-eua",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 2,
+      "name": "Inteligência de companhia pública dos EUA",
+      "status": "active",
+      "skillRefs": [
+        "public-company-intelligence-us"
+      ],
+      "tools": [
+        "finance.sec_companyfacts",
+        "finance.sec_submissions",
+        "news.search"
+      ],
+      "routable": true
+    },
+    {
+      "id": "06.03-leitura-de-series-do-banco-central",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 3,
+      "name": "Leitura de séries do Banco Central",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "06.04-reconciliacao-temporal-de-fatos-sec",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 4,
+      "name": "Reconciliação temporal de fatos SEC",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "06.05-triagem-financeira-de-parceiro-ou-fornecedor",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 5,
+      "name": "Triagem financeira de parceiro ou fornecedor",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "06.06-indicadores-de-crescimento-e-retracao",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 6,
+      "name": "Indicadores de crescimento e retração",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "06.07-comparacao-financeira-entre-concorrentes",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 7,
+      "name": "Comparação financeira entre concorrentes",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "06.08-exposicao-cambial-e-macroeconomica",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 8,
+      "name": "Exposição cambial e macroeconômica",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "06.09-preparacao-de-cenario-de-investimento",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 9,
+      "name": "Preparação de cenário de investimento",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "06.10-briefing-financeiro-com-fontes-e-ressalvas",
+      "segment": "Financeiro e investimento",
+      "segmentNumber": 6,
+      "order": 10,
+      "name": "Briefing financeiro com fontes e ressalvas",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "07.01-inteligencia-de-website",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 1,
+      "name": "Inteligência de website",
+      "status": "active",
+      "skillRefs": [
+        "website-intelligence"
+      ],
+      "tools": [
+        "infra.network",
+        "infra.peering",
+        "osint.subdomains",
+        "web.profile",
+        "web.sitemap",
+        "web.technology"
+      ],
+      "routable": true
+    },
+    {
+      "id": "07.02-forense-de-mudancas-de-website",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 2,
+      "name": "Forense de mudanças de website",
+      "status": "active",
+      "skillRefs": [
+        "website-change-forensics"
+      ],
+      "tools": [
+        "news.search",
+        "web.history",
+        "web.profile",
+        "web.sitemap"
+      ],
+      "routable": true
+    },
+    {
+      "id": "07.03-inteligencia-de-stack-tecnologica",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 3,
+      "name": "Inteligência de stack tecnológica",
+      "status": "active",
+      "skillRefs": [
+        "technology-stack-intelligence"
+      ],
+      "tools": [
+        "infra.network",
+        "osint.subdomains",
+        "web.profile",
+        "web.technology"
+      ],
+      "routable": true
+    },
+    {
+      "id": "07.04-perfil-tecnico-completo-de-dominio",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 4,
+      "name": "Perfil técnico completo de domínio",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "07.05-reconciliacao-dns-rdap-e-http",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 5,
+      "name": "Reconciliação DNS, RDAP e HTTP",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "07.06-descoberta-passiva-de-subdominios-e-certificados",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 6,
+      "name": "Descoberta passiva de subdomínios e certificados",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "07.07-diagnostico-de-disponibilidade-e-origem",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 7,
+      "name": "Diagnóstico de disponibilidade e origem",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "07.08-mapa-de-ativos-digitais-de-uma-organizacao",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 8,
+      "name": "Mapa de ativos digitais de uma organização",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "07.09-comparacao-de-infraestrutura-de-concorrentes",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 9,
+      "name": "Comparação de infraestrutura de concorrentes",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "07.10-relatorio-de-exposicao-tecnica-publica",
+      "segment": "Web e infraestrutura",
+      "segmentNumber": 7,
+      "order": 10,
+      "name": "Relatório de exposição técnica pública",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "08.01-auditoria-tecnica-de-seo",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 1,
+      "name": "Auditoria técnica de SEO",
+      "status": "active",
+      "skillRefs": [
+        "seo-technical-audit"
+      ],
+      "tools": [
+        "seo.audit",
+        "web.profile",
+        "web.sitemap"
+      ],
+      "routable": true
+    },
+    {
+      "id": "08.02-pesquisa-competitiva-de-seo",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 2,
+      "name": "Pesquisa competitiva de SEO",
+      "status": "blocked",
+      "skillRefs": [
+        "seo-competitive-research"
+      ],
+      "tools": [
+        "competitive.compare",
+        "seo.audit",
+        "seo.backlinks",
+        "seo.serp",
+        "web.search"
+      ],
+      "routable": false
+    },
+    {
+      "id": "08.03-inteligencia-de-backlinks",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 3,
+      "name": "Inteligência de backlinks",
+      "status": "blocked",
+      "skillRefs": [
+        "backlink-intelligence"
+      ],
+      "tools": [
+        "competitive.compare",
+        "seo.backlinks",
+        "web.search"
+      ],
+      "routable": false
+    },
+    {
+      "id": "08.04-pesquisa-de-serp-por-intencao",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 4,
+      "name": "Pesquisa de SERP por intenção",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "08.05-auditoria-de-indexabilidade-e-arquitetura",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 5,
+      "name": "Auditoria de indexabilidade e arquitetura",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "08.06-mapa-de-lacunas-de-conteudo",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 6,
+      "name": "Mapa de lacunas de conteúdo",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "08.07-comparacao-de-presenca-organica",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 7,
+      "name": "Comparação de presença orgânica",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "08.08-priorizacao-de-oportunidades-por-esforco-e-impacto",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 8,
+      "name": "Priorização de oportunidades por esforço e impacto",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "08.09-diagnostico-de-paginas-que-perderam-visibilidade",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 9,
+      "name": "Diagnóstico de páginas que perderam visibilidade",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "08.10-plano-editorial-baseado-em-evidencias",
+      "segment": "SEO e aquisição",
+      "segmentNumber": 8,
+      "order": 10,
+      "name": "Plano editorial baseado em evidências",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "09.01-inteligencia-competitiva",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 1,
+      "name": "Inteligência competitiva",
+      "status": "blocked",
+      "skillRefs": [
+        "competitive-intelligence"
+      ],
+      "tools": [
+        "competitive.compare",
+        "competitive.snapshot",
+        "competitive.traffic_estimate",
+        "news.search",
+        "seo.serp",
+        "social.search_mentions",
+        "web.history"
+      ],
+      "routable": false
+    },
+    {
+      "id": "09.02-retrato-comparativo-de-concorrentes",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 2,
+      "name": "Retrato comparativo de concorrentes",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "09.03-matriz-de-diferenciacao-observavel",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 3,
+      "name": "Matriz de diferenciação observável",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "09.04-comparacao-de-produtos-e-posicionamento",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 4,
+      "name": "Comparação de produtos e posicionamento",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "09.05-mapa-de-segmentos-e-territorios-concorrentes",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 5,
+      "name": "Mapa de segmentos e territórios concorrentes",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "09.06-deteccao-de-movimentos-de-mercado",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 6,
+      "name": "Detecção de movimentos de mercado",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "09.07-analise-de-mensagens-e-propostas-de-valor",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 7,
+      "name": "Análise de mensagens e propostas de valor",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "09.08-cenarios-de-ameaca-competitiva",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 8,
+      "name": "Cenários de ameaça competitiva",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "09.09-mapa-de-parceiros-e-canais",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 9,
+      "name": "Mapa de parceiros e canais",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "09.10-briefing-competitivo-executivo",
+      "segment": "Competitivo e posicionamento",
+      "segmentNumber": 9,
+      "order": 10,
+      "name": "Briefing competitivo executivo",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "10.01-inteligencia-de-noticias",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 1,
+      "name": "Inteligência de notícias",
+      "status": "active",
+      "skillRefs": [
+        "news-event-intelligence"
+      ],
+      "tools": [
+        "news.search",
+        "research.deep",
+        "web.search"
+      ],
+      "routable": true
+    },
+    {
+      "id": "10.02-escuta-social",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 2,
+      "name": "Escuta social",
+      "status": "blocked",
+      "skillRefs": [
+        "social-listening"
+      ],
+      "tools": [
+        "news.search",
+        "reddit.search",
+        "social.search_mentions"
+      ],
+      "routable": false
+    },
+    {
+      "id": "10.03-monitoramento-de-crise-reputacional",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 3,
+      "name": "Monitoramento de crise reputacional",
+      "status": "blocked",
+      "skillRefs": [
+        "crisis-reputation-monitoring"
+      ],
+      "tools": [
+        "monitor.create",
+        "monitor.events",
+        "news.search",
+        "reddit.search",
+        "social.search_mentions",
+        "web.search"
+      ],
+      "routable": false
+    },
+    {
+      "id": "10.04-panorama-de-noticias-por-entidade",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 4,
+      "name": "Panorama de notícias por entidade",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "10.05-reconciliacao-de-mencoes-e-homonimos",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 5,
+      "name": "Reconciliação de menções e homônimos",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "10.06-linha-do-tempo-de-narrativa-publica",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 6,
+      "name": "Linha do tempo de narrativa pública",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "10.07-monitoramento-de-reclame-aqui-com-api-oficial",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 7,
+      "name": "Monitoramento de Reclame Aqui com API oficial",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "10.08-classificacao-contextual-de-temas-e-riscos",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 8,
+      "name": "Classificação contextual de temas e riscos",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "10.09-deteccao-de-aceleracao-reputacional",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 9,
+      "name": "Detecção de aceleração reputacional",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "10.10-briefing-de-reputacao-com-evidencias",
+      "segment": "Marca, reputação e mídia",
+      "segmentNumber": 10,
+      "order": 10,
+      "name": "Briefing de reputação com evidências",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "11.01-pesquisa-academica",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 1,
+      "name": "Pesquisa acadêmica",
+      "status": "active",
+      "skillRefs": [
+        "academic-research"
+      ],
+      "tools": [
+        "research.deep",
+        "research.papers"
+      ],
+      "routable": true
+    },
+    {
+      "id": "11.02-pesquisa-profunda-multifuente",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 2,
+      "name": "Pesquisa profunda multifuente",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "11.03-revisao-bibliografica-orientada-a-pergunta",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 3,
+      "name": "Revisão bibliográfica orientada a pergunta",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "11.04-mapa-de-consenso-e-divergencia",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 4,
+      "name": "Mapa de consenso e divergência",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "11.05-sintese-com-rastreabilidade-de-fontes",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 5,
+      "name": "Síntese com rastreabilidade de fontes",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "11.06-estado-da-arte-por-tecnologia",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 6,
+      "name": "Estado da arte por tecnologia",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "11.07-monitoramento-de-novas-publicacoes",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 7,
+      "name": "Monitoramento de novas publicações",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "11.08-extracao-de-hipoteses-e-lacunas",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 8,
+      "name": "Extração de hipóteses e lacunas",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "11.09-comparacao-de-metodologias",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 9,
+      "name": "Comparação de metodologias",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "11.10-briefing-tecnico-para-decisao",
+      "segment": "Pesquisa e conhecimento",
+      "segmentNumber": 11,
+      "order": 10,
+      "name": "Briefing técnico para decisão",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "12.01-monitoramento-de-inteligencia-continua",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 1,
+      "name": "Monitoramento de inteligência contínua",
+      "status": "active",
+      "skillRefs": [
+        "continuous-intelligence-monitoring"
+      ],
+      "tools": [
+        "monitor.create",
+        "monitor.events",
+        "monitor.list",
+        "monitor.run",
+        "monitor.run_due"
+      ],
+      "routable": true
+    },
+    {
+      "id": "12.02-briefing-executivo",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 2,
+      "name": "Briefing executivo",
+      "status": "active",
+      "skillRefs": [
+        "executive-intelligence-brief"
+      ],
+      "tools": [
+        "company.osint",
+        "competitive.compare",
+        "finance.bcb_series",
+        "market.ibge",
+        "monitor.events",
+        "news.search"
+      ],
+      "routable": true
+    },
+    {
+      "id": "12.03-criacao-de-baseline-multifuente",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 3,
+      "name": "Criação de baseline multifuente",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "12.04-investigacao-de-mudanca-detectada",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 4,
+      "name": "Investigação de mudança detectada",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "12.05-relatorio-de-cobertura-e-lacunas",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 5,
+      "name": "Relatório de cobertura e lacunas",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "12.06-briefing-diario-por-segmento",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 6,
+      "name": "Briefing diário por segmento",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "12.07-briefing-semanal-executivo-transversal",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 7,
+      "name": "Briefing semanal executivo transversal",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "12.08-priorizacao-de-alertas-por-evidencia",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 8,
+      "name": "Priorização de alertas por evidência",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "12.09-auditoria-de-qualidade-de-dados",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 9,
+      "name": "Auditoria de qualidade de dados",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "12.10-revisao-de-eficacia-de-workflow",
+      "segment": "Operações e inteligência contínua",
+      "segmentNumber": 12,
+      "order": 10,
+      "name": "Revisão de eficácia de workflow",
+      "status": "planned",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "13.01-pesquisa-abm-de-conta",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 1,
+      "name": "Pesquisa ABM de conta",
+      "status": "active",
+      "skillRefs": [
+        "abm-account-research"
+      ],
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "company.public_contracts",
+        "competitive.snapshot",
+        "news.search",
+        "regulatory.search",
+        "web.profile",
+        "web.technology"
+      ],
+      "routable": true
+    },
+    {
+      "id": "13.02-mapeamento-de-mercado-e-leads",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 2,
+      "name": "Mapeamento de mercado e leads",
+      "status": "blocked",
+      "skillRefs": [
+        "lead-market-mapping"
+      ],
+      "tools": [
+        "company.osint",
+        "geo.search",
+        "market.ibge",
+        "market.open_data",
+        "regulatory.search",
+        "web.search"
+      ],
+      "routable": false
+    },
+    {
+      "id": "13.03-inteligencia-de-contratos-para-vendas-publicas",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 3,
+      "name": "Inteligência de contratos para vendas públicas",
+      "status": "active",
+      "skillRefs": [
+        "public-procurement-intelligence"
+      ],
+      "tools": [
+        "company.profile",
+        "company.public_contracts",
+        "market.ibge",
+        "news.search"
+      ],
+      "routable": true
+    },
+    {
+      "id": "13.04-definicao-e-validacao-de-icp",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 4,
+      "name": "Definição e validação de ICP",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "13.05-enriquecimento-e-qualificacao-de-lead",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 5,
+      "name": "Enriquecimento e qualificação de lead",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "13.06-deteccao-de-gatilhos-de-compra-observaveis",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 6,
+      "name": "Detecção de gatilhos de compra observáveis",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "13.07-preparacao-de-reuniao-de-descoberta",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 7,
+      "name": "Preparação de reunião de descoberta",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "13.08-mapa-de-stakeholders-e-influencia",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 8,
+      "name": "Mapa de stakeholders e influência",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "13.09-hipotese-de-valor-e-personalizacao-de-proposta",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 9,
+      "name": "Hipótese de valor e personalização de proposta",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    },
+    {
+      "id": "13.10-inteligencia-de-oportunidade-expansao-e-churn",
+      "segment": "Vendas e receita",
+      "segmentNumber": 13,
+      "order": 10,
+      "name": "Inteligência de oportunidade, expansão e churn",
+      "status": "next",
+      "skillRefs": [],
+      "tools": [],
+      "routable": false
+    }
+  ]
+}

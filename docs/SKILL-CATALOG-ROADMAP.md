@@ -7,13 +7,14 @@ cruzamento, validação e análise. Uma skill composta pode implementar um
 workflow inteiro, enquanto uma skill menor pode ser compartilhada por vários
 workflows.
 
-Legenda: **[ATIVA]** já existe no catálogo atual; **[PRÓXIMA]** é prioridade de
-implementação; **[PLANEJADA]** depende de uma fase posterior.
+Legenda: **[ATIVA]** já existe e pode ser roteada; **[BLOQUEADA]** possui uma
+receita, mas depende de tool/provider indisponível; **[PRÓXIMA]** é prioridade
+de implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 ## 1. Empresa e entidades
 
 1. **[PRÓXIMA]** Verificação cadastral de empresa brasileira
-2. **[ATIVA]** Due diligence de fornecedor (`company-due-diligence`)
+2. **[BLOQUEADA]** Due diligence de fornecedor (`company-due-diligence`)
 3. **[ATIVA]** OSINT de empresa brasileira (`company-osint-br`)
 4. **[PRÓXIMA]** Reconciliação de identidade entre CNPJ, nome, domínio e LEI
 5. **[PRÓXIMA]** Mapa de grupo econômico e entidades relacionadas
@@ -51,7 +52,7 @@ implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 ## 4. Propriedade intelectual
 
-1. **[ATIVA]** Inteligência de propriedade intelectual (`intellectual-property-intelligence`)
+1. **[BLOQUEADA]** Inteligência de propriedade intelectual (`intellectual-property-intelligence`)
 2. **[PRÓXIMA]** Busca de marcas por titular
 3. **[PRÓXIMA]** Reconciliação de titularidade e razão social
 4. **[PRÓXIMA]** Portfólio de marcas de uma empresa
@@ -64,7 +65,7 @@ implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 ## 5. Mercado e economia
 
-1. **[ATIVA]** Pesquisa de mercado brasileiro (`market-research-br`)
+1. **[BLOQUEADA]** Pesquisa de mercado brasileiro (`market-research-br`)
 2. **[PRÓXIMA]** Dimensionamento de mercado por setor
 3. **[PRÓXIMA]** Dimensionamento por estado e município
 4. **[PRÓXIMA]** Comparação de praças para expansão
@@ -104,8 +105,8 @@ implementação; **[PLANEJADA]** depende de uma fase posterior.
 ## 8. SEO e aquisição
 
 1. **[ATIVA]** Auditoria técnica de SEO (`seo-technical-audit`)
-2. **[ATIVA]** Pesquisa competitiva de SEO (`seo-competitive-research`)
-3. **[ATIVA]** Inteligência de backlinks (`backlink-intelligence`)
+2. **[BLOQUEADA]** Pesquisa competitiva de SEO (`seo-competitive-research`)
+3. **[BLOQUEADA]** Inteligência de backlinks (`backlink-intelligence`)
 4. **[PRÓXIMA]** Pesquisa de SERP por intenção
 5. **[PRÓXIMA]** Auditoria de indexabilidade e arquitetura
 6. **[PRÓXIMA]** Mapa de lacunas de conteúdo
@@ -116,7 +117,7 @@ implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 ## 9. Competitivo e posicionamento
 
-1. **[ATIVA]** Inteligência competitiva (`competitive-intelligence`)
+1. **[BLOQUEADA]** Inteligência competitiva (`competitive-intelligence`)
 2. **[PRÓXIMA]** Retrato comparativo de concorrentes
 3. **[PRÓXIMA]** Matriz de diferenciação observável
 4. **[PRÓXIMA]** Comparação de produtos e posicionamento
@@ -130,8 +131,8 @@ implementação; **[PLANEJADA]** depende de uma fase posterior.
 ## 10. Marca, reputação e mídia
 
 1. **[ATIVA]** Inteligência de notícias (`news-event-intelligence`)
-2. **[ATIVA]** Escuta social (`social-listening`)
-3. **[ATIVA]** Monitoramento de crise reputacional (`crisis-reputation-monitoring`)
+2. **[BLOQUEADA]** Escuta social (`social-listening`)
+3. **[BLOQUEADA]** Monitoramento de crise reputacional (`crisis-reputation-monitoring`)
 4. **[PRÓXIMA]** Panorama de notícias por entidade
 5. **[PRÓXIMA]** Reconciliação de menções e homônimos
 6. **[PRÓXIMA]** Linha do tempo de narrativa pública
@@ -169,7 +170,7 @@ implementação; **[PLANEJADA]** depende de uma fase posterior.
 ## 13. Vendas e receita
 
 1. **[ATIVA]** Pesquisa ABM de conta (`abm-account-research`)
-2. **[ATIVA]** Mapeamento de mercado e leads (`lead-market-mapping`)
+2. **[BLOQUEADA]** Mapeamento de mercado e leads (`lead-market-mapping`)
 3. **[ATIVA]** Inteligência de contratos para vendas públicas (`public-procurement-intelligence`)
 4. **[PRÓXIMA]** Definição e validação de ICP
 5. **[PRÓXIMA]** Enriquecimento e qualificação de lead

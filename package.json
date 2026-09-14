@@ -13,7 +13,10 @@
     "smoke": "node scripts/smoke.mjs",
     "skills:list": "node scripts/skills.mjs list",
     "skills:validate": "node scripts/skills.mjs validate",
-    "skills:install": "node scripts/skills.mjs install"
+    "skills:install": "node scripts/skills.mjs install",
+    "workflows:generate": "node scripts/workflows.mjs generate",
+    "workflows:validate": "node scripts/workflows.mjs validate",
+    "workflows:list": "node scripts/workflows.mjs list"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.0.0",

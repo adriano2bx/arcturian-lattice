@@ -15,6 +15,24 @@ Hermes
 
 The skills do not duplicate provider logic. They teach the agent **when and how to combine MCP tools**, how to grade evidence, and what not to infer.
 
+## Workflow registry
+
+The business catalog is machine-readable in `skills/workflows.json`. It contains
+one record per workflow candidate with a stable ID, segment, lifecycle status,
+linked skill packages, derived MCP tools and a `routable` flag. The registry is
+generated from `docs/SKILL-CATALOG-ROADMAP.md`; it does not turn every roadmap
+item into a skill automatically.
+
+```bash
+npm run workflows:generate
+npm run workflows:validate
+npm run workflows:list
+```
+
+Only workflows with status `active` and active skill dependencies are routable.
+The agent remains responsible for choosing order, parameters, frequency,
+validation and the final decision output.
+
 ## Install
 
 ```bash

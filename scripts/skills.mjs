@@ -26,7 +26,7 @@ const manifest = JSON.parse(
 if (command === "list") {
   for (const s of manifest.skills)
     console.log(`${s.name}\t${s.status ?? "active"}\t${s.category}\t${s.description}`);
-  await new Promise((resolve) => setTimeout(resolve, 10));
+  await new Promise((resolve) => setTimeout(resolve, 100));
   process.exit(0);
 }
 
@@ -102,7 +102,7 @@ if (command === "validate") {
     process.exit(1);
   }
   console.log(`Validated ${manifest.skills.length} skills successfully.`);
-  await new Promise((resolve) => setTimeout(resolve, 10));
+  await new Promise((resolve) => setTimeout(resolve, 100));
   process.exit(0);
 }
 
@@ -150,7 +150,7 @@ if (command === "install") {
   console.log(
     `Done. installed=${installed} skipped=${skipped} target=${target}`,
   );
-  await new Promise((resolve) => setTimeout(resolve, 10));
+  await new Promise((resolve) => setTimeout(resolve, 100));
   process.exit(0);
 }
 
