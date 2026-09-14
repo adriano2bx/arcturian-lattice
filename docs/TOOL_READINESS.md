@@ -37,4 +37,4 @@ ANATEL foi concluída: `17.606` registros deduplicados, todas as 37 páginas pro
 
 ## Gates automatizados
 
-`npm test`: 66 testes, 59 aprovados, 0 falhas e 7 testes live ignorados por dependerem de rede.
+`npm test`: 67 testes, 60 aprovados, 0 falhas e 7 testes live ignorados por dependerem de rede.
