@@ -23,7 +23,7 @@ export class BingNewsRssProvider {
         redirect: 'follow',
         headers: {
           accept: 'application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.1',
-          'user-agent': 'NexusIntelligence/1.1',
+          'user-agent': 'DeltaBotsArcturianLattice/1.1',
         },
       });
     } catch (error) {

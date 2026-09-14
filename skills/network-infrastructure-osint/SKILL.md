@@ -2,12 +2,12 @@
 name: network-infrastructure-osint
 description: Maps public network, ASN, DNS and peering signals for a company domain using passive or registry-based sources. Use for infrastructure intelligence, vendor research or digital-asset mapping—not unauthorized security testing.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "osint"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Network Infrastructure OSINT
 
@@ -18,6 +18,6 @@ metadata:
 
 Only passive/registry reconnaissance is authorized by this skill. Do not perform port scanning, vulnerability scanning, credential attacks or exploitation against third-party systems.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `web.profile`, `osint.subdomains`, `infra.network`, `infra.peering`
 

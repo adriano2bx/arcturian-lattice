@@ -2,12 +2,12 @@
 name: news-event-intelligence
 description: Finds and synthesizes recent company, sector and geopolitical news events using GDELT and web research. Use for event detection, competitive moves, partnership tracking, crisis context or market briefings.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "research"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # News and Event Intelligence
 
@@ -19,6 +19,6 @@ metadata:
 
 For sensitive allegations, require multiple credible sources and use cautious language.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `news.search`, `research.deep`, `web.search`
 

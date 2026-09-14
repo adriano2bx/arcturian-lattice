@@ -2,12 +2,12 @@
 name: social-listening
 description: Monitors public social mentions across indexed Reddit, YouTube, X and Instagram surfaces, with direct Reddit search where available. Use for brand listening, competitor mentions, customer pain discovery or trend reconnaissance.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "social"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Social Listening
 
@@ -19,6 +19,6 @@ metadata:
 
 Never claim complete coverage of closed or anti-bot social platforms.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `social.search_mentions`, `reddit.search`, `news.search`
 

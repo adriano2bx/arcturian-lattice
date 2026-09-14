@@ -1,6 +1,6 @@
-# Nexus Intelligence Agent Skills
+# DeltaBots Arcturian / Lattice Agent Skills
 
-Version 1.1 adds an internal Agent Skills catalog inspired by the workflow layer used by AIsa, but bound to the private Nexus Intelligence MCP rather than paid third-party APIs.
+Version 1.1 adds an internal Agent Skills catalog inspired by the workflow layer used by AIsa, but bound to the private DeltaBots Arcturian / Lattice MCP rather than paid third-party APIs.
 
 ## Architecture
 
@@ -9,7 +9,7 @@ Hermes
   ├── skill discovery / progressive loading
   │      └── ~/.hermes/skills/<skill>/SKILL.md
   │
-  └── Nexus Intelligence MCP
+  └── DeltaBots Arcturian / Lattice MCP
          └── stable high-level tools
 ```
 

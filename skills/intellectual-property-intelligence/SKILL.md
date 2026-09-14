@@ -2,12 +2,12 @@
 name: intellectual-property-intelligence
 description: Analyzes locally mirrored official INPI records for company trademarks, patents and other IP signals. Use for brand portfolio review, product-launch signals, competitive monitoring or IP due diligence.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "company-intelligence"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Intellectual Property Intelligence
 
@@ -19,6 +19,6 @@ metadata:
 
 Return active portfolio, recent filings, notable status changes, possible product/brand signals and freshness of the local mirror.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `company.ip`, `company.profile`, `web.history`, `news.search`
 

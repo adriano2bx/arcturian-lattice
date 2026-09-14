@@ -2,12 +2,12 @@
 name: company-due-diligence
 description: Builds an evidence-graded due diligence dossier for a Brazilian company using official registrations, public contracts, legal signals, IP, web presence and OSINT. Use when evaluating a client, supplier, partner, acquisition target or high-value prospect.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "company-intelligence"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Company Due Diligence
 
@@ -36,6 +36,6 @@ Return: identity, ownership/relationships if available, public-sector exposure, 
 ## Guardrails
 Do not expose personal data that is not necessary for the business purpose. Do not turn public records into accusations. Distinguish absence of evidence from evidence of absence.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `company.validate_cnpj`, `company.profile`, `company.risk`, `company.public_contracts`, `company.legal`, `company.ip`, `company.gazette`, `company.osint`, `web.profile`, `web.history`, `web.technology`, `news.search`
 

@@ -2,12 +2,12 @@
 name: abm-account-research
 description: Creates an account-based marketing research brief for a target company by combining company, web, technology, market, news and competitive signals. Use before strategic outbound, enterprise sales, partnership outreach or custom proposals.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "go-to-market"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # ABM Account Research
 
@@ -20,6 +20,6 @@ metadata:
 ## Output
 Account summary, verified facts, strategic hypotheses, likely buying triggers, personalized value angles, discovery questions and evidence links. Never fabricate employee names, budgets, intent or pain.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `company.osint`, `company.profile`, `web.profile`, `web.technology`, `news.search`, `competitive.snapshot`, `company.public_contracts`, `regulatory.search`
 

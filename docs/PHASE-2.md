@@ -36,13 +36,13 @@ This tool supports partial success: failure of DNS, RDAP or the website does not
 Create the database once:
 
 ```bash
-npx wrangler d1 create nexus-intelligence
+npx wrangler d1 create arcturian-lattice
 ```
 
 Add the returned binding to `wrangler.jsonc` as `DB`, then apply:
 
 ```bash
-npx wrangler d1 migrations apply nexus-intelligence --remote
+npx wrangler d1 migrations apply arcturian-lattice --remote
 ```
 
 No commercial API key is required for `company.ip`; the data-loading job is separate from the query path.

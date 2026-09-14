@@ -2,12 +2,12 @@
 name: academic-research
 description: Performs evidence-oriented literature discovery with Crossref and OpenAlex, then synthesizes results with source provenance. Use for technical research, evidence reviews, scientific background or citation discovery.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "research"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Academic Research
 
@@ -19,6 +19,6 @@ metadata:
 
 Return key findings, disagreements, evidence strength, citations/identifiers and unanswered questions.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `research.papers`, `research.deep`
 

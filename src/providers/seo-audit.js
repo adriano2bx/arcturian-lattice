@@ -3,7 +3,7 @@ export class SeoAuditProvider {
   async audit(input) {
     const url = normalizeUrl(input);
     let response;
-    try { response = await this.fetchFn(url, { redirect: 'follow', headers: { accept: 'text/html,*/*;q=0.1', 'user-agent': 'NexusIntelligence/1.0' } }); }
+    try { response = await this.fetchFn(url, { redirect: 'follow', headers: { accept: 'text/html,*/*;q=0.1', 'user-agent': 'DeltaBotsArcturianLattice/1.0' } }); }
     catch (error) { return { ok: false, provider: this.id, reason: 'network_error', detail: String(error?.message ?? error) }; }
     if (!response.ok) return { ok: false, provider: this.id, reason: 'upstream_error', status: response.status };
     const html = await response.text();

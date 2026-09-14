@@ -2,12 +2,12 @@
 name: content-gap-intelligence
 description: Finds content and search gaps by combining competitor pages, SERPs, sitemaps, YouTube, social mentions and news. Use to plan editorial calendars, landing pages, video topics or thought-leadership content.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "marketing"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Content Gap Intelligence
 
@@ -21,6 +21,6 @@ metadata:
 
 Do not invent keyword volume. Use observed ranking/content evidence and clearly state demand proxies.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `seo.serp`, `web.sitemap`, `web.search`, `youtube.transcript`, `social.search_mentions`, `news.search`, `competitive.compare`
 

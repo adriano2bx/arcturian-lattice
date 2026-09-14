@@ -1,4 +1,4 @@
-# Nexus Intelligence MCP
+# DeltaBots Arcturian / Lattice MCP
 
 Private intelligence capability layer for Hermes/AI agents. The Worker is the single MCP facade; public/official sources, local D1 mirrors and optional self-hosted engines sit behind it.
 
@@ -49,8 +49,8 @@ npx wrangler login
 Create D1, add the `DB` binding in `wrangler.jsonc`, then apply migrations:
 
 ```bash
-npx wrangler d1 create nexus-intelligence
-npx wrangler d1 migrations apply nexus-intelligence --remote
+npx wrangler d1 create arcturian-lattice
+npx wrangler d1 migrations apply arcturian-lattice --remote
 ```
 
 Set an internal bearer token:

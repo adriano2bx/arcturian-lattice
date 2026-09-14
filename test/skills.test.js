@@ -12,7 +12,7 @@ const manifest = JSON.parse(await fs.readFile(path.join(root,'skills/manifest.js
 const mcpSource = await fs.readFile(path.join(root,'src/mcp/create-server.js'),'utf8');
 
 test('skills catalog contains a substantial internal workflow library', () => {
-  assert.equal(manifest.server,'nexus-intelligence-mcp');
+  assert.equal(manifest.server,'arcturian-lattice');
   assert.ok(manifest.skills.length >= 25);
 });
 

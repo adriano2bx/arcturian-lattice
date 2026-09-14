@@ -1,4 +1,4 @@
-# Nexus Intelligence MCP v1.0 — status
+# DeltaBots Arcturian / Lattice MCP v1.0 — status
 
 ## Test status
 

@@ -2,12 +2,12 @@
 name: website-intelligence
 description: Builds a public intelligence profile of a website or domain using HTTP, DNS, RDAP, sitemap, technology detection and subdomain signals. Use for competitor research, prospect enrichment, vendor review or digital reconnaissance.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "web-intelligence"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Website Intelligence
 
@@ -19,6 +19,6 @@ metadata:
 
 Use only passive/low-impact reconnaissance for third-party assets. Do not turn this workflow into vulnerability scanning.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `web.profile`, `web.technology`, `web.sitemap`, `osint.subdomains`, `infra.network`, `infra.peering`
 

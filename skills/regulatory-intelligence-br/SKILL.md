@@ -2,12 +2,12 @@
 name: regulatory-intelligence-br
 description: Searches locally mirrored official Brazilian regulatory datasets across CVM, ANS, Anvisa, Anatel, Aneel, ANP and Susep. Use for sector due diligence, regulated-company research, compliance context or vertical market intelligence.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "regulatory"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Brazilian Regulatory Intelligence
 
@@ -19,6 +19,6 @@ metadata:
 
 Never substitute this workflow for formal legal or regulatory advice.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `regulatory.search`, `company.profile`, `news.search`
 

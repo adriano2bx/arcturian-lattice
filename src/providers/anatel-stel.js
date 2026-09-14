@@ -43,7 +43,7 @@ export class AnatelStelProvider {
             accept:
               'text/html,application/xhtml+xml',
             'user-agent':
-              'NexusIntelligence/1.1',
+              'DeltaBotsArcturianLattice/1.1',
           },
         },
       );

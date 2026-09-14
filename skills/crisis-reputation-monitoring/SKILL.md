@@ -2,12 +2,12 @@
 name: crisis-reputation-monitoring
 description: Monitors public news and social signals for a company or brand, grouping potential reputation issues and validating material events. Use for crisis detection, reputation monitoring or competitor-incident tracking.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "risk"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Crisis and Reputation Monitoring
 
@@ -19,6 +19,6 @@ metadata:
 
 Avoid automated accusations, doxxing, personal targeting or overconfident sentiment claims.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `news.search`, `social.search_mentions`, `reddit.search`, `monitor.create`, `monitor.events`, `web.search`
 

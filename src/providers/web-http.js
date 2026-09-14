@@ -15,7 +15,7 @@ export class WebHttpProvider {
           redirect: "follow",
           headers: {
             accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1",
-            "user-agent": "NexusIntelligence/0.2 (+internal research)",
+            "user-agent": "DeltaBotsArcturianLattice/0.2 (+internal research)",
           },
         });
       } catch (error) {

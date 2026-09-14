@@ -15,7 +15,7 @@ export class WaybackProvider {
     if (from) url.searchParams.set('from', String(from).replace(/-/g, ''));
     if (to) url.searchParams.set('to', String(to).replace(/-/g, ''));
     let response;
-    try { response = await this.fetchFn(url.toString(), { headers: { accept: 'application/json', 'user-agent': 'NexusIntelligence/1.0' } }); }
+    try { response = await this.fetchFn(url.toString(), { headers: { accept: 'application/json', 'user-agent': 'DeltaBotsArcturianLattice/1.0' } }); }
     catch (error) { return { ok: false, provider: this.id, reason: 'network_error', detail: String(error?.message ?? error) }; }
     if (!response.ok) return { ok: false, provider: this.id, reason: 'upstream_error', status: response.status };
     const payload = await response.json();

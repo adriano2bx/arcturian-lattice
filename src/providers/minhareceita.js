@@ -31,7 +31,7 @@ export class MinhaReceitaCnpjProvider {
         {
           headers: {
             accept: 'application/json',
-            'user-agent': 'NexusIntelligence/1.1',
+            'user-agent': 'DeltaBotsArcturianLattice/1.1',
           },
         },
       );

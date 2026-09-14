@@ -2,12 +2,12 @@
 name: technology-stack-intelligence
 description: Identifies and interprets a company website technology stack from public HTML, headers, DNS and infrastructure signals. Use for martech research, vendor displacement opportunities, integration planning or competitor tech benchmarking.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "web-intelligence"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Technology Stack Intelligence
 
@@ -19,6 +19,6 @@ metadata:
 
 For sales use cases, turn stack findings into plausible integration/displacement opportunities, clearly labeling inference.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `web.technology`, `web.profile`, `osint.subdomains`, `infra.network`
 

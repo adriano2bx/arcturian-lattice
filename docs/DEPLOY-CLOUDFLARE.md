@@ -10,7 +10,7 @@ npm test
 ## 2. Create D1
 
 ```bash
-npx wrangler d1 create nexus-intelligence
+npx wrangler d1 create arcturian-lattice
 ```
 
 Copy the returned database ID into a `d1_databases` binding named `DB` in `wrangler.jsonc`.
@@ -18,7 +18,7 @@ Copy the returned database ID into a `d1_databases` binding named `DB` in `wrang
 ## 3. Apply migrations
 
 ```bash
-npx wrangler d1 migrations apply nexus-intelligence --remote
+npx wrangler d1 migrations apply arcturian-lattice --remote
 ```
 
 ## 4. Secrets

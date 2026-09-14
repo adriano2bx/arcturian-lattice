@@ -2,12 +2,12 @@
 name: lead-market-mapping
 description: Maps target-market segments and company opportunities using Brazilian market data, public company intelligence, geography and web research. Use for ICP design, territory planning or lead-list strategy.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "go-to-market"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Lead Market Mapping
 
@@ -20,6 +20,6 @@ metadata:
 
 Return segment map, prioritization logic, candidate accounts, evidence and data gaps.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `market.ibge`, `market.open_data`, `geo.search`, `web.search`, `company.osint`, `regulatory.search`
 

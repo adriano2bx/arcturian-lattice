@@ -2,12 +2,12 @@
 name: company-osint-br
 description: Investigates a Brazilian company from public and official sources, correlating CNPJ, web, gazette, regulatory, legal and infrastructure signals. Use for OSINT, business intelligence, prospect research or entity verification.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "company-intelligence"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Brazilian Company OSINT
 
@@ -22,6 +22,6 @@ metadata:
 ## Output
 Provide a timeline, entity graph, verified identifiers, public digital assets, regulatory footprint, anomalies, unresolved ambiguities and a source table with confidence.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `company.osint`, `company.profile`, `company.gazette`, `company.global`, `regulatory.search`, `web.profile`, `osint.subdomains`, `infra.network`
 

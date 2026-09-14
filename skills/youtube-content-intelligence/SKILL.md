@@ -2,12 +2,12 @@
 name: youtube-content-intelligence
 description: Analyzes YouTube videos and transcripts for themes, hooks, positioning, claims and content opportunities. Use for competitor channel research, content strategy, video summarization or transcript-driven intelligence.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "social"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # YouTube Content Intelligence
 
@@ -19,6 +19,6 @@ metadata:
 
 Deliver content patterns, white-space opportunities, reusable topic clusters and evidence excerpts by timestamp when available.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `youtube.metadata`, `youtube.transcript`, `web.search`
 

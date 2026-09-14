@@ -43,15 +43,15 @@ import { OpenDataLocalProvider } from '../providers/open-data-local.js';
 import { SitemapProvider } from '../providers/sitemap.js';
 import { AnatelSyncService } from '../services/anatel-sync.js';
 
-export const NEXUS_VERSION = '1.1.0';
+export const ARCTURIAN_VERSION = '1.1.0';
 
-export function createNexusMcpServer({
+export function createArcturianLatticeMcpServer({
   env = {},
   fetchFn = globalThis.fetch,
 } = {}) {
   const server = new McpServer({
-    name: 'nexus-intelligence-mcp',
-    version: NEXUS_VERSION,
+    name: 'arcturian-lattice',
+    version: ARCTURIAN_VERSION,
   });
 
   const searx = () =>
@@ -1136,7 +1136,7 @@ export function createNexusMcpServer({
         fetchFn,
         userAgent:
           env.SEC_USER_AGENT ??
-          'NexusIntelligence/1.0 admin@example.invalid',
+          'DeltaBotsArcturianLattice/1.0 admin@example.invalid',
       }).companyFacts(cik)),
       meta: official(
         'SEC EDGAR',
@@ -1159,7 +1159,7 @@ export function createNexusMcpServer({
         fetchFn,
         userAgent:
           env.SEC_USER_AGENT ??
-          'NexusIntelligence/1.0 admin@example.invalid',
+          'DeltaBotsArcturianLattice/1.0 admin@example.invalid',
       }).submissions(cik)),
       meta: official(
         'SEC EDGAR',

@@ -2,12 +2,12 @@
 name: seo-competitive-research
 description: Compares competitors in search using self-hosted SERP search, technical SEO observations, backlinks and web evidence. Use for keyword opportunity discovery, competitive SEO strategy or search-market mapping.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "seo"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Competitive SEO Research
 
@@ -20,6 +20,6 @@ metadata:
 
 Always disclose when SearXNG or the local backlink graph has partial coverage. Do not label a query's exact search volume unless a verified source provides it.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `seo.serp`, `seo.audit`, `seo.backlinks`, `web.search`, `competitive.compare`
 

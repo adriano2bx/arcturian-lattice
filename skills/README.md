@@ -1,6 +1,6 @@
-# Nexus Intelligence Skills
+# DeltaBots Arcturian / Lattice Skills
 
-Internal Agent Skills library for the Nexus Intelligence MCP. Each skill follows the open Agent Skills `SKILL.md` format and encodes a multi-tool workflow rather than wrapping a single endpoint.
+Internal Agent Skills library for the DeltaBots Arcturian / Lattice MCP. Each skill follows the open Agent Skills `SKILL.md` format and encodes a multi-tool workflow rather than wrapping a single endpoint.
 
 ## Hermes
 

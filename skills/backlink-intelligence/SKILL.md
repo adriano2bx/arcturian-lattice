@@ -2,12 +2,12 @@
 name: backlink-intelligence
 description: Analyzes the locally accumulated backlink graph for a domain, including referring domains and link opportunities. Use for link-gap research, authority analysis or outreach planning when local coverage exists.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "seo"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Backlink Intelligence
 
@@ -18,6 +18,6 @@ metadata:
 
 If the local link graph is sparse, state that the result is a sample, not a global backlink inventory.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `seo.backlinks`, `competitive.compare`, `web.search`
 

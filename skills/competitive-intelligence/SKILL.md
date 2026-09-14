@@ -2,12 +2,12 @@
 name: competitive-intelligence
 description: Builds multi-source competitor snapshots and compares domains using derived Digital Visibility signals. Use for competitor benchmarking, strategic positioning, market monitoring or executive competitive analysis.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "competitive"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Competitive Intelligence
 
@@ -19,6 +19,6 @@ metadata:
 
 Always label Digital Visibility as a derived internal score, not an industry-standard audience measurement.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `competitive.snapshot`, `competitive.compare`, `competitive.traffic_estimate`, `web.history`, `news.search`, `seo.serp`, `social.search_mentions`
 

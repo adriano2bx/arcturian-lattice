@@ -2,12 +2,12 @@
 name: market-research-br
 description: Builds Brazilian market intelligence from IBGE/SIDRA, mirrored open datasets, company intelligence and geographic context. Use for TAM/SAM framing, regional expansion, vertical research or market-entry analysis.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "market"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Brazilian Market Research
 
@@ -20,6 +20,6 @@ metadata:
 
 Return market definition, demand proxies, regional ranking, competitive density, opportunity thesis and data limitations.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `market.ibge`, `market.open_data`, `geo.search`, `company.osint`, `web.search`, `news.search`
 

@@ -1,5 +1,5 @@
 import { createMcpHandler } from 'agents/mcp/server';
-import { createNexusMcpServer, NEXUS_VERSION } from './mcp/create-server.js';
+import { createArcturianLatticeMcpServer, ARCTURIAN_VERSION } from './mcp/create-server.js';
 import { MonitorService } from './services/monitor.js';
 
 export default {
@@ -9,8 +9,8 @@ export default {
     if (url.pathname === '/healthz') {
       return Response.json({
         ok: true,
-        service: 'nexus-intelligence-mcp',
-        version: NEXUS_VERSION,
+        service: 'arcturian-lattice',
+        version: ARCTURIAN_VERSION,
         mcp: '/mcp',
         continuousIntelligence: Boolean(env.DB),
       });
@@ -45,7 +45,7 @@ export default {
     const fetchFn = (...args) => globalThis.fetch(...args);
 
     const handler = createMcpHandler(
-      () => createNexusMcpServer({ env, fetchFn }),
+      () => createArcturianLatticeMcpServer({ env, fetchFn }),
       {
         route: '/mcp',
         responseMode: 'json',

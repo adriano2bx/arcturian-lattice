@@ -2,12 +2,12 @@
 name: executive-intelligence-brief
 description: Produces a concise executive intelligence brief from company, competitor, market, news and monitoring signals. Use for weekly leadership updates, client strategy meetings or board-style summaries.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "executive"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Executive Intelligence Brief
 
@@ -26,6 +26,6 @@ metadata:
 
 Keep the brief decision-oriented; move raw research to an appendix.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `monitor.events`, `competitive.compare`, `news.search`, `company.osint`, `market.ibge`, `finance.bcb_series`
 

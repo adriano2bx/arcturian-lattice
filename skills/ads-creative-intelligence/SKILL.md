@@ -2,12 +2,12 @@
 name: ads-creative-intelligence
 description: Discovers publicly indexed ad-transparency pages and analyzes competitor messaging, offers and creative patterns. Use for paid-media research, creative strategy or campaign positioning.
 license: Proprietary - internal use
-compatibility: Requires Hermes Agent or another Agent Skills client with the Nexus Intelligence MCP configured.
+compatibility: Requires Hermes Agent or another Agent Skills client with the DeltaBots Arcturian / Lattice MCP configured.
 metadata:
-  author: "Nexus Intelligence"
+  author: "DeltaBots Arcturian / Lattice"
   version: "1.0.0"
   category: "marketing"
-  mcp-server: "nexus-intelligence-mcp"
+  mcp-server: "arcturian-lattice"
 ---
 # Ads and Creative Intelligence
 
@@ -18,6 +18,6 @@ metadata:
 
 This is public-surface intelligence, not a licensed ad firehose. State coverage limitations.
 
-## Nexus MCP tools used
+## Arcturian Lattice MCP tools used
 `ads.search_public`, `web.search`, `web.history`, `competitive.snapshot`
 
