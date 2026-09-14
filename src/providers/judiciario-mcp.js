@@ -100,7 +100,9 @@ export class JudiciarioMcpProvider {
     const url = `https://comunicaapi.pje.jus.br/api/v1/comunicacao?${params}`;
     try {
       const response = await this.fetchFn(url, { headers: { accept: 'application/json' } });
-      const body = await response.json();
+      const text = await response.text();
+      let body;
+      try { body = JSON.parse(text); } catch { body = { raw: text.slice(0, 500) }; }
       if (!response.ok) return { ok: false, provider: 'djen_public', reason: 'upstream_error', status: response.status, detail: body };
       return { ok: true, provider: 'djen_public', query: Object.fromEntries(params), count: body?.count ?? null, publications: normalizeJudiciarioPublications(body), raw: body };
     } catch (error) {
