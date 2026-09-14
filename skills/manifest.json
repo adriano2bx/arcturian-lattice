@@ -4,6 +4,7 @@
   "skills": [
     {
       "name": "company-due-diligence",
+      "status": "blocked",
       "description": "Builds an evidence-graded due diligence dossier for a Brazilian company using official registrations, public contracts, legal signals, IP, web presence and OSINT. Use when evaluating a client, supplier, partner, acquisition target or high-value prospect.",
       "category": "company-intelligence",
       "version": "1.0.0",
@@ -67,6 +68,7 @@
     },
     {
       "name": "intellectual-property-intelligence",
+      "status": "blocked",
       "description": "Analyzes locally mirrored official INPI records for company trademarks, patents and other IP signals. Use for brand portfolio review, product-launch signals, competitive monitoring or IP due diligence.",
       "category": "company-intelligence",
       "version": "1.0.0",
@@ -133,6 +135,7 @@
     },
     {
       "name": "seo-competitive-research",
+      "status": "blocked",
       "description": "Compares competitors in search using self-hosted SERP search, technical SEO observations, backlinks and web evidence. Use for keyword opportunity discovery, competitive SEO strategy or search-market mapping.",
       "category": "seo",
       "version": "1.0.0",
@@ -147,6 +150,7 @@
     },
     {
       "name": "backlink-intelligence",
+      "status": "blocked",
       "description": "Analyzes the locally accumulated backlink graph for a domain, including referring domains and link opportunities. Use for link-gap research, authority analysis or outreach planning when local coverage exists.",
       "category": "seo",
       "version": "1.0.0",
@@ -159,6 +163,7 @@
     },
     {
       "name": "market-research-br",
+      "status": "blocked",
       "description": "Builds Brazilian market intelligence from IBGE/SIDRA, mirrored open datasets, company intelligence and geographic context. Use for TAM/SAM framing, regional expansion, vertical research or market-entry analysis.",
       "category": "market",
       "version": "1.0.0",
@@ -197,6 +202,7 @@
     },
     {
       "name": "youtube-content-intelligence",
+      "status": "blocked",
       "description": "Analyzes YouTube videos and transcripts for themes, hooks, positioning, claims and content opportunities. Use for competitor channel research, content strategy, video summarization or transcript-driven intelligence.",
       "category": "social",
       "version": "1.0.0",
@@ -209,6 +215,7 @@
     },
     {
       "name": "social-listening",
+      "status": "blocked",
       "description": "Monitors public social mentions across indexed Reddit, YouTube, X and Instagram surfaces, with direct Reddit search where available. Use for brand listening, competitor mentions, customer pain discovery or trend reconnaissance.",
       "category": "social",
       "version": "1.0.0",
@@ -284,6 +291,7 @@
     },
     {
       "name": "competitive-intelligence",
+      "status": "blocked",
       "description": "Builds multi-source competitor snapshots and compares domains using derived Digital Visibility signals. Use for competitor benchmarking, strategic positioning, market monitoring or executive competitive analysis.",
       "category": "competitive",
       "version": "1.0.0",
@@ -331,6 +339,7 @@
     },
     {
       "name": "lead-market-mapping",
+      "status": "blocked",
       "description": "Maps target-market segments and company opportunities using Brazilian market data, public company intelligence, geography and web research. Use for ICP design, territory planning or lead-list strategy.",
       "category": "go-to-market",
       "version": "1.0.0",
@@ -346,6 +355,7 @@
     },
     {
       "name": "content-gap-intelligence",
+      "status": "blocked",
       "description": "Finds content and search gaps by combining competitor pages, SERPs, sitemaps, YouTube, social mentions and news. Use to plan editorial calendars, landing pages, video topics or thought-leadership content.",
       "category": "marketing",
       "version": "1.0.0",
@@ -377,6 +387,7 @@
     },
     {
       "name": "crisis-reputation-monitoring",
+      "status": "blocked",
       "description": "Monitors public news and social signals for a company or brand, grouping potential reputation issues and validating material events. Use for crisis detection, reputation monitoring or competitor-incident tracking.",
       "category": "risk",
       "version": "1.0.0",
@@ -389,6 +400,41 @@
         "web.search"
       ],
       "path": "skills/crisis-reputation-monitoring/SKILL.md"
+    },
+    {
+      "name": "sales-account-qualification",
+      "description": "Qualifies a B2B account for sales prioritization using public identity, digital, market and change evidence; never infers purchase intent.",
+      "category": "sales",
+      "version": "1.0.0",
+      "tools": [
+        "company.validate_cnpj",
+        "company.profile",
+        "company.osint",
+        "web.profile",
+        "web.technology",
+        "web.sitemap",
+        "news.search",
+        "competitive.snapshot"
+      ],
+      "path": "skills/sales-account-qualification/SKILL.md"
+    },
+    {
+      "name": "sales-discovery-prep",
+      "description": "Prepares an evidence-based discovery brief for a B2B sales conversation without inventing stakeholders or pain.",
+      "category": "sales",
+      "version": "1.0.0",
+      "tools": [
+        "company.profile",
+        "company.osint",
+        "web.profile",
+        "web.technology",
+        "web.sitemap",
+        "news.search",
+        "company.public_contracts",
+        "regulatory.search",
+        "competitive.snapshot"
+      ],
+      "path": "skills/sales-discovery-prep/SKILL.md"
     }
   ]
 }

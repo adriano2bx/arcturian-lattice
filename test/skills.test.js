@@ -45,9 +45,10 @@ test('skills installer installs all skills into an isolated Hermes home', async 
     const result = await run(['scripts/skills.mjs','install','--target','hermes'], { HERMES_HOME: temp });
     assert.equal(result.code,0,result.stderr);
     const entries = await fs.readdir(path.join(temp,'skills'),{withFileTypes:true});
-    assert.equal(entries.filter(e=>e.isDirectory()).length,manifest.skills.length);
-    const sample = await fs.readFile(path.join(temp,'skills','competitive-intelligence','SKILL.md'),'utf8');
-    assert.match(sample,/competitive\.snapshot/);
+    const activeSkills=manifest.skills.filter((skill)=> (skill.status??'active')==='active');
+    assert.equal(entries.filter(e=>e.isDirectory()).length,activeSkills.length);
+    const sample = await fs.readFile(path.join(temp,'skills','executive-intelligence-brief','SKILL.md'),'utf8');
+    assert.match(sample,/competitive\.compare/);
   } finally { await fs.rm(temp,{recursive:true,force:true}); }
 });
 
