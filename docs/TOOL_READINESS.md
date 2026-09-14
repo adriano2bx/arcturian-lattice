@@ -6,8 +6,8 @@
 
 | Estado                           | Quantidade | Significado                                                                                          |
 | -------------------------------- | ---------: | ---------------------------------------------------------------------------------------------------- |
-| Operacional verificado           |         38 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
-| Dependência externa/configuração |          9 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
+| Operacional verificado           |         39 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
+| Dependência externa/configuração |          8 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
 | Não executado no smoke test      |          0 | Todas as tools foram chamadas; as mutáveis foram executadas com escopo limitado.                     |
 
 ### Operacional verificado
@@ -20,11 +20,11 @@
 `finance.bcb_series`, `finance.sec_companyfacts`, `finance.sec_submissions`,
 `competitive.compare`, `osint.subdomains`, `infra.network`, `infra.peering`,
 `web.search`, `seo.serp`, `social.search_mentions`, `ads.search_public`,
-`news.search`, `research.deep`, `web.sitemap`, `geo.search`.
+`news.search`, `research.deep`, `web.sitemap`, `geo.search`, `company.osint`.
 
 ### Dependência externa/configuração
 
-`company.ip`, `company.gazette`, `company.osint`,
+`company.ip`, `company.gazette`,
 `web.history`, `seo.backlinks`, `youtube.transcript`, `reddit.search`,
 `competitive.traffic_estimate`, `market.open_data`.
 
