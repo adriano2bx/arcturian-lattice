@@ -54,6 +54,21 @@ test("Judiciario MCP provider reports tool-level error", async () => {
   assert.equal(result.reason, "tool_error");
 });
 
+test("DJEN public fallback searches by OAB without an upstream MCP", async () => {
+  let seenUrl;
+  const fetchFn = async (url) => {
+    seenUrl = url;
+    return new Response(JSON.stringify({ count: 1, items: [{ numeroProcesso: "123", texto: "Publicação" }] }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  const result = await new JudiciarioMcpProvider({ fetchFn }).searchByOab({ oab: "123456", uf: "SP", dateFrom: "2026-09-01", dateTo: "2026-09-01" });
+  assert.equal(result.ok, true);
+  assert.equal(result.provider, "djen_public");
+  assert.match(seenUrl, /comunicaapi\.pje\.jus\.br\/api\/v1\/comunicacao/);
+  assert.match(seenUrl, /numeroOab=123456/);
+  assert.match(seenUrl, /ufOab=SP/);
+  assert.equal(result.publications[0].processNumber, "123");
+});
+
 test("extracts JSON content when structuredContent is absent", () => {
   assert.deepEqual(
     extractMcpToolPayload({ content: [{ type: "text", text: '{"ok":true}' }] }),

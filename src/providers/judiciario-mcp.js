@@ -73,9 +73,9 @@ export class JudiciarioMcpProvider {
   }
 
   async searchByOab({ oab, uf, dateFrom, dateTo, tribunal, page = 1, pageSize = 20 }) {
-    if (!this.configured()) return { ok: false, provider: this.id, reason: "not_configured" };
     const numeroOab = String(oab ?? "").trim().replace(/[^0-9A-Za-z-]/g, "");
     if (!numeroOab) throw new Error("oab is required.");
+    if (!this.configured()) return this.searchPublicDjen({ numeroOab, uf, dateFrom, dateTo, tribunal, page, pageSize });
     const args = {
       numeroOab,
       ...(uf ? { ufOab: String(uf).trim().toUpperCase() } : {}),
@@ -89,6 +89,23 @@ export class JudiciarioMcpProvider {
     if (!rpc.ok) return rpc;
     const envelope = extractMcpToolPayload(rpc.payload);
     return { ok: true, provider: this.id, query: args, publications: normalizeJudiciarioPublications(envelope), raw: envelope };
+  }
+
+  async searchPublicDjen({ numeroOab, uf, dateFrom, dateTo, tribunal, page = 1, pageSize = 20 }) {
+    const params = new URLSearchParams({ numeroOab, pagina: String(page), itensPorPagina: String(pageSize) });
+    if (uf) params.set('ufOab', String(uf).trim().toUpperCase());
+    if (tribunal) params.set('siglaTribunal', String(tribunal).trim().toUpperCase());
+    if (dateFrom) params.set('dataDisponibilizacaoInicio', normalizeIsoDate(dateFrom, 'dateFrom'));
+    if (dateTo) params.set('dataDisponibilizacaoFim', normalizeIsoDate(dateTo, 'dateTo'));
+    const url = `https://comunicaapi.pje.jus.br/api/v1/comunicacao?${params}`;
+    try {
+      const response = await this.fetchFn(url, { headers: { accept: 'application/json' } });
+      const body = await response.json();
+      if (!response.ok) return { ok: false, provider: 'djen_public', reason: 'upstream_error', status: response.status, detail: body };
+      return { ok: true, provider: 'djen_public', query: Object.fromEntries(params), count: body?.count ?? null, publications: normalizeJudiciarioPublications(body), raw: body };
+    } catch (error) {
+      return { ok: false, provider: 'djen_public', reason: 'network_error', detail: error instanceof Error ? error.message : String(error) };
+    }
   }
 
   async callTool(toolName, args) {
