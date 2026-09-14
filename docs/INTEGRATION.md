@@ -10,6 +10,13 @@ Healthcheck público: `GET https://lattice.deltabots.com.br/healthz`
 
 O endpoint de produção exige `Authorization: Bearer <token>`. O healthcheck não exige credencial.
 
+O MCP não decide quando executar fluxos de negócio: não agenda buscas jurídicas, não deduplica
+publicações e não envia alertas. O agente descobre as tools autorizadas com `tools/list` e escolhe
+quais chamar, com quais parâmetros e em qual sequência. O servidor aplica somente controles
+técnicos necessários (autenticação, tenant, escopos, cotas, validação de entrada, roteamento de
+providers e normalização/proveniência dos dados). O cron do Worker é usado apenas para manutenção
+técnica do espelho oficial ANATEL; não executa monitores nem regras de negócio.
+
 ## Negociação MCP
 
 O cliente deve enviar `Accept: application/json, text/event-stream` e inicializar a sessão:

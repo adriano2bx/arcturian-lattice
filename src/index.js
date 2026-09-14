@@ -3,7 +3,6 @@ import {
   createArcturianLatticeMcpServer,
   ARCTURIAN_VERSION,
 } from "./mcp/create-server.js";
-import { MonitorService } from "./services/monitor.js";
 import { AnatelSyncService } from "./services/anatel-sync.js";
 
 export default {
@@ -90,13 +89,6 @@ export default {
 
     const fetchFn = (...args) => globalThis.fetch(...args);
 
-    const monitorRun = new MonitorService({
-      db: env.DB,
-      fetchFn,
-    })
-      .runDue({ limit: 5 })
-      .catch((error) => console.error("scheduled monitor error", error));
-
     // Keep official ANATEL data moving toward a complete mirror. The service
     // processes one idempotent page per cron invocation and never exposes a
     // partial dataset as ready to consumers.
@@ -107,6 +99,6 @@ export default {
       .syncNextPage()
       .catch((error) => console.error("scheduled ANATEL sync error", error));
 
-    ctx.waitUntil(Promise.all([monitorRun, anatelRun]));
+    ctx.waitUntil(anatelRun);
   },
 };
