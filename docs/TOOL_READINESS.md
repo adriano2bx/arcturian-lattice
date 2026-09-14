@@ -6,8 +6,8 @@
 
 | Estado                           | Quantidade | Significado                                                                                          |
 | -------------------------------- | ---------: | ---------------------------------------------------------------------------------------------------- |
-| Operacional verificado           |         33 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
-| Dependência externa/configuração |         14 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
+| Operacional verificado           |         36 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
+| Dependência externa/configuração |         11 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
 | Não executado no smoke test      |          0 | Todas as tools foram chamadas; as mutáveis foram executadas com escopo limitado.                     |
 
 ### Operacional verificado
@@ -19,13 +19,14 @@
 `regulatory.search`, `seo.audit`, `market.ibge`, `youtube.metadata`,
 `finance.bcb_series`, `finance.sec_companyfacts`, `finance.sec_submissions`,
 `competitive.compare`, `osint.subdomains`, `infra.network`, `infra.peering`,
-`web.search`, `seo.serp`, `social.search_mentions`, `ads.search_public`.
+`web.search`, `seo.serp`, `social.search_mentions`, `ads.search_public`,
+`news.search`, `research.deep`, `web.sitemap`.
 
 ### Dependência externa/configuração
 
 `company.public_contracts`, `company.ip`, `company.gazette`, `company.osint`,
-`web.history`, `seo.backlinks`, `research.deep`, `news.search`,
-`youtube.transcript`, `reddit.search`, `competitive.traffic_estimate`, `web.sitemap`,
+`web.history`, `seo.backlinks`, `youtube.transcript`, `reddit.search`,
+`competitive.traffic_estimate`,
 `geo.search`, `market.open_data`.
 
 Isso não significa que o código esteja ausente. Cada tool retorna falha estruturada quando sua
