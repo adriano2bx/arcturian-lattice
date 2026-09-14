@@ -1,41 +1,65 @@
-import { createMcpHandler } from 'agents/mcp/server';
-import { createArcturianLatticeMcpServer, ARCTURIAN_VERSION } from './mcp/create-server.js';
-import { MonitorService } from './services/monitor.js';
+import { createMcpHandler } from "agents/mcp/server";
+import {
+  createArcturianLatticeMcpServer,
+  ARCTURIAN_VERSION,
+} from "./mcp/create-server.js";
+import { MonitorService } from "./services/monitor.js";
+import { AnatelSyncService } from "./services/anatel-sync.js";
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    if (url.pathname === '/healthz') {
+    if (url.pathname === "/healthz") {
       return Response.json({
         ok: true,
-        service: 'arcturian-lattice',
+        service: "arcturian-lattice",
         version: ARCTURIAN_VERSION,
-        mcp: '/mcp',
+        mcp: "/mcp",
         continuousIntelligence: Boolean(env.DB),
       });
     }
 
-    if (url.pathname !== '/mcp') {
-      return new Response('Not found', { status: 404 });
+    if (url.pathname !== "/mcp") {
+      return new Response("Not found", { status: 404 });
     }
 
-    if (request.method !== 'OPTIONS' && env.CONTROL_PLANE && env.INTERNAL_AUTH_SECRET) {
-      const verified = await env.CONTROL_PLANE.fetch('https://control.internal/internal/auth/verify', { method: 'POST', headers: { authorization: request.headers.get('authorization') ?? '', 'x-deltabots-internal-secret': env.INTERNAL_AUTH_SECRET } });
-      if (!verified.ok) return new Response(await verified.text(), { status: verified.status, headers: { 'content-type': 'application/json', 'www-authenticate': verified.status === 401 ? 'Bearer' : '' } });
-    } else if (request.method !== 'OPTIONS' && env.MCP_TOKEN) {
+    if (
+      request.method !== "OPTIONS" &&
+      env.CONTROL_PLANE &&
+      env.INTERNAL_AUTH_SECRET
+    ) {
+      const verified = await env.CONTROL_PLANE.fetch(
+        "https://control.internal/internal/auth/verify",
+        {
+          method: "POST",
+          headers: {
+            authorization: request.headers.get("authorization") ?? "",
+            "x-deltabots-internal-secret": env.INTERNAL_AUTH_SECRET,
+          },
+        },
+      );
+      if (!verified.ok)
+        return new Response(await verified.text(), {
+          status: verified.status,
+          headers: {
+            "content-type": "application/json",
+            "www-authenticate": verified.status === 401 ? "Bearer" : "",
+          },
+        });
+    } else if (request.method !== "OPTIONS" && env.MCP_TOKEN) {
       const expected = `Bearer ${env.MCP_TOKEN}`;
 
-      if (request.headers.get('authorization') !== expected) {
+      if (request.headers.get("authorization") !== expected) {
         return Response.json(
           {
-            error: 'unauthorized',
-            message: 'Missing or invalid Bearer token.',
+            error: "unauthorized",
+            message: "Missing or invalid Bearer token.",
           },
           {
             status: 401,
             headers: {
-              'www-authenticate': 'Bearer',
+              "www-authenticate": "Bearer",
             },
           },
         );
@@ -50,10 +74,10 @@ export default {
     const handler = createMcpHandler(
       () => createArcturianLatticeMcpServer({ env, fetchFn }),
       {
-        route: '/mcp',
-        responseMode: 'json',
+        route: "/mcp",
+        responseMode: "json",
         onerror(error) {
-          console.error('MCP handler error', error);
+          console.error("MCP handler error", error);
         },
       },
     );
@@ -66,13 +90,23 @@ export default {
 
     const fetchFn = (...args) => globalThis.fetch(...args);
 
-    ctx.waitUntil(
-      new MonitorService({
-        db: env.DB,
-        fetchFn,
-      })
-        .runDue({ limit: 5 })
-        .catch((error) => console.error('scheduled monitor error', error)),
-    );
+    const monitorRun = new MonitorService({
+      db: env.DB,
+      fetchFn,
+    })
+      .runDue({ limit: 5 })
+      .catch((error) => console.error("scheduled monitor error", error));
+
+    // Keep official ANATEL data moving toward a complete mirror. The service
+    // processes one idempotent page per cron invocation and never exposes a
+    // partial dataset as ready to consumers.
+    const anatelRun = new AnatelSyncService({
+      db: env.DB,
+      fetchFn,
+    })
+      .syncNextPage()
+      .catch((error) => console.error("scheduled ANATEL sync error", error));
+
+    ctx.waitUntil(Promise.all([monitorRun, anatelRun]));
   },
 };
