@@ -23,7 +23,11 @@
         "company.profile",
         "company.validate_cnpj"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "01.02-due-diligence-de-fornecedor",
@@ -49,7 +53,13 @@
         "web.profile",
         "web.technology"
       ],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": [
+          "company-due-diligence:blocked-dependency"
+        ]
+      }
     },
     {
       "id": "01.03-osint-de-empresa-brasileira",
@@ -71,7 +81,11 @@
         "regulatory.search",
         "web.profile"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "01.04-reconciliacao-de-identidade-entre-cnpj-nome-dominio-e-lei",
@@ -90,7 +104,11 @@
         "web.profile",
         "web.sitemap"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "01.05-mapa-de-grupo-economico-e-entidades-relacionadas",
@@ -112,7 +130,11 @@
         "regulatory.search",
         "web.profile"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "01.06-linha-do-tempo-societaria-e-cadastral",
@@ -134,7 +156,11 @@
         "regulatory.search",
         "web.profile"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "01.07-perfil-de-cliente-potencial-para-vendas-enterprise",
@@ -156,7 +182,11 @@
         "web.profile",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "01.08-validacao-de-fornecedor-antes-de-contratacao",
@@ -173,7 +203,11 @@
         "company.profile",
         "company.risk"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "01.09-dossie-de-empresa-estrangeira-e-subsidiarias",
@@ -184,7 +218,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "01.10-comparacao-de-multiplas-entidades-com-resolucao-de-homonimos",
@@ -195,7 +235,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "02.01-triagem-de-risco-juridico-publico",
@@ -212,7 +258,11 @@
         "company.profile",
         "company.risk"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "02.02-publicacoes-judiciais-por-oab-com-controle-de-cobertura",
@@ -227,7 +277,11 @@
       "tools": [
         "legal.publications_by_oab"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "02.03-publicacoes-judiciais-por-parte-e-validacao-de-identidade",
@@ -243,7 +297,11 @@
         "company.legal",
         "company.profile"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "02.04-monitoramento-de-mudanca-em-publicacoes-de-um-processo",
@@ -262,7 +320,11 @@
         "monitor.events",
         "monitor.run"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "02.05-triagem-de-certidoes-e-sinais-de-integridade",
@@ -278,7 +340,11 @@
         "company.profile",
         "regulatory.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "02.06-matriz-de-evidencias-para-revisao-por-advogado",
@@ -295,7 +361,11 @@
         "company.profile",
         "company.risk"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "02.07-conflito-de-nomes-marcas-e-partes-relacionadas",
@@ -306,7 +376,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "02.08-due-diligence-regulatoria-por-setor",
@@ -317,7 +393,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "02.09-preparacao-de-briefing-juridico-sem-conclusao-legal",
@@ -328,7 +410,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "02.10-reconciliacao-de-eventos-judiciais-em-multiplas-fontes",
@@ -339,7 +427,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "03.01-inteligencia-de-contratos-publicos",
@@ -357,7 +451,11 @@
         "market.ibge",
         "news.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "03.02-historico-de-fornecedor-no-pncp",
@@ -373,7 +471,11 @@
         "company.public_contracts",
         "company.validate_cnpj"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "03.03-mapa-de-orgaos-compradores-por-setor",
@@ -391,7 +493,11 @@
         "market.ibge",
         "news.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "03.04-deteccao-de-concentracao-de-contratos",
@@ -407,7 +513,11 @@
         "company.public_contracts",
         "company.validate_cnpj"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "03.05-identificacao-de-oportunidades-por-cnae-e-territorio",
@@ -426,7 +536,11 @@
         "market.ibge",
         "web.profile"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "03.06-analise-de-editais-e-requisitos-recorrentes",
@@ -444,7 +558,11 @@
         "market.ibge",
         "news.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "03.07-comparacao-de-concorrentes-em-licitacoes",
@@ -455,7 +573,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "03.08-linha-do-tempo-de-contratos-e-aditivos",
@@ -466,7 +590,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "03.09-qualificacao-de-conta-publica-para-abm",
@@ -477,7 +607,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "03.10-briefing-executivo-de-exposicao-ao-setor-publico",
@@ -488,7 +624,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "04.01-inteligencia-de-propriedade-intelectual",
@@ -506,7 +648,13 @@
         "news.search",
         "web.history"
       ],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": [
+          "intellectual-property-intelligence:blocked-dependency"
+        ]
+      }
     },
     {
       "id": "04.02-busca-de-marcas-por-titular",
@@ -517,7 +665,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "04.03-reconciliacao-de-titularidade-e-razao-social",
@@ -528,7 +680,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "04.04-portfolio-de-marcas-de-uma-empresa",
@@ -539,7 +695,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "04.05-busca-de-colisoes-nominativas-por-classe",
@@ -550,7 +710,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "04.06-linha-do-tempo-de-pedidos-e-concessoes",
@@ -561,7 +725,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "04.07-sinais-de-patentes-e-programas-de-computador",
@@ -572,7 +742,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "04.08-monitoramento-de-novos-depositos-de-concorrentes",
@@ -583,7 +759,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "04.09-mapa-de-classes-e-categorias-tecnologicas",
@@ -594,7 +776,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "04.10-relatorio-de-ativos-e-lacunas-de-protecao",
@@ -605,7 +793,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "05.01-pesquisa-de-mercado-brasileiro",
@@ -625,7 +819,13 @@
         "news.search",
         "web.search"
       ],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": [
+          "market-research-br:blocked-dependency"
+        ]
+      }
     },
     {
       "id": "05.02-dimensionamento-de-mercado-por-setor",
@@ -640,7 +840,11 @@
       "tools": [
         "market.ibge"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "05.03-dimensionamento-por-estado-e-municipio",
@@ -656,7 +860,11 @@
         "geo.search",
         "market.ibge"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "05.04-comparacao-de-pracas-para-expansao",
@@ -672,7 +880,11 @@
         "geo.search",
         "market.ibge"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "05.05-perfil-economico-de-territorio",
@@ -688,7 +900,11 @@
         "geo.search",
         "market.ibge"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "05.06-sazonalidade-e-tendencia-em-series-ibge",
@@ -703,7 +919,11 @@
       "tools": [
         "market.ibge"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "05.07-mapa-de-densidade-de-empresas-por-cnae",
@@ -714,7 +934,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "05.08-analise-de-comercio-exterior-por-produto",
@@ -725,7 +951,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "05.09-cenarios-de-entrada-em-mercado",
@@ -736,7 +968,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "05.10-briefing-de-mercado-para-diretoria",
@@ -747,7 +985,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "06.01-inteligencia-financeira-brasileira",
@@ -765,7 +1009,11 @@
         "news.search",
         "regulatory.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "06.02-inteligencia-de-companhia-publica-dos-eua",
@@ -782,7 +1030,11 @@
         "finance.sec_submissions",
         "news.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "06.03-leitura-de-series-do-banco-central",
@@ -797,7 +1049,11 @@
       "tools": [
         "finance.bcb_series"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "06.04-reconciliacao-temporal-de-fatos-sec",
@@ -814,7 +1070,11 @@
         "finance.sec_submissions",
         "news.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "06.05-triagem-financeira-de-parceiro-ou-fornecedor",
@@ -832,7 +1092,11 @@
         "finance.bcb_series",
         "regulatory.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "06.06-indicadores-de-crescimento-e-retracao",
@@ -847,7 +1111,11 @@
       "tools": [
         "finance.bcb_series"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "06.07-comparacao-financeira-entre-concorrentes",
@@ -858,7 +1126,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "06.08-exposicao-cambial-e-macroeconomica",
@@ -869,7 +1143,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "06.09-preparacao-de-cenario-de-investimento",
@@ -880,7 +1160,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "06.10-briefing-financeiro-com-fontes-e-ressalvas",
@@ -891,7 +1177,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "07.01-inteligencia-de-website",
@@ -911,7 +1203,11 @@
         "web.sitemap",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "07.02-forense-de-mudancas-de-website",
@@ -929,7 +1225,11 @@
         "web.profile",
         "web.sitemap"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "07.03-inteligencia-de-stack-tecnologica",
@@ -947,7 +1247,11 @@
         "web.profile",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "07.04-perfil-tecnico-completo-de-dominio",
@@ -966,7 +1270,11 @@
         "web.sitemap",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "07.05-reconciliacao-dns-rdap-e-http",
@@ -985,7 +1293,11 @@
         "web.sitemap",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "07.06-descoberta-passiva-de-subdominios-e-certificados",
@@ -1003,7 +1315,11 @@
         "osint.subdomains",
         "web.profile"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "07.07-diagnostico-de-disponibilidade-e-origem",
@@ -1019,7 +1335,11 @@
         "infra.network",
         "web.profile"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "07.08-mapa-de-ativos-digitais-de-uma-organizacao",
@@ -1030,7 +1350,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "07.09-comparacao-de-infraestrutura-de-concorrentes",
@@ -1041,7 +1367,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "07.10-relatorio-de-exposicao-tecnica-publica",
@@ -1052,7 +1384,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "08.01-auditoria-tecnica-de-seo",
@@ -1069,7 +1407,11 @@
         "web.profile",
         "web.sitemap"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "08.02-pesquisa-competitiva-de-seo",
@@ -1088,7 +1430,13 @@
         "seo.serp",
         "web.search"
       ],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": [
+          "seo-competitive-research:blocked-dependency"
+        ]
+      }
     },
     {
       "id": "08.03-inteligencia-de-backlinks",
@@ -1105,7 +1453,13 @@
         "seo.backlinks",
         "web.search"
       ],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": [
+          "backlink-intelligence:blocked-dependency"
+        ]
+      }
     },
     {
       "id": "08.04-pesquisa-de-serp-por-intencao",
@@ -1122,7 +1476,11 @@
         "seo.serp",
         "web.profile"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "08.05-auditoria-de-indexabilidade-e-arquitetura",
@@ -1139,7 +1497,11 @@
         "web.profile",
         "web.sitemap"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "08.06-mapa-de-lacunas-de-conteudo",
@@ -1150,7 +1512,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "08.07-comparacao-de-presenca-organica",
@@ -1161,7 +1527,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "08.08-priorizacao-de-oportunidades-por-esforco-e-impacto",
@@ -1172,7 +1542,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "08.09-diagnostico-de-paginas-que-perderam-visibilidade",
@@ -1183,7 +1559,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "08.10-plano-editorial-baseado-em-evidencias",
@@ -1194,7 +1576,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "09.01-inteligencia-competitiva",
@@ -1215,7 +1603,13 @@
         "social.search_mentions",
         "web.history"
       ],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": [
+          "competitive-intelligence:blocked-dependency"
+        ]
+      }
     },
     {
       "id": "09.02-retrato-comparativo-de-concorrentes",
@@ -1226,7 +1620,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "09.03-matriz-de-diferenciacao-observavel",
@@ -1237,7 +1635,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "09.04-comparacao-de-produtos-e-posicionamento",
@@ -1248,7 +1650,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "09.05-mapa-de-segmentos-e-territorios-concorrentes",
@@ -1259,7 +1665,11 @@
       "status": "blocked",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": []
+      }
     },
     {
       "id": "09.06-deteccao-de-movimentos-de-mercado",
@@ -1270,7 +1680,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "09.07-analise-de-mensagens-e-propostas-de-valor",
@@ -1281,7 +1697,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "09.08-cenarios-de-ameaca-competitiva",
@@ -1292,7 +1714,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "09.09-mapa-de-parceiros-e-canais",
@@ -1303,7 +1731,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "09.10-briefing-competitivo-executivo",
@@ -1314,7 +1748,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "10.01-inteligencia-de-noticias",
@@ -1331,7 +1771,11 @@
         "research.deep",
         "web.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "10.02-escuta-social",
@@ -1348,7 +1792,13 @@
         "reddit.search",
         "social.search_mentions"
       ],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": [
+          "social-listening:blocked-dependency"
+        ]
+      }
     },
     {
       "id": "10.03-monitoramento-de-crise-reputacional",
@@ -1368,7 +1818,13 @@
         "social.search_mentions",
         "web.search"
       ],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": [
+          "crisis-reputation-monitoring:blocked-dependency"
+        ]
+      }
     },
     {
       "id": "10.04-panorama-de-noticias-por-entidade",
@@ -1384,7 +1840,11 @@
         "news.search",
         "web.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "10.05-reconciliacao-de-mencoes-e-homonimos",
@@ -1400,7 +1860,11 @@
         "news.search",
         "web.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "10.06-linha-do-tempo-de-narrativa-publica",
@@ -1416,7 +1880,11 @@
         "news.search",
         "web.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "10.07-monitoramento-de-reclame-aqui-com-api-oficial",
@@ -1427,7 +1895,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "10.08-classificacao-contextual-de-temas-e-riscos",
@@ -1438,7 +1912,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "10.09-deteccao-de-aceleracao-reputacional",
@@ -1449,7 +1929,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "10.10-briefing-de-reputacao-com-evidencias",
@@ -1460,7 +1946,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "11.01-pesquisa-academica",
@@ -1476,7 +1968,11 @@
         "research.deep",
         "research.papers"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "11.02-pesquisa-profunda-multifuente",
@@ -1492,7 +1988,11 @@
         "research.deep",
         "research.papers"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "11.03-revisao-bibliografica-orientada-a-pergunta",
@@ -1508,7 +2008,11 @@
         "research.deep",
         "research.papers"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "11.04-mapa-de-consenso-e-divergencia",
@@ -1524,7 +2028,11 @@
         "research.deep",
         "research.papers"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "11.05-sintese-com-rastreabilidade-de-fontes",
@@ -1540,7 +2048,11 @@
         "research.deep",
         "research.papers"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "11.06-estado-da-arte-por-tecnologia",
@@ -1551,7 +2063,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "11.07-monitoramento-de-novas-publicacoes",
@@ -1562,7 +2080,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "11.08-extracao-de-hipoteses-e-lacunas",
@@ -1573,7 +2097,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "11.09-comparacao-de-metodologias",
@@ -1584,7 +2114,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "11.10-briefing-tecnico-para-decisao",
@@ -1595,7 +2131,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "12.01-monitoramento-de-inteligencia-continua",
@@ -1614,7 +2156,11 @@
         "monitor.run",
         "monitor.run_due"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "12.02-briefing-executivo",
@@ -1634,7 +2180,11 @@
         "monitor.events",
         "news.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "12.03-criacao-de-baseline-multifuente",
@@ -1653,7 +2203,11 @@
         "monitor.run",
         "monitor.run_due"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "12.04-investigacao-de-mudanca-detectada",
@@ -1672,7 +2226,11 @@
         "monitor.run",
         "monitor.run_due"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "12.05-relatorio-de-cobertura-e-lacunas",
@@ -1692,7 +2250,11 @@
         "monitor.events",
         "news.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "12.06-briefing-diario-por-segmento",
@@ -1712,7 +2274,11 @@
         "monitor.events",
         "news.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "12.07-briefing-semanal-executivo-transversal",
@@ -1723,7 +2289,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "12.08-priorizacao-de-alertas-por-evidencia",
@@ -1734,7 +2306,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "12.09-auditoria-de-qualidade-de-dados",
@@ -1745,7 +2323,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "12.10-revisao-de-eficacia-de-workflow",
@@ -1756,7 +2340,13 @@
       "status": "planned",
       "skillRefs": [],
       "tools": [],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "not_started",
+        "blockers": [
+          "skill_recipe_not_registered"
+        ]
+      }
     },
     {
       "id": "13.01-pesquisa-abm-de-conta",
@@ -1778,7 +2368,11 @@
         "web.profile",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "13.02-mapeamento-de-mercado-e-leads",
@@ -1798,7 +2392,13 @@
         "regulatory.search",
         "web.search"
       ],
-      "routable": false
+      "routable": false,
+      "implementation": {
+        "state": "blocked",
+        "blockers": [
+          "lead-market-mapping:blocked-dependency"
+        ]
+      }
     },
     {
       "id": "13.03-inteligencia-de-contratos-para-vendas-publicas",
@@ -1816,7 +2416,11 @@
         "market.ibge",
         "news.search"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "13.04-definicao-e-validacao-de-icp",
@@ -1835,7 +2439,11 @@
         "market.ibge",
         "web.profile"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "13.05-enriquecimento-e-qualificacao-de-lead",
@@ -1857,7 +2465,11 @@
         "web.sitemap",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "13.06-deteccao-de-gatilhos-de-compra-observaveis",
@@ -1879,7 +2491,11 @@
         "web.sitemap",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "13.07-preparacao-de-reuniao-de-descoberta",
@@ -1902,7 +2518,11 @@
         "web.sitemap",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "13.08-mapa-de-stakeholders-e-influencia",
@@ -1922,7 +2542,11 @@
         "web.search",
         "web.sitemap"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "13.09-hipotese-de-valor-e-personalizacao-de-proposta",
@@ -1945,7 +2569,11 @@
         "web.sitemap",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     },
     {
       "id": "13.10-inteligencia-de-oportunidade-expansao-e-churn",
@@ -1967,7 +2595,11 @@
         "web.sitemap",
         "web.technology"
       ],
-      "routable": true
+      "routable": true,
+      "implementation": {
+        "state": "routable",
+        "blockers": []
+      }
     }
   ]
 }

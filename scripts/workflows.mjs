@@ -51,6 +51,11 @@ async function buildRegistry() {
       skillRefs: skills.map((skill) => skill.name),
       tools: [...new Set(skills.flatMap((skill) => skill.tools ?? []))].sort(),
       routable: workflow.status === "active" && skills.every((skill) => (skill.status ?? "active") === "active"),
+      implementation: workflow.status === "active"
+        ? { state: "routable", blockers: [] }
+        : workflow.status === "blocked"
+          ? { state: "blocked", blockers: skills.filter((skill) => (skill.status ?? "active") === "blocked").map((skill) => `${skill.name}:blocked-dependency`) }
+          : { state: "not_started", blockers: ["skill_recipe_not_registered"] },
     };
   });
   return {
@@ -90,6 +95,10 @@ if (command === "generate") {
       errors.push(`${workflow.id}: active workflow has no skill mapping`);
     if (workflow.status === "active" && !workflow.routable)
       errors.push(`${workflow.id}: active workflow depends on blocked skill`);
+    if (!workflow.implementation?.state)
+      errors.push(`${workflow.id}: missing implementation state`);
+    if (!Array.isArray(workflow.implementation?.blockers))
+      errors.push(`${workflow.id}: missing blocker list`);
   }
   if (errors.length) {
     console.error(`Workflow validation failed (${errors.length}):`);

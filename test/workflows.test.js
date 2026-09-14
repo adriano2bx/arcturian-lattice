@@ -17,5 +17,7 @@ test("workflow registry is generated and preserves the hierarchy contract", asyn
     assert.match(workflow.id, /^\d{2}\.\d{2}-[a-z0-9-]+$/);
     assert.ok(["active", "blocked", "next", "planned"].includes(workflow.status));
     assert.equal(workflow.routable, workflow.status === "active");
+    assert.ok(["routable", "blocked", "not_started"].includes(workflow.implementation.state));
+    assert.ok(Array.isArray(workflow.implementation.blockers));
   }
 });

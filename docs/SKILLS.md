@@ -23,6 +23,11 @@ linked skill packages, derived MCP tools and a `routable` flag. The registry is
 generated from `docs/SKILL-CATALOG-ROADMAP.md`; it does not turn every roadmap
 item into a skill automatically.
 
+Each record also exposes `implementation.state` (`routable`, `blocked` or
+`not_started`) and a deterministic `implementation.blockers` list. This keeps
+the console and agent from treating a planned or provider-dependent workflow as
+available.
+
 ```bash
 npm run workflows:generate
 npm run workflows:validate
