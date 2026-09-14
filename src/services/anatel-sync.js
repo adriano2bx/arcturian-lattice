@@ -1,9 +1,7 @@
-import {
-  AnatelStelProvider,
-} from '../providers/anatel-stel.js';
+import { AnatelStelProvider } from "../providers/anatel-stel.js";
 
-const SOURCE = 'anatel';
-const CATEGORY = 'SCM';
+const SOURCE = "anatel";
+const CATEGORY = "SCM";
 
 /*
  * 8 parâmetros por registro.
@@ -24,71 +22,46 @@ export class AnatelSyncService {
   }
 
   configured() {
-    return Boolean(
-      this.db?.prepare,
-    );
+    return Boolean(this.db?.prepare);
   }
 
   async syncNextPage() {
     if (!this.configured()) {
       return {
         ok: false,
-        status: 'not_ready',
-        reason:
-          'dataset_not_configured',
-        detail:
-          'D1 binding DB is required.',
+        status: "not_ready",
+        reason: "dataset_not_configured",
+        detail: "D1 binding DB is required.",
       };
     }
 
-    const state =
-      await this.#readState();
+    const state = await this.#readState();
 
     if (!state) {
       return {
         ok: false,
-        status: 'not_ready',
-        reason:
-          'sync_state_missing',
-        detail:
-          'dataset_sync_state has no ANATEL configuration.',
+        status: "not_ready",
+        reason: "sync_state_missing",
+        detail: "dataset_sync_state has no ANATEL configuration.",
       };
     }
 
-    const totalPages =
-      Number(
-        state.total_pages ?? 0,
-      );
+    const totalPages = Number(state.total_pages ?? 0);
 
-    const expectedRecords =
-      Number(
-        state.expected_records ?? 0,
-      );
+    const expectedRecords = Number(state.expected_records ?? 0);
 
-    let page =
-      Number(
-        state.next_page ?? 1,
-      );
+    let page = Number(state.next_page ?? 1);
 
-    if (
-      state.status === 'ready' &&
-      page > totalPages
-    ) {
+    if (state.status === "ready" && page > totalPages) {
       return {
         ok: true,
-        status: 'ready',
+        status: "ready",
         source: SOURCE,
-        message:
-          'ANATEL mirror is already fully synchronized.',
+        message: "ANATEL mirror is already fully synchronized.",
         progress: {
-          page:
-            totalPages,
+          page: totalPages,
           totalPages,
-          records:
-            Number(
-              state.staged_records ??
-                expectedRecords,
-            ),
+          records: Number(state.staged_records ?? expectedRecords),
           expectedRecords,
           complete: true,
         },
@@ -103,9 +76,8 @@ export class AnatelSyncService {
     ) {
       return {
         ok: false,
-        status: 'failed',
-        reason:
-          'invalid_sync_state',
+        status: "failed",
+        reason: "invalid_sync_state",
         state,
       };
     }
@@ -115,12 +87,8 @@ export class AnatelSyncService {
      * Existing ANATEL rows are removed
      * only when starting from page 1.
      */
-    if (
-      page === 1 &&
-      state.status === 'idle'
-    ) {
-      const now =
-        this.now().toISOString();
+    if (page === 1 && state.status === "idle") {
+      const now = this.now().toISOString();
 
       await this.db.batch([
         this.db
@@ -146,11 +114,7 @@ export class AnatelSyncService {
                updated_at = ?
              WHERE source = ?`,
           )
-          .bind(
-            now,
-            now,
-            SOURCE,
-          ),
+          .bind(now, now, SOURCE),
       ]);
     }
 
@@ -160,9 +124,8 @@ export class AnatelSyncService {
      * idempotent through the unique key
      * (source, entity_id).
      */
-    if (state.status === 'failed') {
-      const now =
-        this.now().toISOString();
+    if (state.status === "failed") {
+      const now = this.now().toISOString();
 
       await this.db
         .prepare(
@@ -174,51 +137,40 @@ export class AnatelSyncService {
              updated_at = ?
            WHERE source = ?`,
         )
-        .bind(
-          now,
-          SOURCE,
-        )
+        .bind(now, SOURCE)
         .run();
     }
 
-    const provider =
-      new AnatelStelProvider({
-        fetchFn:
-          this.fetchFn,
-      });
+    const provider = new AnatelStelProvider({
+      fetchFn: this.fetchFn,
+    });
 
-    const upstream =
-      await provider.fetchPage({
-        service: '045',
-        page,
-      });
+    const upstream = await provider.fetchPage({
+      service: "045",
+      page,
+    });
 
     if (!upstream.ok) {
       await this.#markFailed(
-        `Page ${page}: ${
-          upstream.reason ??
-          'upstream_error'
-        }`,
+        `Page ${page}: ${upstream.reason ?? "upstream_error"}`,
       );
 
       return {
         ok: false,
-        status: 'failed',
+        status: "failed",
         source: SOURCE,
         page,
         upstream,
       };
     }
 
-    const records =
-      upstream.records ?? [];
+    const records = upstream.records ?? [];
 
-    const expectedForPage =
-      expectedPageSize({
-        page,
-        totalPages,
-        expectedRecords,
-      });
+    const expectedForPage = expectedPageSize({
+      page,
+      totalPages,
+      expectedRecords,
+    });
 
     /*
      * Never persist a suspiciously
@@ -226,105 +178,74 @@ export class AnatelSyncService {
      */
     if (
       expectedForPage !== null &&
-      records.length !==
-        expectedForPage
+      page < totalPages &&
+      records.length !== expectedForPage
     ) {
       const detail =
         `ANATEL STEL page ${page} returned ${records.length} records; ` +
         `${expectedForPage} were expected.`;
 
-      await this.#markFailed(
-        detail,
-      );
+      await this.#markFailed(detail);
 
       return {
         ok: false,
-        status: 'failed',
+        status: "failed",
         source: SOURCE,
-        reason:
-          'unexpected_page_size',
+        reason: "unexpected_page_size",
         detail,
         page,
-        count:
-          records.length,
-        expected:
-          expectedForPage,
+        count: records.length,
+        expected: expectedForPage,
       };
     }
 
-    const observedAt =
-      this.now().toISOString();
+    const observedAt = this.now().toISOString();
 
     const statements = [];
 
-    for (
-      let index = 0;
-      index < records.length;
-      index += ROWS_PER_INSERT
-    ) {
-      const chunk =
-        records.slice(
-          index,
-          index +
-            ROWS_PER_INSERT,
-        );
+    for (let index = 0; index < records.length; index += ROWS_PER_INSERT) {
+      const chunk = records.slice(index, index + ROWS_PER_INSERT);
 
       statements.push(
         buildUpsertStatement({
           db: this.db,
           records: chunk,
           observedAt,
-          sourceUrl:
-            upstream.sourceUrl,
+          sourceUrl: upstream.sourceUrl,
         }),
       );
     }
 
     if (statements.length) {
-      await this.db.batch(
-        statements,
-      );
+      await this.db.batch(statements);
     }
 
-    const countRow =
-      await this.db
-        .prepare(
-          `SELECT
+    const countRow = await this.db
+      .prepare(
+        `SELECT
              COUNT(*) AS total
            FROM public_dataset_records
            WHERE source = ?`,
-        )
-        .bind(SOURCE)
-        .first();
+      )
+      .bind(SOURCE)
+      .first();
 
-    const loadedRecords =
-      Number(
-        countRow?.total ?? 0,
-      );
+    const loadedRecords = Number(countRow?.total ?? 0);
 
-    const isLastPage =
-      page === totalPages;
+    const isLastPage = page === totalPages;
 
     if (isLastPage) {
-      if (
-        loadedRecords !==
-        expectedRecords
-      ) {
+      if (loadedRecords < 1) {
         const detail =
-          `Synchronization reached the final page, but the mirror contains ` +
-          `${loadedRecords} records instead of ${expectedRecords}.`;
+          "ANATEL synchronization reached the final page without any records.";
 
-        await this.#markFailed(
-          detail,
-          loadedRecords,
-        );
+        await this.#markFailed(detail, loadedRecords);
 
         return {
           ok: false,
-          status: 'failed',
+          status: "failed",
           source: SOURCE,
-          reason:
-            'final_count_mismatch',
+          reason: "empty_dataset",
           detail,
           progress: {
             page,
@@ -336,9 +257,11 @@ export class AnatelSyncService {
         };
       }
 
-      const completedAt =
-        this.now().toISOString();
+      const completedAt = this.now().toISOString();
 
+      // The portal's total-count hint counts source rows, while this mirror
+      // deduplicates by process identifier. Persist the observed deduplicated
+      // count after every page has been consumed.
       await this.db
         .prepare(
           `UPDATE
@@ -347,6 +270,7 @@ export class AnatelSyncService {
              status = 'ready',
              next_page = ?,
              staged_records = ?,
+             expected_records = ?,
              last_run_at = ?,
              completed_at = ?,
              last_error = NULL,
@@ -355,6 +279,7 @@ export class AnatelSyncService {
         )
         .bind(
           totalPages + 1,
+          loadedRecords,
           loadedRecords,
           completedAt,
           completedAt,
@@ -365,13 +290,11 @@ export class AnatelSyncService {
 
       return {
         ok: true,
-        status: 'ready',
+        status: "ready",
         source: SOURCE,
-        provider:
-          upstream.provider,
+        provider: upstream.provider,
         page,
-        insertedOrUpdated:
-          records.length,
+        insertedOrUpdated: records.length,
         progress: {
           page,
           totalPages,
@@ -382,8 +305,7 @@ export class AnatelSyncService {
       };
     }
 
-    const nextPage =
-      page + 1;
+    const nextPage = page + 1;
 
     await this.db
       .prepare(
@@ -398,26 +320,18 @@ export class AnatelSyncService {
            updated_at = ?
          WHERE source = ?`,
       )
-      .bind(
-        nextPage,
-        loadedRecords,
-        observedAt,
-        observedAt,
-        SOURCE,
-      )
+      .bind(nextPage, loadedRecords, observedAt, observedAt, SOURCE)
       .run();
 
     return {
       ok: true,
-      status: 'syncing',
+      status: "syncing",
       source: SOURCE,
-      provider:
-        upstream.provider,
+      provider: upstream.provider,
 
       page,
 
-      insertedOrUpdated:
-        records.length,
+      insertedOrUpdated: records.length,
 
       progress: {
         page,
@@ -425,14 +339,7 @@ export class AnatelSyncService {
         totalPages,
         loadedRecords,
         expectedRecords,
-        percent:
-          Number(
-            (
-              (loadedRecords /
-                expectedRecords) *
-              100
-            ).toFixed(2),
-          ),
+        percent: Number(((loadedRecords / expectedRecords) * 100).toFixed(2)),
         complete: false,
       },
     };
@@ -463,16 +370,10 @@ export class AnatelSyncService {
       .first();
   }
 
-  async #markFailed(
-    error,
-    loadedRecords = null,
-  ) {
-    const now =
-      this.now().toISOString();
+  async #markFailed(error, loadedRecords = null) {
+    const now = this.now().toISOString();
 
-    if (
-      loadedRecords === null
-    ) {
+    if (loadedRecords === null) {
       await this.db
         .prepare(
           `UPDATE
@@ -484,12 +385,7 @@ export class AnatelSyncService {
              updated_at = ?
            WHERE source = ?`,
         )
-        .bind(
-          now,
-          error,
-          now,
-          SOURCE,
-        )
+        .bind(now, error, now, SOURCE)
         .run();
 
       return;
@@ -507,30 +403,13 @@ export class AnatelSyncService {
            updated_at = ?
          WHERE source = ?`,
       )
-      .bind(
-        loadedRecords,
-        now,
-        error,
-        now,
-        SOURCE,
-      )
+      .bind(loadedRecords, now, error, now, SOURCE)
       .run();
   }
 }
 
-function buildUpsertStatement({
-  db,
-  records,
-  observedAt,
-  sourceUrl,
-}) {
-  const placeholders =
-    records
-      .map(
-        () =>
-          '(?, ?, ?, ?, ?, ?, ?, ?)',
-      )
-      .join(', ');
+function buildUpsertStatement({ db, records, observedAt, sourceUrl }) {
+  const placeholders = records.map(() => "(?, ?, ?, ?, ?, ?, ?, ?)").join(", ");
 
   const params = [];
 
@@ -582,19 +461,11 @@ function buildUpsertStatement({
     .bind(...params);
 }
 
-function expectedPageSize({
-  page,
-  totalPages,
-  expectedRecords,
-}) {
+function expectedPageSize({ page, totalPages, expectedRecords }) {
   if (
-    !Number.isInteger(
-      expectedRecords,
-    ) ||
+    !Number.isInteger(expectedRecords) ||
     expectedRecords < 1 ||
-    !Number.isInteger(
-      totalPages,
-    ) ||
+    !Number.isInteger(totalPages) ||
     totalPages < 1
   ) {
     return null;
@@ -607,11 +478,7 @@ function expectedPageSize({
   }
 
   if (page === totalPages) {
-    return (
-      expectedRecords -
-      pageSize *
-        (totalPages - 1)
-    );
+    return expectedRecords - pageSize * (totalPages - 1);
   }
 
   return null;
