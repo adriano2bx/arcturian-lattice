@@ -42,6 +42,9 @@ Depois, use `tools/list` para descobrir apenas as capabilities habilitadas para 
 
 Lattice expõe 46 tools organizadas em company, web, SEO, research, news, market, finance, social, competitive, monitoring, infrastructure, geo, regulatory e open data. A lista normativa e os schemas são sempre obtidos por `tools/list`.
 
+Catálogo funcional público (nomes de capability e finalidade, sem expor provedores ou APIs internas):
+`https://deltabots.com.br/pt-BR/products/arcturian/lattice/integration/tools/`
+
 ## Respostas e erros
 
 - `200`: resposta MCP válida; o resultado pode indicar `ok`, `partial_success` ou ausência de registros.
