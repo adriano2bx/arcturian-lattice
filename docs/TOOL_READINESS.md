@@ -6,8 +6,8 @@
 
 | Estado | Quantidade | Significado |
 | --- | ---: | --- |
-| Operacional verificado | 21 | Chamada autenticada concluída com resposta válida no endpoint de produção. |
-| Dependência externa/configuração | 26 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
+| Operacional verificado | 22 | Chamada autenticada concluída com resposta válida no endpoint de produção. |
+| Dependência externa/configuração | 25 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
 | Não executado no smoke test | 0 | Todas as tools foram chamadas; as mutáveis foram executadas com escopo limitado. |
 
 ### Operacional verificado
@@ -16,7 +16,9 @@
 `company.global`, `web.profile`, `web.technology`, `research.papers`, `market.weather`,
 `market.crypto_rates`, `competitive.snapshot`, `monitor.list`, `monitor.events`,
 `monitor.create`, `monitor.run`, `monitor.run_due`, `regulatory.sync_anatel`,
-`regulatory.search`, `osint.subdomains`, `infra.network`, `infra.peering`.
+`regulatory.search`, `seo.audit`, `market.ibge`, `youtube.metadata`,
+`finance.sec_companyfacts`, `finance.sec_submissions`, `competitive.compare`,
+`osint.subdomains`, `infra.network`, `infra.peering`.
 
 ### Dependência externa/configuração
 
