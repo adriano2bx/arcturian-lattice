@@ -467,6 +467,22 @@
       "version": "1.0.0",
       "tools": ["seo.serp", "web.profile", "seo.audit"],
       "path": "skills/serp-intent-research/SKILL.md"
+    },
+    {
+      "name": "icp-definition-validation",
+      "description": "Defines and validates an ideal customer profile from observable company, sector, territory and procurement evidence.",
+      "category": "sales",
+      "version": "1.0.0",
+      "tools": ["company.validate_cnpj", "company.profile", "market.ibge", "company.public_contracts", "web.profile"],
+      "path": "skills/icp-definition-validation/SKILL.md"
+    },
+    {
+      "name": "entity-news-panorama",
+      "description": "Produces a dated, source-linked panorama of news about an entity while separating observation from interpretation.",
+      "category": "research",
+      "version": "1.0.0",
+      "tools": ["news.search", "web.search"],
+      "path": "skills/entity-news-panorama/SKILL.md"
     }
   ]
 }

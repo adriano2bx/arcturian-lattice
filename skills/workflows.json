@@ -1206,10 +1206,15 @@
       "segmentNumber": 10,
       "order": 4,
       "name": "Panorama de notícias por entidade",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "entity-news-panorama"
+      ],
+      "tools": [
+        "news.search",
+        "web.search"
+      ],
+      "routable": true
     },
     {
       "id": "10.05-reconciliacao-de-mencoes-e-homonimos",
@@ -1585,10 +1590,18 @@
       "segmentNumber": 13,
       "order": 4,
       "name": "Definição e validação de ICP",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "icp-definition-validation"
+      ],
+      "tools": [
+        "company.profile",
+        "company.public_contracts",
+        "company.validate_cnpj",
+        "market.ibge",
+        "web.profile"
+      ],
+      "routable": true
     },
     {
       "id": "13.05-enriquecimento-e-qualificacao-de-lead",

@@ -133,7 +133,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 1. **[ATIVA]** Inteligência de notícias (`news-event-intelligence`)
 2. **[BLOQUEADA]** Escuta social (`social-listening`)
 3. **[BLOQUEADA]** Monitoramento de crise reputacional (`crisis-reputation-monitoring`)
-4. **[PRÓXIMA]** Panorama de notícias por entidade
+4. **[ATIVA]** Panorama de notícias por entidade (`entity-news-panorama`)
 5. **[PRÓXIMA]** Reconciliação de menções e homônimos
 6. **[PRÓXIMA]** Linha do tempo de narrativa pública
 7. **[PLANEJADA]** Monitoramento de Reclame Aqui com API oficial
@@ -172,7 +172,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 1. **[ATIVA]** Pesquisa ABM de conta (`abm-account-research`)
 2. **[BLOQUEADA]** Mapeamento de mercado e leads (`lead-market-mapping`)
 3. **[ATIVA]** Inteligência de contratos para vendas públicas (`public-procurement-intelligence`)
-4. **[PRÓXIMA]** Definição e validação de ICP
+4. **[ATIVA]** Definição e validação de ICP (`icp-definition-validation`)
 5. **[PRÓXIMA]** Enriquecimento e qualificação de lead
 6. **[PRÓXIMA]** Detecção de gatilhos de compra observáveis
 7. **[PRÓXIMA]** Preparação de reunião de descoberta
