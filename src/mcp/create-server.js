@@ -43,6 +43,18 @@ import { OpenDataLocalProvider } from "../providers/open-data-local.js";
 import { SitemapProvider } from "../providers/sitemap.js";
 import { AnatelSyncService } from "../services/anatel-sync.js";
 
+// Public surface is intentionally limited to capabilities with a verified
+// production data source. Implementations remain in the repository for later
+// reactivation when their source, credentials or dataset is ready.
+export const DISABLED_TOOLS = new Set([
+  "company.ip",
+  "seo.backlinks",
+  "youtube.transcript",
+  "reddit.search",
+  "competitive.traffic_estimate",
+  "market.open_data",
+]);
+
 export const ARCTURIAN_VERSION = "1.1.0";
 
 export function createArcturianLatticeMcpServer({
@@ -1177,6 +1189,7 @@ export function createArcturianLatticeMcpServer({
 }
 
 function tool(server, name, description, inputSchema, handler) {
+  if (DISABLED_TOOLS.has(name)) return;
   server.registerTool(
     name,
     {

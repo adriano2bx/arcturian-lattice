@@ -1,6 +1,6 @@
 # Lattice tool readiness
 
-Última verificação: 2026-09-14. O endpoint de produção respondeu a `tools/list` com 47 tools.
+Última verificação: 2026-09-14. O endpoint de produção respondeu a `tools/list` com 41 tools habilitadas.
 
 ## Estado
 
@@ -29,6 +29,10 @@
 
 Isso não significa que o código esteja ausente. Cada tool retorna falha estruturada quando sua
 fonte não está configurada ou indisponível; não produz dados estimados como se fossem oficiais.
+
+As seis capabilities pendentes permanecem no código, mas estão desativadas no registro MCP e
+não aparecem em `tools/list` nem no catálogo público: `company.ip`, `seo.backlinks`,
+`youtube.transcript`, `reddit.search`, `competitive.traffic_estimate` e `market.open_data`.
 
 As operações mutáveis foram validadas com um monitor temporário de produção e a sincronização
 ANATEL foi concluída: `17.606` registros deduplicados, todas as 37 páginas processadas e estado

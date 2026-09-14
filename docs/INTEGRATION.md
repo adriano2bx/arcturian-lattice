@@ -40,7 +40,7 @@ Depois, use `tools/list` para descobrir apenas as capabilities habilitadas para 
 
 ## Superfície atual
 
-Lattice expõe 47 tools organizadas em company, legal, web, SEO, research, news, market, finance, social, competitive, monitoring, infrastructure, geo, regulatory e open data. A lista normativa e os schemas são sempre obtidos por `tools/list`.
+Lattice expõe 41 tools habilitadas em produção, organizadas em company, legal, web, SEO, research, news, market, finance, social, competitive, monitoring, infrastructure, geo e regulatory. A lista normativa e os schemas são sempre obtidos por `tools/list`; capabilities em preparação não são anunciadas.
 
 ## Publicações por OAB
 
