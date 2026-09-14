@@ -162,6 +162,19 @@ implementação; **[PLANEJADA]** depende de uma fase posterior.
 9. **[PLANEJADA]** Auditoria de qualidade de dados
 10. **[PLANEJADA]** Revisão de eficácia de workflow
 
+## 13. Vendas e receita
+
+1. **[ATIVA]** Pesquisa ABM de conta (`abm-account-research`)
+2. **[ATIVA]** Mapeamento de mercado e leads (`lead-market-mapping`)
+3. **[ATIVA]** Inteligência de contratos para vendas públicas (`public-procurement-intelligence`)
+4. **[PRÓXIMA]** Definição e validação de ICP
+5. **[PRÓXIMA]** Enriquecimento e qualificação de lead
+6. **[PRÓXIMA]** Detecção de gatilhos de compra observáveis
+7. **[PRÓXIMA]** Preparação de reunião de descoberta
+8. **[PRÓXIMA]** Mapa de stakeholders e influência
+9. **[PRÓXIMA]** Hipótese de valor e personalização de proposta
+10. **[PRÓXIMA]** Inteligência de oportunidade, expansão e churn
+
 ## Fases do backlog
 
 ### Fase A — fundação (28 skills existentes)

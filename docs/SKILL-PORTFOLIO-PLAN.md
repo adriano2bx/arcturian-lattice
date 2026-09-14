@@ -17,6 +17,7 @@ consultada.
 | Empresa e entidades | quem é a entidade e qual sua estrutura | identificação, cadastro, relacionamentos, due diligence |
 | Jurídico e conformidade | quais sinais exigem revisão humana | publicações, risco, integridade, conflitos, evidências |
 | Governo e contratos | onde estão oportunidades e exposição pública | fornecedores, licitações, contratos, concentração |
+| Vendas e receita | quais contas priorizar e como preparar cada avanço comercial | ICP, qualificação, gatilhos, conta, proposta, expansão |
 | Propriedade intelectual | quais ativos e riscos de marca existem | marcas, patentes, titularidade, colisões |
 | Mercado e economia | tamanho, dinâmica e atratividade de mercados | dimensionamento, território, setor, indicadores |
 | Financeiro e investimento | saúde, exposição e desempenho financeiro | demonstrações, séries, filings, cenários |
@@ -92,6 +93,19 @@ Cada segmento terá skills em cinco níveis:
 - Investigação de mudança detectada
 - Briefing diário/semanal executivo
 - Relatório de evidências pendentes
+
+### Vendas e receita
+
+- Definição e validação de ICP
+- Mapeamento de território e contas-alvo
+- Enriquecimento e qualificação de lead
+- Pesquisa ABM antes do primeiro contato
+- Detecção de gatilhos de compra observáveis
+- Preparação de reunião de descoberta
+- Mapa de stakeholders sem inferir pessoas não verificadas
+- Personalização de hipótese de valor e proposta
+- Inteligência de oportunidade e concorrência
+- Expansão, cross-sell e risco de churn com evidências
 
 ## Composição padrão de uma skill
 
