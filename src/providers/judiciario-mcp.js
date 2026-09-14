@@ -29,12 +29,14 @@ export class JudiciarioMcpProvider {
     fetchFn = globalThis.fetch,
     endpoint = null,
     bearerToken = null,
+    publicDjenUrl = 'https://comunicaapi.pje.jus.br/api/v1/comunicacao',
     protocolVersion = "2025-11-25",
   } = {}) {
     this.id = "judiciario_br_mcp";
     this.fetchFn = fetchFn;
     this.endpoint = endpoint ? endpoint.replace(/\/$/, "") : null;
     this.bearerToken = bearerToken;
+    this.publicDjenUrl = publicDjenUrl.replace(/\/$/, '');
     this.protocolVersion = protocolVersion;
   }
 
@@ -97,7 +99,7 @@ export class JudiciarioMcpProvider {
     if (tribunal) params.set('siglaTribunal', String(tribunal).trim().toUpperCase());
     if (dateFrom) params.set('dataDisponibilizacaoInicio', normalizeIsoDate(dateFrom, 'dateFrom'));
     if (dateTo) params.set('dataDisponibilizacaoFim', normalizeIsoDate(dateTo, 'dateTo'));
-    const url = `https://comunicaapi.pje.jus.br/api/v1/comunicacao?${params}`;
+    const url = `${this.publicDjenUrl}?${params}`;
     try {
       const response = await this.fetchFn(url, { headers: { accept: 'application/json' } });
       const text = await response.text();

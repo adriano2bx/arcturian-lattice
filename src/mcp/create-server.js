@@ -347,7 +347,7 @@ export function createArcturianLatticeMcpServer({
       pageSize: z.number().int().min(1).max(20).default(20),
     },
     async (args) => {
-      const p = new JudiciarioMcpProvider({ fetchFn, endpoint: env.JUDICIARIO_MCP_URL ?? null, bearerToken: env.JUDICIARIO_BEARER_TOKEN ?? null });
+      const p = new JudiciarioMcpProvider({ fetchFn, endpoint: env.JUDICIARIO_MCP_URL ?? null, bearerToken: env.JUDICIARIO_BEARER_TOKEN ?? null, publicDjenUrl: env.DJEN_PUBLIC_URL ?? undefined });
       return { ...(await p.searchByOab(args)), meta: { source: 'DJEN-CNJ', sourceType: 'public_judicial_data', estimated: false, legalConclusion: false } };
     },
   );
