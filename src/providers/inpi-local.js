@@ -72,6 +72,7 @@ export class InpiLocalProvider {
                MAX(source_updated_at) AS latest_source_update
              FROM ip_assets`,
           )
+          .bind()
           .first();
 
       const totalRecords =
