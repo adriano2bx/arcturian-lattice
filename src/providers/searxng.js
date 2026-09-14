@@ -3,7 +3,7 @@ export class SearxngProvider {
   constructor({
     fetchFn = globalThis.fetch,
     baseUrl = null,
-    fallbackUrl = "https://html.duckduckgo.com/html/",
+    fallbackUrl = "https://lite.duckduckgo.com/lite/",
   } = {}) {
     this.id = "searxng";
     this.fetchFn = fetchFn;
@@ -90,11 +90,13 @@ export class SearxngProvider {
     const html = await response.text();
     const links = [
       ...html.matchAll(
-        /class="result__a"[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi,
+        /<a[^>]*href="([^"]+)"[^>]*class=['"](?:result-link|result__a)['"][^>]*>([\s\S]*?)<\/a>/gi,
       ),
     ];
     const snippets = [
-      ...html.matchAll(/class="result__snippet"[^>]*>([\s\S]*?)<\/a>/gi),
+      ...html.matchAll(
+        /<(?:td|a)[^>]*class=['"](?:result-snippet|result__snippet)['"][^>]*>([\s\S]*?)<\/(?:td|a)>/gi,
+      ),
     ];
     const results = links
       .slice(0, clamp(limit, 1, 50, 10))

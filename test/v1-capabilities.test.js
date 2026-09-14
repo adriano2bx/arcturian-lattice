@@ -77,7 +77,7 @@ test("SearXNG prefers configured JSON and falls back to public DuckDuckGo HTML",
     fetchFn: async (u) => {
       fallback = new URL(u);
       return new Response(
-        '<a class="result__a" href="https://a.test">A</a><a class="result__snippet">B</a>',
+        '<a href="https://a.test" class="result__a">A</a><a class="result__snippet">B</a>',
         { status: 200 },
       );
     },
