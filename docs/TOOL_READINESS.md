@@ -6,13 +6,13 @@
 
 | Estado                           | Quantidade | Significado                                                                                          |
 | -------------------------------- | ---------: | ---------------------------------------------------------------------------------------------------- |
-| Operacional verificado           |         36 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
-| Dependência externa/configuração |         11 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
+| Operacional verificado           |         37 | Chamada autenticada concluída com resposta válida no endpoint de produção.                           |
+| Dependência externa/configuração |         10 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
 | Não executado no smoke test      |          0 | Todas as tools foram chamadas; as mutáveis foram executadas com escopo limitado.                     |
 
 ### Operacional verificado
 
-`company.validate_cnpj`, `company.profile`, `company.risk`, `legal.publications_by_oab`,
+`company.validate_cnpj`, `company.profile`, `company.public_contracts`, `company.risk`, `legal.publications_by_oab`,
 `company.global`, `company.legal`, `web.profile`, `web.technology`, `research.papers`, `market.weather`,
 `market.crypto_rates`, `competitive.snapshot`, `monitor.list`, `monitor.events`,
 `monitor.create`, `monitor.run`, `monitor.run_due`, `regulatory.sync_anatel`,
@@ -24,7 +24,7 @@
 
 ### Dependência externa/configuração
 
-`company.public_contracts`, `company.ip`, `company.gazette`, `company.osint`,
+`company.ip`, `company.gazette`, `company.osint`,
 `web.history`, `seo.backlinks`, `youtube.transcript`, `reddit.search`,
 `competitive.traffic_estimate`,
 `geo.search`, `market.open_data`.
