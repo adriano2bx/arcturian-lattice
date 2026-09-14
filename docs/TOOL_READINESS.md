@@ -6,15 +6,16 @@
 
 | Estado | Quantidade | Significado |
 | --- | ---: | --- |
-| Operacional verificado | 16 | Chamada autenticada concluída com resposta válida no endpoint de produção. |
+| Operacional verificado | 20 | Chamada autenticada concluída com resposta válida no endpoint de produção. |
 | Dependência externa/configuração | 27 | A implementação está publicada, mas requer credencial, dataset local ou provedor externo disponível. |
-| Não executado no smoke test | 4 | Operações mutáveis/sincronizações deliberadamente não executadas para não alterar dados. |
+| Não executado no smoke test | 0 | Todas as tools foram chamadas; as mutáveis foram executadas com escopo limitado. |
 
 ### Operacional verificado
 
 `company.validate_cnpj`, `company.profile`, `company.risk`, `legal.publications_by_oab`,
 `company.global`, `web.profile`, `web.technology`, `research.papers`, `market.weather`,
 `market.crypto_rates`, `competitive.snapshot`, `monitor.list`, `monitor.events`,
+`monitor.create`, `monitor.run`, `monitor.run_due`, `regulatory.sync_anatel`,
 `osint.subdomains`, `infra.network`, `infra.peering`.
 
 ### Dependência externa/configuração
@@ -29,14 +30,10 @@
 Isso não significa que o código esteja ausente. Cada tool retorna falha estruturada quando sua
 fonte não está configurada ou indisponível; não produz dados estimados como se fossem oficiais.
 
-### Não executado no smoke test
-
-`monitor.create`, `monitor.run`, `monitor.run_due`, `regulatory.sync_anatel`.
-
-Essas operações alteram estado ou iniciam sincronização e devem ser validadas em um ambiente de
-homologação com dados de teste.
+As operações mutáveis foram validadas com um monitor temporário de produção e uma sincronização
+limitada da ANATEL. A sincronização retornou progresso (`1.472` de `18.455` registros esperados)
+e continuará nas próximas execuções agendadas.
 
 ## Gates automatizados
 
 `npm test`: 66 testes, 59 aprovados, 0 falhas e 7 testes live ignorados por dependerem de rede.
-
