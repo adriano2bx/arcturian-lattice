@@ -1501,10 +1501,18 @@
       "segmentNumber": 12,
       "order": 3,
       "name": "Criação de baseline multifuente",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "continuous-intelligence-monitoring"
+      ],
+      "tools": [
+        "monitor.create",
+        "monitor.events",
+        "monitor.list",
+        "monitor.run",
+        "monitor.run_due"
+      ],
+      "routable": true
     },
     {
       "id": "12.04-investigacao-de-mudanca-detectada",
@@ -1512,10 +1520,18 @@
       "segmentNumber": 12,
       "order": 4,
       "name": "Investigação de mudança detectada",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "continuous-intelligence-monitoring"
+      ],
+      "tools": [
+        "monitor.create",
+        "monitor.events",
+        "monitor.list",
+        "monitor.run",
+        "monitor.run_due"
+      ],
+      "routable": true
     },
     {
       "id": "12.05-relatorio-de-cobertura-e-lacunas",
@@ -1523,10 +1539,19 @@
       "segmentNumber": 12,
       "order": 5,
       "name": "Relatório de cobertura e lacunas",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "executive-intelligence-brief"
+      ],
+      "tools": [
+        "company.osint",
+        "competitive.compare",
+        "finance.bcb_series",
+        "market.ibge",
+        "monitor.events",
+        "news.search"
+      ],
+      "routable": true
     },
     {
       "id": "12.06-briefing-diario-por-segmento",
@@ -1534,10 +1559,19 @@
       "segmentNumber": 12,
       "order": 6,
       "name": "Briefing diário por segmento",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "executive-intelligence-brief"
+      ],
+      "tools": [
+        "company.osint",
+        "competitive.compare",
+        "finance.bcb_series",
+        "market.ibge",
+        "monitor.events",
+        "news.search"
+      ],
+      "routable": true
     },
     {
       "id": "12.07-briefing-semanal-executivo-transversal",
@@ -1668,10 +1702,21 @@
       "segmentNumber": 13,
       "order": 5,
       "name": "Enriquecimento e qualificação de lead",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "sales-account-qualification"
+      ],
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "company.validate_cnpj",
+        "competitive.snapshot",
+        "news.search",
+        "web.profile",
+        "web.sitemap",
+        "web.technology"
+      ],
+      "routable": true
     },
     {
       "id": "13.06-deteccao-de-gatilhos-de-compra-observaveis",
@@ -1679,10 +1724,21 @@
       "segmentNumber": 13,
       "order": 6,
       "name": "Detecção de gatilhos de compra observáveis",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "sales-account-qualification"
+      ],
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "company.validate_cnpj",
+        "competitive.snapshot",
+        "news.search",
+        "web.profile",
+        "web.sitemap",
+        "web.technology"
+      ],
+      "routable": true
     },
     {
       "id": "13.07-preparacao-de-reuniao-de-descoberta",
@@ -1690,10 +1746,22 @@
       "segmentNumber": 13,
       "order": 7,
       "name": "Preparação de reunião de descoberta",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "sales-discovery-prep"
+      ],
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "company.public_contracts",
+        "competitive.snapshot",
+        "news.search",
+        "regulatory.search",
+        "web.profile",
+        "web.sitemap",
+        "web.technology"
+      ],
+      "routable": true
     },
     {
       "id": "13.08-mapa-de-stakeholders-e-influencia",

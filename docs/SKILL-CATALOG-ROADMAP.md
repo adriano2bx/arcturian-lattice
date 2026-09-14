@@ -158,10 +158,10 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 1. **[ATIVA]** Monitoramento de inteligência contínua (`continuous-intelligence-monitoring`)
 2. **[ATIVA]** Briefing executivo (`executive-intelligence-brief`)
-3. **[PRÓXIMA]** Criação de baseline multifuente
-4. **[PRÓXIMA]** Investigação de mudança detectada
-5. **[PRÓXIMA]** Relatório de cobertura e lacunas
-6. **[PRÓXIMA]** Briefing diário por segmento
+3. **[ATIVA]** Criação de baseline multifuente (`continuous-intelligence-monitoring`)
+4. **[ATIVA]** Investigação de mudança detectada (`continuous-intelligence-monitoring`)
+5. **[ATIVA]** Relatório de cobertura e lacunas (`executive-intelligence-brief`)
+6. **[ATIVA]** Briefing diário por segmento (`executive-intelligence-brief`)
 7. **[PLANEJADA]** Briefing semanal executivo transversal
 8. **[PLANEJADA]** Priorização de alertas por evidência
 9. **[PLANEJADA]** Auditoria de qualidade de dados
@@ -173,9 +173,9 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 2. **[BLOQUEADA]** Mapeamento de mercado e leads (`lead-market-mapping`)
 3. **[ATIVA]** Inteligência de contratos para vendas públicas (`public-procurement-intelligence`)
 4. **[ATIVA]** Definição e validação de ICP (`icp-definition-validation`)
-5. **[PRÓXIMA]** Enriquecimento e qualificação de lead
-6. **[PRÓXIMA]** Detecção de gatilhos de compra observáveis
-7. **[PRÓXIMA]** Preparação de reunião de descoberta
+5. **[ATIVA]** Enriquecimento e qualificação de lead (`sales-account-qualification`)
+6. **[ATIVA]** Detecção de gatilhos de compra observáveis (`sales-account-qualification`)
+7. **[ATIVA]** Preparação de reunião de descoberta (`sales-discovery-prep`)
 8. **[PRÓXIMA]** Mapa de stakeholders e influência
 9. **[PRÓXIMA]** Hipótese de valor e personalização de proposta
 10. **[PRÓXIMA]** Inteligência de oportunidade, expansão e churn
