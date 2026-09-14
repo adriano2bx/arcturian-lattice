@@ -177,27 +177,28 @@ implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 ## Fases do backlog
 
-### Fase A — fundação (28 skills existentes)
+### Fase A — fundação (30 pacotes existentes)
 
-Padronizar frontmatter, IDs, dependências, evidência, saída e testes das skills
-atuais. Remover ou marcar workflows que dependem de tools desativadas.
+Padronizar frontmatter, IDs, dependências, evidência, saída e testes das 30
+skills atuais. Hoje 19 estão instaláveis e 11 estão `blocked` porque dependem
+de tools desativadas; nenhuma skill bloqueada entra no roteamento automático.
 
-### Fase B — workflows prioritários (aproximadamente 45)
+### Fase B — workflows prioritários (59)
 
-Implementar os itens **[PRÓXIMA]**, começando por empresa, jurídico, governo,
+Implementar os 59 itens **[PRÓXIMA]**, começando por empresa, jurídico, governo,
 mercado e operações. São os workflows com maior reutilização entre clientes e
 segmentos.
 
-### Fase C — especialização por setor (aproximadamente 60)
+### Fase C — workflows planejados (47)
+
+Implementar os 47 itens **[PLANEJADA]** restantes da matriz base antes de criar
+variações verticais.
+
+### Fase D — especialização por setor (100+ variações)
 
 Derivar as receitas base para jurídico, saúde, telecom, tecnologia, indústria,
-serviços financeiros e setor público, alterando fontes, campos e guardrails sem
-duplicar o motor de evidências.
-
-### Fase D — escala (100+ variações)
-
-Combinar resultado, segmento, profundidade, periodicidade e persona (analista,
-gestor, compliance, vendas, jurídico ou diretoria), sempre com testes próprios.
+serviços financeiros e setor público, combinando resultado, segmento,
+profundidade, periodicidade e persona, sempre com testes próprios.
 
 O catálogo só deve crescer quando cada skill tiver uma pergunta de decisão
 clara, uma receita reproduzível e um contrato de saída verificável.
