@@ -435,6 +435,38 @@
         "competitive.snapshot"
       ],
       "path": "skills/sales-discovery-prep/SKILL.md"
+    },
+    {
+      "name": "company-identity-reconciliation",
+      "description": "Reconciles a Brazilian company identity across CNPJ, legal name, domain and public records before downstream research.",
+      "category": "company-intelligence",
+      "version": "1.0.0",
+      "tools": ["company.validate_cnpj", "company.profile", "company.osint", "web.profile", "web.sitemap"],
+      "path": "skills/company-identity-reconciliation/SKILL.md"
+    },
+    {
+      "name": "legal-publications-oab",
+      "description": "Searches Brazilian judicial publications by OAB number with coverage, date and identity controls for attorney review.",
+      "category": "legal",
+      "version": "1.0.0",
+      "tools": ["legal.publications_by_oab"],
+      "path": "skills/legal-publications-oab/SKILL.md"
+    },
+    {
+      "name": "domain-profile-complete",
+      "description": "Builds a complete public technical profile of a domain by reconciling HTTP, DNS, RDAP, sitemap, technology and certificate signals.",
+      "category": "web-intelligence",
+      "version": "1.0.0",
+      "tools": ["web.profile", "web.technology", "web.sitemap", "osint.subdomains", "infra.network"],
+      "path": "skills/domain-profile-complete/SKILL.md"
+    },
+    {
+      "name": "serp-intent-research",
+      "description": "Maps search results to user intent and opportunity using reproducible SERP observations and technical page evidence.",
+      "category": "seo",
+      "version": "1.0.0",
+      "tools": ["seo.serp", "web.profile", "seo.audit"],
+      "path": "skills/serp-intent-research/SKILL.md"
     }
   ]
 }

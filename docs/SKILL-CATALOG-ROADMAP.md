@@ -16,7 +16,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 1. **[PRÓXIMA]** Verificação cadastral de empresa brasileira
 2. **[BLOQUEADA]** Due diligence de fornecedor (`company-due-diligence`)
 3. **[ATIVA]** OSINT de empresa brasileira (`company-osint-br`)
-4. **[PRÓXIMA]** Reconciliação de identidade entre CNPJ, nome, domínio e LEI
+4. **[ATIVA]** Reconciliação de identidade entre CNPJ, nome, domínio e LEI (`company-identity-reconciliation`)
 5. **[PRÓXIMA]** Mapa de grupo econômico e entidades relacionadas
 6. **[PRÓXIMA]** Linha do tempo societária e cadastral
 7. **[PRÓXIMA]** Perfil de cliente potencial para vendas enterprise
@@ -27,7 +27,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 ## 2. Jurídico e conformidade
 
 1. **[ATIVA]** Triagem de risco jurídico público (`legal-risk-screening`)
-2. **[PRÓXIMA]** Publicações judiciais por OAB com controle de cobertura
+2. **[ATIVA]** Publicações judiciais por OAB com controle de cobertura (`legal-publications-oab`)
 3. **[PRÓXIMA]** Publicações judiciais por parte e validação de identidade
 4. **[PRÓXIMA]** Monitoramento de mudança em publicações de um processo
 5. **[PRÓXIMA]** Triagem de certidões e sinais de integridade
@@ -94,7 +94,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 1. **[ATIVA]** Inteligência de website (`website-intelligence`)
 2. **[ATIVA]** Forense de mudanças de website (`website-change-forensics`)
 3. **[ATIVA]** Inteligência de stack tecnológica (`technology-stack-intelligence`)
-4. **[PRÓXIMA]** Perfil técnico completo de domínio
+4. **[ATIVA]** Perfil técnico completo de domínio (`domain-profile-complete`)
 5. **[PRÓXIMA]** Reconciliação DNS, RDAP e HTTP
 6. **[PRÓXIMA]** Descoberta passiva de subdomínios e certificados
 7. **[PRÓXIMA]** Diagnóstico de disponibilidade e origem
@@ -107,7 +107,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 1. **[ATIVA]** Auditoria técnica de SEO (`seo-technical-audit`)
 2. **[BLOQUEADA]** Pesquisa competitiva de SEO (`seo-competitive-research`)
 3. **[BLOQUEADA]** Inteligência de backlinks (`backlink-intelligence`)
-4. **[PRÓXIMA]** Pesquisa de SERP por intenção
+4. **[ATIVA]** Pesquisa de SERP por intenção (`serp-intent-research`)
 5. **[PRÓXIMA]** Auditoria de indexabilidade e arquitetura
 6. **[PRÓXIMA]** Mapa de lacunas de conteúdo
 7. **[PRÓXIMA]** Comparação de presença orgânica

@@ -74,10 +74,18 @@
       "segmentNumber": 1,
       "order": 4,
       "name": "Reconciliação de identidade entre CNPJ, nome, domínio e LEI",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "company-identity-reconciliation"
+      ],
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "company.validate_cnpj",
+        "web.profile",
+        "web.sitemap"
+      ],
+      "routable": true
     },
     {
       "id": "01.05-mapa-de-grupo-economico-e-entidades-relacionadas",
@@ -168,10 +176,14 @@
       "segmentNumber": 2,
       "order": 2,
       "name": "Publicações judiciais por OAB com controle de cobertura",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "legal-publications-oab"
+      ],
+      "tools": [
+        "legal.publications_by_oab"
+      ],
+      "routable": true
     },
     {
       "id": "02.03-publicacoes-judiciais-por-parte-e-validacao-de-identidade",
@@ -799,10 +811,18 @@
       "segmentNumber": 7,
       "order": 4,
       "name": "Perfil técnico completo de domínio",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "domain-profile-complete"
+      ],
+      "tools": [
+        "infra.network",
+        "osint.subdomains",
+        "web.profile",
+        "web.sitemap",
+        "web.technology"
+      ],
+      "routable": true
     },
     {
       "id": "07.05-reconciliacao-dns-rdap-e-http",
@@ -929,10 +949,16 @@
       "segmentNumber": 8,
       "order": 4,
       "name": "Pesquisa de SERP por intenção",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "serp-intent-research"
+      ],
+      "tools": [
+        "seo.audit",
+        "seo.serp",
+        "web.profile"
+      ],
+      "routable": true
     },
     {
       "id": "08.05-auditoria-de-indexabilidade-e-arquitetura",

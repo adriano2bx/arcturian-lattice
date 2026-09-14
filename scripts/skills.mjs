@@ -19,15 +19,21 @@ function has(name) {
   return args.includes(`--${name}`);
 }
 
-const manifest = JSON.parse(
-  await fs.readFile(path.join(skillsRoot, "manifest.json"), "utf8"),
-);
+function writeLine(value) {
+  return new Promise((resolve) => process.stdout.write(`${value}\n`, resolve));
+}
+
+async function main() {
+  const manifest = JSON.parse(
+    await fs.readFile(path.join(skillsRoot, "manifest.json"), "utf8"),
+  );
 
 if (command === "list") {
   for (const s of manifest.skills)
-    console.log(`${s.name}\t${s.status ?? "active"}\t${s.category}\t${s.description}`);
-  await new Promise((resolve) => setTimeout(resolve, 100));
-  process.exit(0);
+    await writeLine(`${s.name}\t${s.status ?? "active"}\t${s.category}\t${s.description}`);
+  await new Promise((resolve) => process.stdout.write("", resolve));
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  return;
 }
 
 if (command === "validate") {
@@ -99,11 +105,12 @@ if (command === "validate") {
   if (errors.length) {
     console.error(`Skill validation failed (${errors.length}):`);
     for (const e of errors) console.error(`- ${e}`);
-    process.exit(1);
+    process.exitCode = 1;
+    return;
   }
-  console.log(`Validated ${manifest.skills.length} skills successfully.`);
-  await new Promise((resolve) => setTimeout(resolve, 100));
-  process.exit(0);
+  await writeLine(`Validated ${manifest.skills.length} skills successfully.`);
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  return;
 }
 
 if (command === "install") {
@@ -129,7 +136,7 @@ if (command === "install") {
   for (const s of manifest.skills) {
     if ((s.status ?? "active") !== "active") {
       skipped++;
-      console.log(`skip ${s.name} (status=${s.status})`);
+      await writeLine(`skip ${s.name} (status=${s.status})`);
       continue;
     }
     const src = path.join(skillsRoot, s.name);
@@ -137,7 +144,7 @@ if (command === "install") {
     try {
       await fs.access(dst);
       if (!force) {
-        console.log(`skip ${s.name} (exists; use --force)`);
+        await writeLine(`skip ${s.name} (exists; use --force)`);
         skipped++;
         continue;
       }
@@ -145,16 +152,22 @@ if (command === "install") {
     } catch {}
     await fs.cp(src, dst, { recursive: true });
     installed++;
-    console.log(`installed ${s.name} -> ${dst}`);
+    await writeLine(`installed ${s.name} -> ${dst}`);
   }
-  console.log(
+  await writeLine(
     `Done. installed=${installed} skipped=${skipped} target=${target}`,
   );
-  await new Promise((resolve) => setTimeout(resolve, 100));
-  process.exit(0);
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  return;
 }
 
-console.error(
-  "Usage: node scripts/skills.mjs list|validate|install [--target hermes|claude|codex|cursor] [--force]",
-);
-process.exit(2);
+  console.error(
+    "Usage: node scripts/skills.mjs list|validate|install [--target hermes|claude|codex|cursor] [--force]",
+  );
+  process.exitCode = 2;
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
