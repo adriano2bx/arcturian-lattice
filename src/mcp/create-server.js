@@ -515,7 +515,7 @@ export function createArcturianLatticeMcpServer({
     async (a) => ({
       ...(await searx().search(a)),
       meta: {
-        source: "self-hosted SearXNG",
+        source: "SearXNG self-hosted ou DuckDuckGo público",
         sourceType: "self_hosted_metasearch",
         estimated: false,
       },
@@ -557,7 +557,7 @@ export function createArcturianLatticeMcpServer({
         limit,
       })),
       meta: {
-        source: "self-hosted SearXNG",
+        source: "SearXNG self-hosted ou DuckDuckGo público",
         sourceType: "metasearch",
         estimated: false,
       },
