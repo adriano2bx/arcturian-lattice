@@ -58,6 +58,7 @@ export function createArcturianLatticeMcpServer({
     new SearxngProvider({
       fetchFn,
       baseUrl: env.SEARXNG_URL ?? null,
+      fallbackUrl: env.SEARCH_RELAY_URL ?? "https://djen.2bx.com.br/search",
     });
 
   const youtube = () =>
