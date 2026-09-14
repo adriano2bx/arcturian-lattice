@@ -17,10 +17,10 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 2. **[BLOQUEADA]** Due diligence de fornecedor (`company-due-diligence`)
 3. **[ATIVA]** OSINT de empresa brasileira (`company-osint-br`)
 4. **[ATIVA]** Reconciliação de identidade entre CNPJ, nome, domínio e LEI (`company-identity-reconciliation`)
-5. **[PRÓXIMA]** Mapa de grupo econômico e entidades relacionadas
-6. **[PRÓXIMA]** Linha do tempo societária e cadastral
-7. **[PRÓXIMA]** Perfil de cliente potencial para vendas enterprise
-8. **[PRÓXIMA]** Validação de fornecedor antes de contratação
+5. **[ATIVA]** Mapa de grupo econômico e entidades relacionadas (`company-osint-br`)
+6. **[ATIVA]** Linha do tempo societária e cadastral (`company-osint-br`)
+7. **[ATIVA]** Perfil de cliente potencial para vendas enterprise (`abm-account-research`)
+8. **[ATIVA]** Validação de fornecedor antes de contratação (`legal-risk-screening`)
 9. **[PLANEJADA]** Dossiê de empresa estrangeira e subsidiárias
 10. **[PLANEJADA]** Comparação de múltiplas entidades com resolução de homônimos
 
@@ -31,7 +31,7 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 3. **[ATIVA]** Publicações judiciais por parte e validação de identidade (`legal-publications-party`)
 4. **[ATIVA]** Monitoramento de mudança em publicações de um processo (`legal-process-change-monitoring`)
 5. **[ATIVA]** Triagem de certidões e sinais de integridade (`regulatory-sector-screening`)
-6. **[PRÓXIMA]** Matriz de evidências para revisão por advogado
+6. **[ATIVA]** Matriz de evidências para revisão por advogado (`legal-risk-screening`)
 7. **[PLANEJADA]** Conflito de nomes, marcas e partes relacionadas
 8. **[PLANEJADA]** Due diligence regulatória por setor
 9. **[PLANEJADA]** Preparação de briefing jurídico sem conclusão legal
@@ -41,10 +41,10 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 1. **[ATIVA]** Inteligência de contratos públicos (`public-procurement-intelligence`)
 2. **[ATIVA]** Histórico de fornecedor no PNCP (`pncp-supplier-history`)
-3. **[PRÓXIMA]** Mapa de órgãos compradores por setor
-4. **[PRÓXIMA]** Detecção de concentração de contratos
-5. **[PRÓXIMA]** Identificação de oportunidades por CNAE e território
-6. **[PRÓXIMA]** Análise de editais e requisitos recorrentes
+3. **[ATIVA]** Mapa de órgãos compradores por setor (`public-procurement-intelligence`)
+4. **[ATIVA]** Detecção de concentração de contratos (`pncp-supplier-history`)
+5. **[ATIVA]** Identificação de oportunidades por CNAE e território (`icp-definition-validation`)
+6. **[ATIVA]** Análise de editais e requisitos recorrentes (`public-procurement-intelligence`)
 7. **[PLANEJADA]** Comparação de concorrentes em licitações
 8. **[PLANEJADA]** Linha do tempo de contratos e aditivos
 9. **[PLANEJADA]** Qualificação de conta pública para ABM
@@ -67,10 +67,10 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 
 1. **[BLOQUEADA]** Pesquisa de mercado brasileiro (`market-research-br`)
 2. **[ATIVA]** Dimensionamento de mercado por setor (`sector-market-sizing`)
-3. **[PRÓXIMA]** Dimensionamento por estado e município
-4. **[PRÓXIMA]** Comparação de praças para expansão
+3. **[ATIVA]** Dimensionamento por estado e município (`territory-economic-profile`)
+4. **[ATIVA]** Comparação de praças para expansão (`territory-economic-profile`)
 5. **[ATIVA]** Perfil econômico de território (`territory-economic-profile`)
-6. **[PRÓXIMA]** Sazonalidade e tendência em séries IBGE
+6. **[ATIVA]** Sazonalidade e tendência em séries IBGE (`sector-market-sizing`)
 7. **[PLANEJADA]** Mapa de densidade de empresas por CNAE
 8. **[PLANEJADA]** Análise de comércio exterior por produto
 9. **[PLANEJADA]** Cenários de entrada em mercado
@@ -81,9 +81,9 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 1. **[ATIVA]** Inteligência financeira brasileira (`financial-intelligence-br`)
 2. **[ATIVA]** Inteligência de companhia pública dos EUA (`public-company-intelligence-us`)
 3. **[ATIVA]** Leitura de séries do Banco Central (`bcb-series-reading`)
-4. **[PRÓXIMA]** Reconciliação temporal de fatos SEC
+4. **[ATIVA]** Reconciliação temporal de fatos SEC (`public-company-intelligence-us`)
 5. **[ATIVA]** Triagem financeira de parceiro ou fornecedor (`partner-financial-screening`)
-6. **[PRÓXIMA]** Indicadores de crescimento e retração
+6. **[ATIVA]** Indicadores de crescimento e retração (`bcb-series-reading`)
 7. **[PLANEJADA]** Comparação financeira entre concorrentes
 8. **[PLANEJADA]** Exposição cambial e macroeconômica
 9. **[PLANEJADA]** Preparação de cenário de investimento
@@ -95,8 +95,8 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 2. **[ATIVA]** Forense de mudanças de website (`website-change-forensics`)
 3. **[ATIVA]** Inteligência de stack tecnológica (`technology-stack-intelligence`)
 4. **[ATIVA]** Perfil técnico completo de domínio (`domain-profile-complete`)
-5. **[PRÓXIMA]** Reconciliação DNS, RDAP e HTTP
-6. **[PRÓXIMA]** Descoberta passiva de subdomínios e certificados
+5. **[ATIVA]** Reconciliação DNS, RDAP e HTTP (`domain-profile-complete`)
+6. **[ATIVA]** Descoberta passiva de subdomínios e certificados (`network-infrastructure-osint`)
 7. **[ATIVA]** Diagnóstico de disponibilidade e origem (`availability-infrastructure-diagnosis`)
 8. **[PLANEJADA]** Mapa de ativos digitais de uma organização
 9. **[PLANEJADA]** Comparação de infraestrutura de concorrentes
@@ -134,8 +134,8 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 2. **[BLOQUEADA]** Escuta social (`social-listening`)
 3. **[BLOQUEADA]** Monitoramento de crise reputacional (`crisis-reputation-monitoring`)
 4. **[ATIVA]** Panorama de notícias por entidade (`entity-news-panorama`)
-5. **[PRÓXIMA]** Reconciliação de menções e homônimos
-6. **[PRÓXIMA]** Linha do tempo de narrativa pública
+5. **[ATIVA]** Reconciliação de menções e homônimos (`entity-news-panorama`)
+6. **[ATIVA]** Linha do tempo de narrativa pública (`entity-news-panorama`)
 7. **[PLANEJADA]** Monitoramento de Reclame Aqui com API oficial
 8. **[PLANEJADA]** Classificação contextual de temas e riscos
 9. **[PLANEJADA]** Detecção de aceleração reputacional
@@ -144,10 +144,10 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 ## 11. Pesquisa e conhecimento
 
 1. **[ATIVA]** Pesquisa acadêmica (`academic-research`)
-2. **[PRÓXIMA]** Pesquisa profunda multifuente
-3. **[PRÓXIMA]** Revisão bibliográfica orientada a pergunta
-4. **[PRÓXIMA]** Mapa de consenso e divergência
-5. **[PRÓXIMA]** Síntese com rastreabilidade de fontes
+2. **[ATIVA]** Pesquisa profunda multifuente (`academic-research`)
+3. **[ATIVA]** Revisão bibliográfica orientada a pergunta (`academic-research`)
+4. **[ATIVA]** Mapa de consenso e divergência (`academic-research`)
+5. **[ATIVA]** Síntese com rastreabilidade de fontes (`academic-research`)
 6. **[PLANEJADA]** Estado da arte por tecnologia
 7. **[PLANEJADA]** Monitoramento de novas publicações
 8. **[PLANEJADA]** Extração de hipóteses e lacunas
@@ -177,8 +177,8 @@ de implementação; **[PLANEJADA]** depende de uma fase posterior.
 6. **[ATIVA]** Detecção de gatilhos de compra observáveis (`sales-account-qualification`)
 7. **[ATIVA]** Preparação de reunião de descoberta (`sales-discovery-prep`)
 8. **[PRÓXIMA]** Mapa de stakeholders e influência
-9. **[PRÓXIMA]** Hipótese de valor e personalização de proposta
-10. **[PRÓXIMA]** Inteligência de oportunidade, expansão e churn
+9. **[ATIVA]** Hipótese de valor e personalização de proposta (`sales-discovery-prep`)
+10. **[ATIVA]** Inteligência de oportunidade, expansão e churn (`sales-account-qualification`)
 
 ## Fases do backlog
 
@@ -188,11 +188,11 @@ Padronizar frontmatter, IDs, dependências, evidência, saída e testes das 30
 skills atuais. Hoje 19 estão instaláveis e 11 estão `blocked` porque dependem
 de tools desativadas; nenhuma skill bloqueada entra no roteamento automático.
 
-### Fase B — workflows prioritários (59)
+### Fase B — workflows prioritários (63 ativos; 11 aguardando capacidade)
 
-Implementar os 59 itens **[PRÓXIMA]**, começando por empresa, jurídico, governo,
-mercado e operações. São os workflows com maior reutilização entre clientes e
-segmentos.
+Os workflows **[ATIVA]** estão configurados e roteáveis. Os 11 itens ainda
+**[PRÓXIMA]** aguardam uma skill/tool específica ou dependem de uma capability
+bloqueada; não são marcados como ativos por aproximação.
 
 ### Fase C — workflows planejados (47)
 

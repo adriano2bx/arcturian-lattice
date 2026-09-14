@@ -98,10 +98,21 @@
       "segmentNumber": 1,
       "order": 5,
       "name": "Mapa de grupo econômico e entidades relacionadas",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "company-osint-br"
+      ],
+      "tools": [
+        "company.gazette",
+        "company.global",
+        "company.osint",
+        "company.profile",
+        "infra.network",
+        "osint.subdomains",
+        "regulatory.search",
+        "web.profile"
+      ],
+      "routable": true
     },
     {
       "id": "01.06-linha-do-tempo-societaria-e-cadastral",
@@ -109,10 +120,21 @@
       "segmentNumber": 1,
       "order": 6,
       "name": "Linha do tempo societária e cadastral",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "company-osint-br"
+      ],
+      "tools": [
+        "company.gazette",
+        "company.global",
+        "company.osint",
+        "company.profile",
+        "infra.network",
+        "osint.subdomains",
+        "regulatory.search",
+        "web.profile"
+      ],
+      "routable": true
     },
     {
       "id": "01.07-perfil-de-cliente-potencial-para-vendas-enterprise",
@@ -120,10 +142,21 @@
       "segmentNumber": 1,
       "order": 7,
       "name": "Perfil de cliente potencial para vendas enterprise",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "abm-account-research"
+      ],
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "company.public_contracts",
+        "competitive.snapshot",
+        "news.search",
+        "regulatory.search",
+        "web.profile",
+        "web.technology"
+      ],
+      "routable": true
     },
     {
       "id": "01.08-validacao-de-fornecedor-antes-de-contratacao",
@@ -131,10 +164,16 @@
       "segmentNumber": 1,
       "order": 8,
       "name": "Validação de fornecedor antes de contratação",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "legal-risk-screening"
+      ],
+      "tools": [
+        "company.legal",
+        "company.profile",
+        "company.risk"
+      ],
+      "routable": true
     },
     {
       "id": "01.09-dossie-de-empresa-estrangeira-e-subsidiarias",
@@ -247,10 +286,16 @@
       "segmentNumber": 2,
       "order": 6,
       "name": "Matriz de evidências para revisão por advogado",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "legal-risk-screening"
+      ],
+      "tools": [
+        "company.legal",
+        "company.profile",
+        "company.risk"
+      ],
+      "routable": true
     },
     {
       "id": "02.07-conflito-de-nomes-marcas-e-partes-relacionadas",
@@ -336,10 +381,17 @@
       "segmentNumber": 3,
       "order": 3,
       "name": "Mapa de órgãos compradores por setor",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "public-procurement-intelligence"
+      ],
+      "tools": [
+        "company.profile",
+        "company.public_contracts",
+        "market.ibge",
+        "news.search"
+      ],
+      "routable": true
     },
     {
       "id": "03.04-deteccao-de-concentracao-de-contratos",
@@ -347,10 +399,15 @@
       "segmentNumber": 3,
       "order": 4,
       "name": "Detecção de concentração de contratos",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "pncp-supplier-history"
+      ],
+      "tools": [
+        "company.public_contracts",
+        "company.validate_cnpj"
+      ],
+      "routable": true
     },
     {
       "id": "03.05-identificacao-de-oportunidades-por-cnae-e-territorio",
@@ -358,10 +415,18 @@
       "segmentNumber": 3,
       "order": 5,
       "name": "Identificação de oportunidades por CNAE e território",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "icp-definition-validation"
+      ],
+      "tools": [
+        "company.profile",
+        "company.public_contracts",
+        "company.validate_cnpj",
+        "market.ibge",
+        "web.profile"
+      ],
+      "routable": true
     },
     {
       "id": "03.06-analise-de-editais-e-requisitos-recorrentes",
@@ -369,10 +434,17 @@
       "segmentNumber": 3,
       "order": 6,
       "name": "Análise de editais e requisitos recorrentes",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "public-procurement-intelligence"
+      ],
+      "tools": [
+        "company.profile",
+        "company.public_contracts",
+        "market.ibge",
+        "news.search"
+      ],
+      "routable": true
     },
     {
       "id": "03.07-comparacao-de-concorrentes-em-licitacoes",
@@ -576,10 +648,15 @@
       "segmentNumber": 5,
       "order": 3,
       "name": "Dimensionamento por estado e município",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "territory-economic-profile"
+      ],
+      "tools": [
+        "geo.search",
+        "market.ibge"
+      ],
+      "routable": true
     },
     {
       "id": "05.04-comparacao-de-pracas-para-expansao",
@@ -587,10 +664,15 @@
       "segmentNumber": 5,
       "order": 4,
       "name": "Comparação de praças para expansão",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "territory-economic-profile"
+      ],
+      "tools": [
+        "geo.search",
+        "market.ibge"
+      ],
+      "routable": true
     },
     {
       "id": "05.05-perfil-economico-de-territorio",
@@ -614,10 +696,14 @@
       "segmentNumber": 5,
       "order": 6,
       "name": "Sazonalidade e tendência em séries IBGE",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "sector-market-sizing"
+      ],
+      "tools": [
+        "market.ibge"
+      ],
+      "routable": true
     },
     {
       "id": "05.07-mapa-de-densidade-de-empresas-por-cnae",
@@ -719,10 +805,16 @@
       "segmentNumber": 6,
       "order": 4,
       "name": "Reconciliação temporal de fatos SEC",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "public-company-intelligence-us"
+      ],
+      "tools": [
+        "finance.sec_companyfacts",
+        "finance.sec_submissions",
+        "news.search"
+      ],
+      "routable": true
     },
     {
       "id": "06.05-triagem-financeira-de-parceiro-ou-fornecedor",
@@ -748,10 +840,14 @@
       "segmentNumber": 6,
       "order": 6,
       "name": "Indicadores de crescimento e retração",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "bcb-series-reading"
+      ],
+      "tools": [
+        "finance.bcb_series"
+      ],
+      "routable": true
     },
     {
       "id": "06.07-comparacao-financeira-entre-concorrentes",
@@ -878,10 +974,18 @@
       "segmentNumber": 7,
       "order": 5,
       "name": "Reconciliação DNS, RDAP e HTTP",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "domain-profile-complete"
+      ],
+      "tools": [
+        "infra.network",
+        "osint.subdomains",
+        "web.profile",
+        "web.sitemap",
+        "web.technology"
+      ],
+      "routable": true
     },
     {
       "id": "07.06-descoberta-passiva-de-subdominios-e-certificados",
@@ -889,10 +993,17 @@
       "segmentNumber": 7,
       "order": 6,
       "name": "Descoberta passiva de subdomínios e certificados",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "network-infrastructure-osint"
+      ],
+      "tools": [
+        "infra.network",
+        "infra.peering",
+        "osint.subdomains",
+        "web.profile"
+      ],
+      "routable": true
     },
     {
       "id": "07.07-diagnostico-de-disponibilidade-e-origem",
@@ -1281,10 +1392,15 @@
       "segmentNumber": 10,
       "order": 5,
       "name": "Reconciliação de menções e homônimos",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "entity-news-panorama"
+      ],
+      "tools": [
+        "news.search",
+        "web.search"
+      ],
+      "routable": true
     },
     {
       "id": "10.06-linha-do-tempo-de-narrativa-publica",
@@ -1292,10 +1408,15 @@
       "segmentNumber": 10,
       "order": 6,
       "name": "Linha do tempo de narrativa pública",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "entity-news-panorama"
+      ],
+      "tools": [
+        "news.search",
+        "web.search"
+      ],
+      "routable": true
     },
     {
       "id": "10.07-monitoramento-de-reclame-aqui-com-api-oficial",
@@ -1363,10 +1484,15 @@
       "segmentNumber": 11,
       "order": 2,
       "name": "Pesquisa profunda multifuente",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "academic-research"
+      ],
+      "tools": [
+        "research.deep",
+        "research.papers"
+      ],
+      "routable": true
     },
     {
       "id": "11.03-revisao-bibliografica-orientada-a-pergunta",
@@ -1374,10 +1500,15 @@
       "segmentNumber": 11,
       "order": 3,
       "name": "Revisão bibliográfica orientada a pergunta",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "academic-research"
+      ],
+      "tools": [
+        "research.deep",
+        "research.papers"
+      ],
+      "routable": true
     },
     {
       "id": "11.04-mapa-de-consenso-e-divergencia",
@@ -1385,10 +1516,15 @@
       "segmentNumber": 11,
       "order": 4,
       "name": "Mapa de consenso e divergência",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "academic-research"
+      ],
+      "tools": [
+        "research.deep",
+        "research.papers"
+      ],
+      "routable": true
     },
     {
       "id": "11.05-sintese-com-rastreabilidade-de-fontes",
@@ -1396,10 +1532,15 @@
       "segmentNumber": 11,
       "order": 5,
       "name": "Síntese com rastreabilidade de fontes",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "academic-research"
+      ],
+      "tools": [
+        "research.deep",
+        "research.papers"
+      ],
+      "routable": true
     },
     {
       "id": "11.06-estado-da-arte-por-tecnologia",
@@ -1780,10 +1921,22 @@
       "segmentNumber": 13,
       "order": 9,
       "name": "Hipótese de valor e personalização de proposta",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "sales-discovery-prep"
+      ],
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "company.public_contracts",
+        "competitive.snapshot",
+        "news.search",
+        "regulatory.search",
+        "web.profile",
+        "web.sitemap",
+        "web.technology"
+      ],
+      "routable": true
     },
     {
       "id": "13.10-inteligencia-de-oportunidade-expansao-e-churn",
@@ -1791,10 +1944,21 @@
       "segmentNumber": 13,
       "order": 10,
       "name": "Inteligência de oportunidade, expansão e churn",
-      "status": "next",
-      "skillRefs": [],
-      "tools": [],
-      "routable": false
+      "status": "active",
+      "skillRefs": [
+        "sales-account-qualification"
+      ],
+      "tools": [
+        "company.osint",
+        "company.profile",
+        "company.validate_cnpj",
+        "competitive.snapshot",
+        "news.search",
+        "web.profile",
+        "web.sitemap",
+        "web.technology"
+      ],
+      "routable": true
     }
   ]
 }
