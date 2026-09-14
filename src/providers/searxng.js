@@ -3,7 +3,7 @@ export class SearxngProvider {
   constructor({
     fetchFn = globalThis.fetch,
     baseUrl = null,
-    fallbackUrl = "https://lite.duckduckgo.com/lite/",
+    fallbackUrl = "https://www.bing.com/search?format=rss",
   } = {}) {
     this.id = "searxng";
     this.fetchFn = fetchFn;
@@ -88,6 +88,22 @@ export class SearxngProvider {
         status: response.status,
       };
     const html = await response.text();
+    if (/<rss\b|<feed\b/i.test(html)) {
+      const results = [
+        ...html.matchAll(
+          /<item>[\s\S]*?<title>([\s\S]*?)<\/title>[\s\S]*?<link>([\s\S]*?)<\/link>[\s\S]*?<description>([\s\S]*?)<\/description>[\s\S]*?<\/item>/gi,
+        ),
+      ]
+        .slice(0, clamp(limit, 1, 50, 10))
+        .map(([, title, href, content]) => ({
+          title: stripHtml(title),
+          url: decodeHtml(href).trim(),
+          content: stripHtml(content),
+          engine: "bing_rss",
+          score: null,
+        }));
+      return { ok: true, provider: "bing_rss", fallback: true, results };
+    }
     const links = [
       ...html.matchAll(
         /<a[^>]*href="([^"]+)"[^>]*class=['"](?:result-link|result__a)['"][^>]*>([\s\S]*?)<\/a>/gi,

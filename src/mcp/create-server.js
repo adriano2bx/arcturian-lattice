@@ -58,7 +58,7 @@ export function createArcturianLatticeMcpServer({
     new SearxngProvider({
       fetchFn,
       baseUrl: env.SEARXNG_URL ?? null,
-      fallbackUrl: env.SEARCH_RELAY_URL ?? "https://djen.2bx.com.br/search",
+      fallbackUrl: env.SEARCH_RELAY_URL ?? "https://djen.2bx.com.br/search-rss",
     });
 
   const youtube = () =>
@@ -517,7 +517,7 @@ export function createArcturianLatticeMcpServer({
       ...(await searx().search(a)),
       meta: {
         source: "SearXNG self-hosted ou DuckDuckGo público",
-        sourceType: "self_hosted_metasearch",
+        sourceType: "public_or_self_hosted_search",
         estimated: false,
       },
     }),
@@ -559,7 +559,7 @@ export function createArcturianLatticeMcpServer({
       })),
       meta: {
         source: "SearXNG self-hosted ou DuckDuckGo público",
-        sourceType: "metasearch",
+        sourceType: "public_or_self_hosted_search",
         estimated: false,
       },
     }),
