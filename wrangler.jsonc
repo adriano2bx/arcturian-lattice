@@ -5,6 +5,10 @@
   "compatibility_date": "2026-09-11",
   "observability": { "enabled": true },
 
+  "routes": [
+    { "pattern": "lattice.deltabots.com.br/*", "zone_name": "deltabots.com.br" }
+  ],
+
   "triggers": {
     "crons": ["*/30 * * * *"]
   },
