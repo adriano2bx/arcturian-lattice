@@ -66,6 +66,37 @@ export function createArcturianLatticeMcpServer({
     version: ARCTURIAN_VERSION,
   });
 
+  // Runtime discovery for Agent Skills clients. The full, generated registry
+  // remains versioned in skills/workflows.json; this resource gives an agent
+  // the contract and canonical location without turning planned workflows
+  // into executable capabilities.
+  server.registerResource(
+    "workflow-catalog",
+    "arcturian://catalog/workflows",
+    {
+      title: "Arcturian / Lattice workflow catalog",
+      description: "Workflow, skill and MCP-tool hierarchy with routability states.",
+      mimeType: "application/json",
+    },
+    async (uri) => ({
+      contents: [{
+        uri: uri.href,
+        mimeType: "application/json",
+        text: JSON.stringify({
+          schemaVersion: 1,
+          server: "arcturian-lattice",
+          semantics: {
+            workflow: "resultado de negócio ponta a ponta",
+            skill: "receita reutilizável carregável por um agente",
+            tool: "primitiva MCP de dados ou execução",
+            orchestration: "o agente escolhe ordem, parâmetros, frequência e saída",
+          },
+          registry: "https://github.com/adriano2bx/arcturian-lattice/blob/main/skills/workflows.json",
+        }),
+      }],
+    }),
+  );
+
   const searx = () =>
     new SearxngProvider({
       fetchFn,
